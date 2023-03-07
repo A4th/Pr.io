@@ -19,7 +19,7 @@ html, body {
 }
 
 .top-navigation-bar{
-    background-color: black;
+    background-color:black;
 }
 
 .below-nav-bar{
@@ -27,7 +27,7 @@ html, body {
 }
 
 .left-navigation-bar{
-    background-color: #e3d8d8;
+    background-color: purple;
     width: 20%;
     height: 100%;
     float: left;
@@ -97,5 +97,5 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    background-color: black ;
+    background-color: #4A235A;
 }
