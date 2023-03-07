@@ -25,6 +25,7 @@ let degprogs = [
 function populateDegProgOptions() {
     let courseSelect = document.getElementById("course-select");
     let courseSubjects = document.getElementById("course-subjects");
+    let controls = document.getElementById("control-buttons");
 
     // Ensure first that course selection is empty
     while (courseSelect.length > 0) {
@@ -43,6 +44,7 @@ function populateDegProgOptions() {
     courseSelect.onchange = function() {
         if (courseSelect.value == "NONE") {
             clearNode(courseSubjects);
+            clearNode(controls);
             return;
         }
 
@@ -63,7 +65,9 @@ function clearNode(node) {
 function populateSubjectOptions(course, subjects_json) {
     // First, clear current list of subjects
     let courseSubjects = document.getElementById("course-subjects");
+    let controls = document.getElementById("control-buttons");
     clearNode(courseSubjects);
+    clearNode(controls);
 
     let label = document.createElement('h3');
     label.textContent = `${course} Subjects:`;
@@ -93,16 +97,44 @@ function populateSubjectOptions(course, subjects_json) {
         lbl.setAttribute("for", id)
         lbl.textContent = s + ` (${subjects_json[s]} units)`;
 
-        subjects_box.appendChild(chk);
-        subjects_box.appendChild(lbl);
-        subjects_box.appendChild(document.createElement("br"));
+        // wrap each entry in span element so that
+        // we can easily loop over each element later
+        let entry = document.createElement("span");
+        entry.appendChild(chk);
+        entry.appendChild(lbl);
+        entry.appendChild(document.createElement("br"));
+
+        subjects_box.appendChild(entry);
     }
 
     let add = document.createElement("button");
     add.setAttribute("id", "add-course-subjects-button");
     add.textContent = "Add Subjects"
+    add.onclick = function() {
+        let subject_chks = document.getElementById("subjects-box");
+        // if subjects-box could not be found, probably no course chosen yet
+        if (!subject_chks) {
+            console.log("Null");
+            return;
+        }
 
-    let controls = document.getElementById("control-buttons");
+        let subjects_taken = {};
+        for (let i = 1; i <= num_subs; ++i) {
+            let id = "subject" + i;
+            let chk = document.getElementById(id);
+
+            if (chk?.checked) {
+                subjects_taken[chk.getAttribute("data-subject")] = chk.getAttribute("data-units");
+            }
+        }
+
+        // TODO: save subjects to persistent storage
+        console.log(subjects_taken);
+        if (Object.keys(subjects_taken).length > 0) {
+            alert("Subjects taken:\n" + JSON.stringify(subjects_taken));
+        }
+    };
+
     controls.appendChild(add);
 }
 
