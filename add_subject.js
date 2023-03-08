@@ -5,12 +5,13 @@
 let num_gradeSys = 0;
 
 function inputsFunc() {
-    let gradeSys = {};
+    let gradeSys = {}; // Object to store Grade System items
     let inputs = [
         "#subName", "#unitNum", "#start", "#end"
     ];
     let added = [];
 
+    // Test will inputs are filled (except for grading system entries)
     for (let input of inputs){
         let userInput = document.querySelector(input);
         if(userInput.value.length == 0){
@@ -20,22 +21,28 @@ function inputsFunc() {
         added.push(userInput.value);
     }
     
+    // Fill the gradeSys object and push the Grading System entries ids for easy clearing
     for(let i = 1; i < num_gradeSys+1; i++){
+        if(document.querySelector(`#gradeSys-Type-${i}`).value.length === 0){
+            alert(`Required field: ${`#gradeSys-Type-${i}`}`);
+            return;
+        }
+        if(document.querySelector(`#gradeSys-Points-${i}`).value.length === 0){
+            alert(`Required field: ${`#gradeSys-Points-${i}`}`);
+            return;
+        }
         gradeSys[document.querySelector(`#gradeSys-Type-${i}`).value] = document.querySelector(`#gradeSys-Points-${i}`).value;
         inputs.push(`#gradeSys-Type-${i}`);
         inputs.push(`#gradeSys-Points-${i}`);
     }
     
+    // Display the inputs as an alert message
     alert(`Added subject: ${added[0]} \nNo. of Units: ${added[1]} \nstart time: ${added[2]} \nend time: ${added[3]} \nGrading System: ${JSON.stringify(gradeSys)}]`);
 
+    // Clear all inputs after submit
     for (let input of inputs){
         document.querySelector(input).value = '';
     }
-
-    for (let each of gradeSys){
-        document.querySelector(each).value = '';
-    }
-
 }
 
 function add_gradeSys() {
