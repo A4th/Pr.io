@@ -58,7 +58,12 @@ html, body {
     color: black;
 }
 
-#subName, #unitNum, #start, #end, #gradeSys1, #gradeSys2 {
+#gradeSysBox {
+    width: 100%;
+    margin-left: 5%;
+}
+
+#subName, #unitNum, #start, #end, .gradeSys-Type, .gradeSys-Points {
     font-family: "Montserrat", sans-serif;
     font-size: large;
     background-color: purple;
@@ -66,10 +71,10 @@ html, body {
     color: white;
     text-align: right;
     width: 45%;
-    
+
   }
 
-#subName:hover, #unitNum:hover, #start:hover, #end:hover, #gradeSys1:hover, #gradeSys2:hover {
+#subName:hover, #unitNum:hover, #start:hover, #end:hover, .gradeSys-Type:hover, .gradeSys-Points:hover {
     background-color: #5B346B;
     background-position: 20px 20px;
   }
@@ -79,14 +84,14 @@ html, body {
     width: 30%;
 }
 
-#gradeSys1 {
+.gradeSys-Type {
     width: 35%;
-    margin-left: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
 }
-#gradeSys2 {
+.gradeSys-Points {
     width: 35%;
     margin-left: 0%;
-    margin-right: -5%;
 }
 
 .main-container > img{
@@ -115,7 +120,7 @@ a, button {
     font-size: 32px;
     color: white;
     text-decoration: none;
-}   
+}
 
 a:hover{
     border-radius: 50px;
@@ -130,6 +135,10 @@ a:hover{
     background-color: purple;
     border-radius: 25px;
     margin-left: 5%;
+}
+
+#add_gradeSys {
+    margin-left: 1%;
 }
 
 #submit, #cancel {
