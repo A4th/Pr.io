@@ -124,7 +124,8 @@ function populateSubjectOptions(course, subjects_json) {
             let chk = document.getElementById(id);
 
             if (chk?.checked) {
-                subjects_taken[chk.getAttribute("data-subject")] = chk.getAttribute("data-units");
+                // TODO: add error cheking in case subjects_json has non-float as value
+                subjects_taken[chk.getAttribute("data-subject")] = parseFloat(chk.getAttribute("data-units"));
             }
         }
 
