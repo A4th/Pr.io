@@ -22,6 +22,8 @@ function inputsFunc() {
     
     for(let i = 1; i < num_gradeSys+1; i++){
         gradeSys[document.querySelector(`#gradeSys-Type-${i}`).value] = document.querySelector(`#gradeSys-Points-${i}`).value;
+        inputs.push(`#gradeSys-Type-${i}`);
+        inputs.push(`#gradeSys-Points-${i}`);
     }
     
     alert(`Added subject: ${added[0]} \nNo. of Units: ${added[1]} \nstart time: ${added[2]} \nend time: ${added[3]} \nGrading System: ${JSON.stringify(gradeSys)}]`);
