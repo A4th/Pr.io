@@ -5,10 +5,10 @@
 let num_gradeSys = 0;
 
 function inputsFunc() {
+    let gradeSys = {};
     let inputs = [
         "#subName", "#unitNum", "#start", "#end"
     ];
-
     let added = [];
 
     for (let input of inputs){
@@ -17,15 +17,22 @@ function inputsFunc() {
             alert(`Required field: ${input}`);
             return;
         };
-        
         added.push(userInput.value);
     }
-
-    alert(`Added subject: ${added[0]} \nNo. of Units: ${added[1]} \nstart time: ${added[2]} \nend time: ${added[3]}`);
+    
+    for(let i = 1; i < num_gradeSys+1; i++){
+        gradeSys[document.querySelector(`#gradeSys-Type-${i}`).value] = document.querySelector(`#gradeSys-Points-${i}`).value;
+    }
+    
+    alert(`Added subject: ${added[0]} \nNo. of Units: ${added[1]} \nstart time: ${added[2]} \nend time: ${added[3]} \nGrading System: ${JSON.stringify(gradeSys)}]`);
 
     for (let input of inputs){
         document.querySelector(input).value = '';
-    }                        
+    }
+
+    for (let each of gradeSys){
+        document.querySelector(each).value = '';
+    }
 
 }
 
@@ -55,6 +62,5 @@ function add_gradeSys() {
     gradeSysBox.appendChild(add_button);
     gradeSysBox.appendChild(document.createElement("br"));
 }
-
 
 add_gradeSys();
