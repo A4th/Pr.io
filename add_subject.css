@@ -58,9 +58,13 @@ html, body {
     color: black;
 }
 
+/* TODO: make overflow scrollbar visible. Currently it is hidden behind details pane*/
+/* TODO: style scrollbar*/
 #gradeSysBox {
     width: 100%;
+    height: 30%;
     margin-left: 5%;
+    overflow: auto;
 }
 
 #subName, #unitNum, #start, #end, .gradeSys-Type, .gradeSys-Points {
