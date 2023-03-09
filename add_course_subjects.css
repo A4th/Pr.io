@@ -30,11 +30,11 @@ a{
     color: white;
     text-decoration: none;
 }   
-/* .menu{
-    color: white;
-} */
 
-
+a:hover{
+    border-radius: 50px;
+    color: #CC00CC;
+}
 
 .main-container{
     background-color: white;
