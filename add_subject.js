@@ -45,6 +45,69 @@ function inputsFunc() {
     }
 }
 
+function populateFeat() {
+    let addSub = document.getElementById("addSub");
+
+    let subName = document.createElement("input");
+    subName.setAttribute("id", "subName");
+    subName.setAttribute("type", "text");
+    subName.setAttribute("placeholder", "...enter subject name");
+
+    let subName_label = document.createElement("label");
+    subName_label.setAttribute("class", "addSub_label");
+    subName_label.htmlFor = "subName";
+    subName_label.innerHTML = "Subject Name: ";
+
+    let numUnits = document.createElement("input");
+    numUnits.setAttribute("id", "numUnits");
+    numUnits.setAttribute("type", "number");
+    numUnits.setAttribute("placeholder", "...enter number of units");
+    
+
+    let numUnits_label = document.createElement("label");
+    numUnits_label.setAttribute("class", "addSub_label");
+    numUnits_label.htmlFor = "numUnits";
+    numUnits_label.innerHTML = "Number of Units: ";
+
+    addSub.appendChild(subName_label);
+    addSub.appendChild(subName);
+    addSub.appendChild(document.createElement("br"));
+    addSub.appendChild(document.createElement("br"));
+    addSub.appendChild(numUnits_label);
+    addSub.appendChild(numUnits);
+    addSub.appendChild(document.createElement("br"));
+    addSub.appendChild(document.createElement("br"));
+
+    let startEnd = document.getElementById("startEnd");
+
+    let start = document.createElement("input");
+    start.setAttribute("id", "start");
+    start.setAttribute("type", "datetime-local");
+    start.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
+
+    let start_label = document.createElement("label");
+    start_label.setAttribute("class", "startEnd_label");
+    start_label.htmlFor = "start";
+    start_label.innerHTML = "Start Time: ";
+
+    let end = document.createElement("input");
+    end.setAttribute("id", "end");
+    end.setAttribute("type", "datetime-local");
+    end.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
+    
+    let end_label = document.createElement("label");
+    end_label.setAttribute("class", "startEnd_label");
+    end_label.htmlFor = "end";
+    end_label.innerHTML = "End Time: ";
+
+    startEnd.appendChild(start_label);
+    startEnd.appendChild(start);
+    startEnd.appendChild(document.createElement("br"));
+    startEnd.appendChild(end_label);
+    startEnd.appendChild(end);
+    startEnd.appendChild(document.createElement("br"));
+}
+
 function add_gradeSys() {
     let gradeSysBox = document.getElementById("gradeSysBox");
 
@@ -72,4 +135,5 @@ function add_gradeSys() {
     gradeSysBox.appendChild(document.createElement("br"));
 }
 
+populateFeat();
 add_gradeSys();
