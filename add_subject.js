@@ -7,7 +7,7 @@ let num_gradeSys = 0;
 function inputsFunc() {
     let gradeSys = {}; // Object to store Grade System items
     let inputs = [
-        "#subName", "#unitNum", "#start", "#end"
+        "#subName", "#numUnits", "#start", "#end"
     ];
     let added = [];
 
