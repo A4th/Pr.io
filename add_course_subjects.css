@@ -36,14 +36,14 @@ a:hover{
     color: #CC00CC;
 }
 
-.main-container{
+.main-container {
     background-color: white;
     width: 60%;
     height: 100%;
     float: left;
 }
 
-.main-container > h1,h3{
+.main-container > h1, #course-subjects > h3 {
     margin-left: 2%;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
@@ -52,6 +52,9 @@ a:hover{
     color: black;
 }
 
+#course-subjects > h3{
+    font-size: large;
+}
 
 .below-nav-bar{
     background-color: purple;
@@ -109,7 +112,17 @@ header {
     color: white;
  }
 
-#control-buttons button, #course-select, #subjects-box {
+#course-select, #subjects-box {
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
+    background-color: purple;
+    background-position: 20px 20px;
+    color: white;
+    width: 45%;
+    margin-left: 5%;
+}
+
+#control-buttons button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -122,6 +135,7 @@ header {
     padding-top: 0.5%;
     padding-bottom: 0.5%;
 }
+
 #control-buttons button:hover, .subject-entry:hover {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
