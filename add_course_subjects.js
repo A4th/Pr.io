@@ -100,6 +100,7 @@ function populateSubjectOptions(course, subjects_json) {
         // wrap each entry in span element so that
         // we can easily loop over each element later
         let entry = document.createElement("span");
+        entry.setAttribute("class", "subject-entry");
         entry.appendChild(chk);
         entry.appendChild(lbl);
         entry.appendChild(document.createElement("br"));

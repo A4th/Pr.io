@@ -12,6 +12,10 @@ html, body {
 
 }
 
+.layout-container > div{
+    display: inline;
+
+}
 
 .layout-container{
     width: 100%;
@@ -63,24 +67,6 @@ a{
     background-color:black;
 }
 
-
-#course-select, #subjects-box {
-    color: white;
-    background-color: #330033;
-    font-family: "Montserrat", sans-serif;
-    margin: auto;
-
-
-}
-
-#subjects-box {
-    width: 600px;
-    height: 150px;
-    overflow: auto;
-    
-
-}
-
 button {
     font-family: "Montserrat", sans-serif;
     color: white;
@@ -97,6 +83,15 @@ header {
     padding: 20px 5%;
     background-color: #4A235A;
 }
+#control-buttons {
+    margin-top: 5%;
+}
+
+/* Adapted from add_subject.css*/
+/* TODO: Switch to proper cascading styles instead of copy-paste */
+#help-text{
+    color: black;
+}
 
 .help{
     color: black;
@@ -104,4 +99,43 @@ header {
     height: 45px;
     border-radius: 50%;
     background-color: white;
+}
+
+.help:hover{
+    background-color: purple;
+}
+
+.help:hover #help-text{
+    color: white;
+ }
+
+#control-buttons button, #course-select, #subjects-box {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    background-color: purple;
+    border-radius: 25px;
+    margin-left: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+#control-buttons button:hover, .subject-entry:hover {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    background-color: #FF00FF;
+    border-radius: 100px;
+}
+
+
+
+/* TODO: make view height of subjects box relative to parent div instead of hardcoded */
+#subjects-box {
+    width: 80%;
+    height: 300px;
+    overflow: auto;
 }
