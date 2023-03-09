@@ -4,7 +4,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #ffe5ff;
+    background-color: white;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,26 +13,59 @@ html, body {
 }
 
 
-.layout-container {
-    background-color: #ffe5ff;
-    margin: auto;
-    align-self: center;
-
+.layout-container{
+    width: 100%;
+    height: 100%;
 }
 
-.main-container > h1, h3{
-    margin:auto;
+a{
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}   
+/* .menu{
+    color: white;
+} */
+
+
+
+.main-container{
+    background-color: white;
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.main-container > h1,h3{
+    margin-left: 2%;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 24px;
     letter-spacing: 1.5px;
     color: black;
-    
-
 }
 
+
+.below-nav-bar{
+    background-color: purple;
+}
+
+.left-navigation-bar{
+    background-color: purple;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+.top-navigation-bar{
+    background-color:black;
+}
+
+
 #course-select, #subjects-box {
-    color: #b496b4;
+    color: white;
     background-color: #330033;
     font-family: "Montserrat", sans-serif;
     margin: auto;
@@ -55,4 +88,20 @@ button {
     background-color: #220022;
     text-decoration: none;
     float: right;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #4A235A;
+}
+
+.help{
+    color: black;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
 }
