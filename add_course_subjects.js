@@ -95,7 +95,10 @@ function populateSubjectOptions(course, subjects_json) {
 
         let lbl = document.createElement('label');
         lbl.setAttribute("for", id)
-        lbl.textContent = s + ` (${subjects_json[s]} units)`;
+
+        const units = subjects_json[s];
+        const units_text = units > 1 ? 'units' : 'unit';
+        lbl.textContent = s + ` (${subjects_json[s]} ${units_text})`;
 
         // wrap each entry in span element so that
         // we can easily loop over each element later
