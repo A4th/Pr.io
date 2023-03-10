@@ -4,6 +4,6 @@ This is a course requirements for CS191/192 Software Engineering Courses of the 
 
 
 * Antonio A. Aquino IV
-* Arnel Vincent De Guzman
-* Jan Paul Batrina
-* Justin Gabriel Enriquez
+* Arnel Vincent L. De Guzman
+* Jan Paul M. Batrina
+* Justin Gabriel R. Enriquez
