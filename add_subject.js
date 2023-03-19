@@ -3,6 +3,8 @@
 // variable for number of grading system "rows"
 // TODO: use other mechanisms (e.g. closure) instead of global var
 let num_gradeSys = 0;
+// NOTE: This is a dummy "database" for recording subjects data
+let subjects = [];
 
 function inputsFunc() {
     let gradeSys = {}; // Object to store Grade System items
@@ -36,6 +38,16 @@ function inputsFunc() {
         inputs.push(`#gradeSys-Points-${i}`);
     }
     
+    // Save to database
+    // TODO: Use actual data instead of "dummy" global array
+    let subject_data = {
+        name: added[0],
+        units: added[1],
+        sched: [{day: "M", start: added[2], end: added[3]}],
+        gradeSys: gradeSys
+    };
+    subjects.push(subject_data);
+
     // Display the inputs as an alert message
     alert(`Added subject: ${added[0]} \nNo. of Units: ${added[1]} \nstart time: ${added[2]} \nend time: ${added[3]} \nGrading System: ${JSON.stringify(gradeSys)}]`);
 
