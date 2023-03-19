@@ -221,3 +221,29 @@ header {
     padding: 20px 5%;
     background-color: #4A235A;
 }
+
+
+#error-warning {
+    display: none;
+    background-color: #ffe5ff;
+    border-left: 6px solid #aa00aa;
+    margin-left: 2%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    color: black;
+    letter-spacing: 1.5px;
+    width:95%;
+}
+
+#error-warning.error-warning-shake {
+    display: block;
+    animation: horizontal-shaking 0.3s 3;
+}
+
+@keyframes horizontal-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+}

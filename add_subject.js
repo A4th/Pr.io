@@ -46,15 +46,36 @@ function inputsFunc() {
         sched: [{day: "M", start: added[2], end: added[3]}],
         gradeSys: gradeSys
     };
-    subjects.push(subject_data);
 
-    // Display the inputs as an alert message
-    alert(`Added subject: ${added[0]} \nNo. of Units: ${added[1]} \nstart time: ${added[2]} \nend time: ${added[3]} \nGrading System: ${JSON.stringify(gradeSys)}]`);
+    hideErrorBar();
+    if (subjects.find(subject => subject.name == subject_data.name)) {
+        showErrorBar(`Error #1: Subject <b>${subject_data.name}</b> already exists.`);
+    } else {
+        subjects.push(subject_data);
+        // Display the inputs as an alert message
+        alert(`Added subject: ${added[0]} \nNo. of Units: ${added[1]} \nstart time: ${added[2]} \nend time: ${added[3]} \nGrading System: ${JSON.stringify(gradeSys)}]`);
 
-    // Clear all inputs after submit
-    for (let input of inputs){
-        document.querySelector(input).value = '';
+        // Clear all inputs after submit
+        for (let input of inputs){
+            document.querySelector(input).value = '';
+        }
     }
+}
+
+function showErrorBar(msg) {
+    let errorBar = document.getElementById("error-warning");
+    // remove animation class sJ that we can initialize new animation later
+    errorBar.classList.remove("error-warning-shake");
+    errorBar.innerHTML = msg;
+    errorBar.classList.add("error-warning-shake");
+}
+
+function hideErrorBar() {
+    // NOTE: by default, the error bar has display: none
+    //  and the animation class overrides this into display: block
+    // hence to hide the bar, we simply need to remove the animation class
+    let errorBar = document.getElementById("error-warning");
+    errorBar.classList.remove("error-warning-shake");
 }
 
 function populateFeat() {
