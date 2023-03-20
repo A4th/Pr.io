@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.layout-container{
+    width: 100%;
+    height: 100%;
+}
+
+.layout-container > div{
+    display: inline;
+    
+}
+
+.top-navigation-bar{
+    background-color:black;
+}
+
+.below-nav-bar{
+    background-color: purple;
+}
+
+.left-navigation-bar{
+    background-color: purple;
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.main-container{
+    background-color: white;
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.main-container > h3{
+    margin-left: 2%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+.main-container > label{
+    margin-left: 4%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+/* TODO: make overflow scrollbar visible. Currently it is hidden behind details pane*/
+/* TODO: style scrollbar*/
+/* UPDATE: scrollbar is visible as well as background of gradeSysBox */
+
+#gradeSysBox {
+    width: 88%;
+    height: 25%;
+    margin-left: 5%;
+    overflow: auto;
+    background-color: #e3d8d8;
+    padding-right: -200%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.addSub_label, .startEnd_label {
+    margin-left: 4%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    color: black;
+}
+
+#subName, #reqType,#reqName, #start, #end{
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
+    background-color: purple;
+    background-position: 20px 20px;
+    color: white;
+    text-align: right;
+    width: 45%;
+}
+
+#subName::placeholder, #numUnits::placeholder, #start::placeholder, 
+#end::placeholder, .gradeSys-Type::placeholder, .gradeSys-Points::placeholder {
+    color: white;
+    opacity: 50%;
+}
+
+#subName:hover, #numUnits:hover, #start:hover, #end:hover, .gradeSys-Type:hover, .gradeSys-Points:hover {
+    background-color: #5B346B;
+    background-position: 20px 20px;
+  }
+
+
+#start, #end {
+    width: 30%;
+}
+
+.gradeSys-Type {
+    width: 60%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.gradeSys-Points {
+    width: 30%;
+    margin-left: 0%;
+}
+
+.main-container > img{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.details-pane{
+    background-color: #e3d8d8;
+    width:20%;
+    height: 100%;
+    float: left;
+}
+
+.details-pane > h1{
+    margin-left: 5%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: black;
+}
+
+a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    border-radius: 50px;
+    color: #CC00CC;
+}
+
+#submit, #cancel, #add_gradeSys {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    background-color: purple;
+    border-radius: 25px;
+    margin-left: 1%;
+}
+
+#add_gradeSys {
+    margin-left: 1%;
+}
+
+#submit, #cancel {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+#submit:hover, #cancel:hover, #add_gradeSys:hover{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    background-color: #FF00FF;
+    border-radius: 100px;
+}
+
+#submit {
+    margin-left: 55%;
+}
+
+#req1 {
+    margin-left: 0%;
+}
+
+.menu{
+    color: white;
+    margin: 5%;
+}
+
+#help-text{
+    color: black;
+}
+
+.help{
+    color: black;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.help:hover{
+    background-color: purple;
+}
+
+.help:hover #help-text{
+    color: white;
+ }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #4A235A;
+}
+
+
+#error-warning {
+    display: none;
+    background-color: #ffe5ff;
+    border-left: 6px solid #aa00aa;
+    margin-left: 2%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    color: black;
+    letter-spacing: 1.5px;
+    width:95%;
+}
+
+#error-warning.error-warning-shake {
+    display: block;
+    animation: horizontal-shaking 0.3s 3;
+}
+
+@keyframes horizontal-shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateX(5px) }
+  50% { transform: translateX(-5px) }
+  75% { transform: translateX(5px) }
+  100% { transform: translateX(0) }
+}

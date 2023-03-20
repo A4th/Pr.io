@@ -7,7 +7,7 @@ let num_gradeSys = 0;
 function inputsFunc() {
     let gradeSys = {}; // Object to store Grade System items
     let inputs = [
-        "#subName", "#numUnits", "#start", "#end"
+        "#subName", "#reqType", "#start", "#end"
     ];
     let added = [];
 
@@ -51,32 +51,50 @@ function populateFeat() {
     let subName = document.createElement("input");
     subName.setAttribute("id", "subName");
     subName.setAttribute("type", "text");
-    subName.setAttribute("placeholder", "...enter subject name");
+    subName.setAttribute("placeholder", "select subject...");
 
     let subName_label = document.createElement("label");
     subName_label.setAttribute("class", "addSub_label");
     subName_label.htmlFor = "subName";
     subName_label.innerHTML = "Select Subject: ";
 
-    let numUnits = document.createElement("input");
-    numUnits.setAttribute("id", "numUnits");
-    numUnits.setAttribute("type", "number");
-    numUnits.setAttribute("placeholder", "...enter number of units");
+    let reqType = document.createElement("input");
+    reqType.setAttribute("id", "reqType");
+    reqType.setAttribute("type", "text");
+    reqType.setAttribute("placeholder", "select requirement type...");
     
 
-    let numUnits_label = document.createElement("label");
-    numUnits_label.setAttribute("class", "addSub_label");
-    numUnits_label.htmlFor = "numUnits";
-    numUnits_label.innerHTML = "Requirement Type: ";
+    let reqType_label = document.createElement("label");
+    reqType_label.setAttribute("class", "addSub_label");
+    reqType_label.htmlFor = "reqType";
+    reqType_label.innerHTML = "Requirement Type: ";
+
+
+    let reqName = document.createElement("input");
+    reqName.setAttribute("id", "reqName");
+    reqName.setAttribute("type", "text");
+    reqName.setAttribute("placeholder", "enter requirement name here...");
+    
+
+    let reqName_label = document.createElement("label");
+    reqName_label.setAttribute("class", "addSub_label");
+    reqName_label.htmlFor = "reqType";
+    reqName_label.innerHTML = "Requirement Name: ";
+
+
+    
 
     addSub.appendChild(subName_label);
     addSub.appendChild(subName);
     addSub.appendChild(document.createElement("br"));
     addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(numUnits_label);
-    addSub.appendChild(numUnits);
+    addSub.appendChild(reqType_label);
+    addSub.appendChild(reqType);
     addSub.appendChild(document.createElement("br"));
     addSub.appendChild(document.createElement("br"));
+    addSub.appendChild(document.createElement("br"));
+    addSub.appendChild(reqName_label);
+    addSub.appendChild(reqName);
 
     let startEnd = document.getElementById("startEnd");
 
@@ -88,52 +106,23 @@ function populateFeat() {
     let start_label = document.createElement("label");
     start_label.setAttribute("class", "startEnd_label");
     start_label.htmlFor = "start";
-    start_label.innerHTML = "Start Time: ";
+    start_label.innerHTML = "Due Date: ";
 
     let end = document.createElement("input");
     end.setAttribute("id", "end");
-    end.setAttribute("type", "datetime-local");
+    end.setAttribute("type", "time");
     end.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
-    
+
     let end_label = document.createElement("label");
     end_label.setAttribute("class", "startEnd_label");
     end_label.htmlFor = "end";
-    end_label.innerHTML = "End Time: ";
+    end_label.innerHTML = "Time Due: ";
 
     startEnd.appendChild(start_label);
     startEnd.appendChild(start);
     startEnd.appendChild(document.createElement("br"));
     startEnd.appendChild(end_label);
     startEnd.appendChild(end);
-    startEnd.appendChild(document.createElement("br"));
 }
-
-function add_gradeSys() {
-    let gradeSysBox = document.getElementById("gradeSysBox");
-
-    // remove add button, to be added to new "row"
-    let add_button = document.getElementById("add_gradeSys");
-    gradeSysBox.removeChild(add_button);
-
-    let gradeSysType = document.createElement("input");
-    gradeSysType.setAttribute("id", `gradeSys-Type-${++num_gradeSys}`);
-    gradeSysType.setAttribute("type", "text");
-    gradeSysType.setAttribute("class", "gradeSys-Type");
-    gradeSysType.setAttribute("placeholder", "e.g. Exam");
-
-    let gradeSysPoints = document.createElement("input");
-    gradeSysPoints.setAttribute("id", `gradeSys-Points-${num_gradeSys}`);
-    gradeSysPoints.setAttribute("type", "number");
-    gradeSysPoints.setAttribute("class", "gradeSys-Points");
-    gradeSysPoints.setAttribute("placeholder", "%, e.g. 30");
-    gradeSysPoints.setAttribute("min", 0);
-    gradeSysPoints.setAttribute("max", 100);
-
-    gradeSysBox.appendChild(gradeSysType);
-    gradeSysBox.appendChild(gradeSysPoints);
-    gradeSysBox.appendChild(add_button);
-    gradeSysBox.appendChild(document.createElement("br"));
-}
-
 populateFeat();
-add_gradeSys();
+
