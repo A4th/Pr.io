@@ -62,16 +62,6 @@ html, body {
 /* TODO: style scrollbar*/
 /* UPDATE: scrollbar is visible as well as background of gradeSysBox */
 
-#gradeSysBox {
-    width: 88%;
-    height: 25%;
-    margin-left: 5%;
-    overflow: auto;
-    background-color: #e3d8d8;
-    padding-right: -200%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
 .addSub_label, .startEnd_label {
     margin-left: 4%;
