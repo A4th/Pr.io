@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Navigation Bar</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pr.io</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset='utf-8' />
         <link rel="stylesheet" href="styles2.css">
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var calendarEl = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    headerToolbar: {
+                        left: 'prev, next today',
+                        center: 'title',
+                        right: 'dayGridMonth, timeGridWeek, timeGridDay'
+                    },
+
+                    events:[
+                    {
+                        title: 'Implementing the Calendar',
+                        start: '2023-03-19',
+                        end: '2023-03-22'
+                    },
+                    {
+                        title: 'CS 194 Sprint 2 Review',
+                        start: '2023-03-24'
+                    }
+                    ]
+                });
+                calendar.render();
+            });
+
+        </script>
+
     </head>
     <body>
         <div class="layout-container">
@@ -28,7 +58,8 @@
 
                 <div class = "main-container">
                     <h3>Hello &ltname&gt! Welcome to PR.IO!</h3>
-                    <img src="wip.png" style="display: flex; justify-content: center;">
+                    <!-- <img src="wip.png" style="display: flex; justify-content: center;"> -->
+                    <div id = 'calendar'></div>
                 </div>
 
                 <div class = "details-pane">
