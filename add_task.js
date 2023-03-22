@@ -1,13 +1,9 @@
 "use strict";
 
-// variable for number of grading system "rows"
-// TODO: use other mechanisms (e.g. closure) instead of global var
-let num_gradeSys = 0;
-
 function inputsFunc() {
     let gradeSys = {}; // Object to store Grade System items
     let inputs = [
-        "#subName", "#reqType", "#start", "#end"
+        "#subName", "#reqType", "#reqName", "#dueDate"
     ];
     let added = [];
 
@@ -21,23 +17,8 @@ function inputsFunc() {
         added.push(userInput.value);
     }
     
-    // Fill the gradeSys object and push the Grading System entries ids for easy clearing
-    for(let i = 1; i < num_gradeSys+1; i++){
-        if(document.querySelector(`#gradeSys-Type-${i}`).value.length === 0){
-            alert(`Required field: ${`#gradeSys-Type-${i}`}`);
-            return;
-        }
-        if(document.querySelector(`#gradeSys-Points-${i}`).value.length === 0){
-            alert(`Required field: ${`#gradeSys-Points-${i}`}`);
-            return;
-        }
-        gradeSys[document.querySelector(`#gradeSys-Type-${i}`).value] = document.querySelector(`#gradeSys-Points-${i}`).value;
-        inputs.push(`#gradeSys-Type-${i}`);
-        inputs.push(`#gradeSys-Points-${i}`);
-    }
-    
     // Display the inputs as an alert message
-    alert(`Added subject: ${added[0]} \nNo. of Units: ${added[1]} \nstart time: ${added[2]} \nend time: ${added[3]} \nGrading System: ${JSON.stringify(gradeSys)}]`);
+    alert(`Added Task\n Subject: ${added[0]} \nRequirement Type: ${added[1]} \n Requirement Name:${added[2]} \n Due Date: ${added[3]}`);
 
     // Clear all inputs after submit
     for (let input of inputs){
@@ -46,7 +27,7 @@ function inputsFunc() {
 }
 
 function populateFeat() {
-    let addSub = document.getElementById("addSub");
+    let taskFields = document.getElementById("taskFields");
 
     let subName = document.createElement("select");
     subName.setAttribute("id", "subName");
@@ -76,7 +57,7 @@ function populateFeat() {
 
 
     let subName_label = document.createElement("label");
-    subName_label.setAttribute("class", "addSub_label");
+    subName_label.setAttribute("class", "field_label");
     subName_label.htmlFor = "subName";
     subName_label.innerHTML = "Select Subject: ";
 
@@ -110,7 +91,7 @@ function populateFeat() {
     
 
     let reqType_label = document.createElement("label");
-    reqType_label.setAttribute("class", "addSub_label");
+    reqType_label.setAttribute("class", "field_label");
     reqType_label.htmlFor = "reqType";
     reqType_label.innerHTML = "Requirement Type: ";
 
@@ -122,59 +103,29 @@ function populateFeat() {
     
 
     let reqName_label = document.createElement("label");
-    reqName_label.setAttribute("class", "addSub_label");
-    reqName_label.htmlFor = "reqType";
+    reqName_label.setAttribute("class", "field_label");
+    reqName_label.htmlFor = "reqName";
     reqName_label.innerHTML = "Requirement Name: ";
 
 
-    
-
-    addSub.appendChild(subName_label);
-    addSub.appendChild(subName);
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(reqType_label);
-    addSub.appendChild(reqType);
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(document.createElement("br"));
-    addSub.appendChild(reqName_label);
-    addSub.appendChild(reqName);
-
-    let startEnd = document.getElementById("startEnd");
-
-    let start = document.createElement("input");
-    start.setAttribute("id", "start");
-    start.setAttribute("type", "datetime-local");
-    start.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
-
-    let start_label = document.createElement("label");
-    start_label.setAttribute("class", "startEnd_label");
-    start_label.htmlFor = "start";
-    start_label.innerHTML = "Due Date: ";
-
-    let end = document.createElement("input");
-    end.setAttribute("id", "end");
-    end.setAttribute("type", "time");
-    end.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
-
-    let end_label = document.createElement("label");
-    end_label.setAttribute("class", "startEnd_label");
-    end_label.htmlFor = "end";
-    end_label.innerHTML = "Time Due: ";
-
-    startEnd.appendChild(start_label);
-    startEnd.appendChild(start);
-    startEnd.appendChild(document.createElement("br"));
-    startEnd.appendChild(end_label);
-    startEnd.appendChild(end);
+    taskFields.appendChild(subName_label);
+    taskFields.appendChild(subName);
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(reqType_label);
+    taskFields.appendChild(reqType);
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(document.createElement("br"));
+    taskFields.appendChild(reqName_label);
+    taskFields.appendChild(reqName);
 }
 populateFeat();
 

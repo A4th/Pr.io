@@ -127,7 +127,7 @@ function populateFeat() {
     end.setAttribute("id", "end");
     end.setAttribute("type", "datetime-local");
     end.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
-    
+
     let end_label = document.createElement("label");
     end_label.setAttribute("class", "startEnd_label");
     end_label.htmlFor = "end";

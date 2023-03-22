@@ -58,12 +58,7 @@ html, body {
     color: black;
 }
 
-/* TODO: make overflow scrollbar visible. Currently it is hidden behind details pane*/
-/* TODO: style scrollbar*/
-/* UPDATE: scrollbar is visible as well as background of gradeSysBox */
-
-
-.addSub_label, .startEnd_label {
+.field_label {
     margin-left: 4%;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
@@ -72,7 +67,7 @@ html, body {
     color: black;
 }
 
-#subName, #reqType,#reqName, #start, #end{
+#subName, #reqType,#reqName, #dueDate {
     font-family: "Montserrat", sans-serif;
     font-size: large;
     background-color: purple;
@@ -82,30 +77,19 @@ html, body {
     width: 45%;
 }
 
-#subName::placeholder, #numUnits::placeholder, #start::placeholder, 
-#end::placeholder, .gradeSys-Type::placeholder, .gradeSys-Points::placeholder {
+#subName::placeholder, #numUnits::placeholder, #dueDate::placeholder {
     color: white;
     opacity: 50%;
 }
 
-#subName:hover, #numUnits:hover, #start:hover, #end:hover, .gradeSys-Type:hover, .gradeSys-Points:hover {
+#subName:hover, #numUnits:hover, #dueDate:hover {
     background-color: #5B346B;
     background-position: 20px 20px;
   }
 
 
-#start, #end {
+#dueDate {
     width: 30%;
-}
-
-.gradeSys-Type {
-    width: 60%;
-    margin-left: 1%;
-    margin-right: 1%;
-}
-.gradeSys-Points {
-    width: 30%;
-    margin-left: 0%;
 }
 
 .main-container > img{
@@ -141,7 +125,7 @@ a:hover{
     color: #CC00CC;
 }
 
-#submit, #cancel, #add_gradeSys {
+#submit {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -151,18 +135,14 @@ a:hover{
     margin-left: 1%;
 }
 
-#add_gradeSys {
-    margin-left: 1%;
-}
-
-#submit, #cancel {
+#submit {
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
 }
 
-#submit:hover, #cancel:hover, #add_gradeSys:hover{
+#submit:hover {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 20px;
