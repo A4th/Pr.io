@@ -88,7 +88,7 @@ function populateFeat() {
     subName.setAttribute("placeholder", "...enter subject name");
 
     let subName_label = document.createElement("label");
-    subName_label.setAttribute("class", "addSub_label");
+    subName_label.setAttribute("class", "field_label");
     subName_label.htmlFor = "subName";
     subName_label.innerHTML = "Subject Name: ";
 
@@ -100,7 +100,7 @@ function populateFeat() {
     
 
     let numUnits_label = document.createElement("label");
-    numUnits_label.setAttribute("class", "addSub_label");
+    numUnits_label.setAttribute("class", "field_label");
     numUnits_label.htmlFor = "numUnits";
     numUnits_label.innerHTML = "Number of Units: ";
 
@@ -122,7 +122,7 @@ function populateFeat() {
     start.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
 
     let start_label = document.createElement("label");
-    start_label.setAttribute("class", "startEnd_label");
+    start_label.setAttribute("class", "field_label");
     start_label.htmlFor = "start";
     start_label.innerHTML = "Start Time: ";
 
@@ -133,7 +133,7 @@ function populateFeat() {
     end.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
 
     let end_label = document.createElement("label");
-    end_label.setAttribute("class", "startEnd_label");
+    end_label.setAttribute("class", "field_label");
     end_label.htmlFor = "end";
     end_label.innerHTML = "End Time: ";
 

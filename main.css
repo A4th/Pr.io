@@ -50,6 +50,10 @@ h3, label {
     color: black;
 }
 
+.field_label {
+    margin-left: 4%;
+}
+
 a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
