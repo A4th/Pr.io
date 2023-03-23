@@ -4,14 +4,15 @@
         <script src="add_subject.js" defer></script>
         <title>Add Subject Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="add_subject.css">
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+        <link rel="stylesheet" type="text/css" href="add_subject.css"/>
     </head>
     <body>
         <div class="layout-container">
             <div class = "top-navigation-bar">
                 <header>
                     <nav>
-                        <a href="#" class="pr.io">PR.IO</a>
+                        <a href="#" class="menu">PR.IO</a>
                     </nav>
                     <button class="help"><a href="#" id="help-text">?</a></button>
                 </header>
@@ -29,28 +30,23 @@
 
                 <div class = "main-container">
                     <h3>SUBJECT INFORMATION</h3>
-                    <div id="error-warning"></div>
+                    <div id="error-bar" class="error-bar"></div>
                     <br>
                     <div id="addSub"></div>
                    
                     <h3>Grading System / Breakdown</h3>
                     <div id="gradeSysBox">
-                        <button id="add_gradeSys" onclick="add_gradeSys()">+</button>
+                        <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button>
                     </div><br><br>
                     
                     <div id="startEnd"></div><br>
 
-                    <a id="submit" onclick="inputsFunc()">Submit</a>
-                    <a id="cancel" href="#">Cancel</a>
+                    <a id="submit" class="control-button" onclick="inputsFunc()">Submit</a>
+                    <a id="cancel" class="control-button" href="#">Cancel</a>
                 </div>
                 <div class = "details-pane">
                     <h1>Details:</h1>
                 </div>
-            </div>
-
-            <div class="main-container">
-                
-                
             </div>
         </div>
     </body>

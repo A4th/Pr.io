@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-#course-subjects > h3{
-    font-size: large;
-}
-
 #course-select, #subjects-box {
     font-family: "Montserrat", sans-serif;
     font-size: large;
@@ -19,6 +15,15 @@
     width: 80%;
     height: 300px;
     overflow: auto;
+}
+
+#course-subjects > h3 {
+    font-size: large;
+}
+
+#course-subjects label {
+    margin-left: 0%;
+    color: white;
 }
 
 #control-buttons {

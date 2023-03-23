@@ -63,19 +63,19 @@ function inputsFunc() {
 }
 
 function showErrorBar(msg) {
-    let errorBar = document.getElementById("error-warning");
+    let errorBar = document.getElementById("error-bar");
     // remove animation class sJ that we can initialize new animation later
-    errorBar.classList.remove("error-warning-shake");
+    errorBar.classList.remove("error-bar-shake");
     errorBar.innerHTML = msg;
-    errorBar.classList.add("error-warning-shake");
+    errorBar.classList.add("error-bar-shake");
 }
 
 function hideErrorBar() {
     // NOTE: by default, the error bar has display: none
     //  and the animation class overrides this into display: block
     // hence to hide the bar, we simply need to remove the animation class
-    let errorBar = document.getElementById("error-warning");
-    errorBar.classList.remove("error-warning-shake");
+    let errorBar = document.getElementById("error-bar");
+    errorBar.classList.remove("error-bar-shake");
 }
 
 function populateFeat() {
@@ -83,6 +83,7 @@ function populateFeat() {
 
     let subName = document.createElement("input");
     subName.setAttribute("id", "subName");
+    subName.classList.add("input-field");
     subName.setAttribute("type", "text");
     subName.setAttribute("placeholder", "...enter subject name");
 
@@ -93,6 +94,7 @@ function populateFeat() {
 
     let numUnits = document.createElement("input");
     numUnits.setAttribute("id", "numUnits");
+    numUnits.classList.add("input-field");
     numUnits.setAttribute("type", "number");
     numUnits.setAttribute("placeholder", "...enter number of units");
     
@@ -115,6 +117,7 @@ function populateFeat() {
 
     let start = document.createElement("input");
     start.setAttribute("id", "start");
+    start.classList.add("input-field");
     start.setAttribute("type", "datetime-local");
     start.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
 
@@ -125,6 +128,7 @@ function populateFeat() {
 
     let end = document.createElement("input");
     end.setAttribute("id", "end");
+    end.classList.add("input-field");
     end.setAttribute("type", "datetime-local");
     end.setAttribute("placeholder", "mm/dd/yyyy; hh/mm");
 
@@ -150,14 +154,16 @@ function add_gradeSys() {
 
     let gradeSysType = document.createElement("input");
     gradeSysType.setAttribute("id", `gradeSys-Type-${++num_gradeSys}`);
-    gradeSysType.setAttribute("type", "text");
     gradeSysType.setAttribute("class", "gradeSys-Type");
+    gradeSysType.classList.add("input-field");
+    gradeSysType.setAttribute("type", "text");
     gradeSysType.setAttribute("placeholder", "e.g. Exam");
 
     let gradeSysPoints = document.createElement("input");
     gradeSysPoints.setAttribute("id", `gradeSys-Points-${num_gradeSys}`);
-    gradeSysPoints.setAttribute("type", "number");
     gradeSysPoints.setAttribute("class", "gradeSys-Points");
+    gradeSysPoints.classList.add("input-field");
+    gradeSysPoints.setAttribute("type", "number");
     gradeSysPoints.setAttribute("placeholder", "%, e.g. 30");
     gradeSysPoints.setAttribute("min", 0);
     gradeSysPoints.setAttribute("max", 100);
