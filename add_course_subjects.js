@@ -113,6 +113,7 @@ function populateSubjectOptions(course, subjects_json) {
 
     let add = document.createElement("button");
     add.setAttribute("id", "add-course-subjects-button");
+    add.classList.add("control-button");
     add.textContent = "Add Subjects"
     add.onclick = function() {
         let subject_chks = document.getElementById("subjects-box");
