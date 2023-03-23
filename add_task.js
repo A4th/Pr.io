@@ -58,6 +58,7 @@ function populateFeat() {
 
     let subName_label = document.createElement("label");
     subName_label.setAttribute("class", "field_label");
+    subName.classList.add("input-field");
     subName_label.htmlFor = "subName";
     subName_label.innerHTML = "Select Subject: ";
 
@@ -92,6 +93,7 @@ function populateFeat() {
 
     let reqType_label = document.createElement("label");
     reqType_label.setAttribute("class", "field_label");
+    reqType.classList.add("input-field");
     reqType_label.htmlFor = "reqType";
     reqType_label.innerHTML = "Requirement Type: ";
 
@@ -104,6 +106,7 @@ function populateFeat() {
 
     let reqName_label = document.createElement("label");
     reqName_label.setAttribute("class", "field_label");
+    reqName.classList.add("input-field");
     reqName_label.htmlFor = "reqName";
     reqName_label.innerHTML = "Requirement Name: ";
 

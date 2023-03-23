@@ -4,6 +4,7 @@
         <script src="add_task.js" defer></script>
         <title>Add Task Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="add_task.css">
     </head>
     <body>
@@ -11,7 +12,7 @@
             <div class = "top-navigation-bar">
                 <header>
                     <nav>
-                        <a href="#" class="pr.io">PR.IO</a>
+                        <a href="#" class="menu">PR.IO</a>
                     </nav>
                     <button class="help"><a href="#" id="help-text">?</a></button>
                 </header>
@@ -32,23 +33,18 @@
                     <div id="taskFields"></div>
                    
                     
-                    <label id="dueDate_label" for="dueDate">Due Date:</label>
-                    <input type="datetime-local" id="dueDate">
+                    <label id="dueDate_label" class="field_label" for="dueDate">Due Date:</label>
+                    <input type="datetime-local" class="input-field" id="dueDate">
                     <br>
                     <br>
 
-                    <a id="submit" onclick="inputsFunc()">DONE</a>
+                    <a id="submit" class="control-button" onclick="inputsFunc()">DONE</a>
                     
                 </div>
 
                 <div class = "details-pane">
                     <h1>Details:</h1>
                 </div>
-            </div>
-
-            <div class="main-container">
-                
-                
             </div>
         </div>
     </body>
