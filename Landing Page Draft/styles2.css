@@ -2,3 +2,42 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+/* fullcalender styling; Override rules by opening Inspect Elemnt then
+ *copy full selector of topmost CSS style with relevant attribute (e.g. color)*/
+.fc .fc-button {
+    background-color: purple;
+    color: white;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: #FF00FF;
+    color: white;
+}
+
+.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+
+}
+
+.fc .fc-button-primary:disabled {
+    visibility: hidden
+}
+
+/* NOTE: Duplicate of h3/label rules in main.css */
+/* TODO: Use LessCSS mixins (or similar) so that we don't need to duplicate???*/
+.fc-toolbar-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    margin-left: 2%;
+    color: black;
+}
+
+.fc-event-title-container {
+    background-color: purple;
+}
+
+.fc-timegrid-axis-frame, .fc-timegrid-slot-label-frame {
+    color: black;
+}
