@@ -127,13 +127,15 @@ for task in tasks:
 
         print(todayTime, dueTime, brk["start"], brk["end"])
         # for today, only subtract time which overlaps with break time
-        if (todayTime <= brk["start"]):
-            delta = max(todayTime, brk["end"]) - brk["start"]
+        # this only happens when todayTime is AT or BEFORE end of break
+        if (todayTime <= brk["end"]):
+            delta = brk["end"] - max(todayTime, brk["start"])
             task["remTime"] -= delta
             print("\ttoday overlap", delta)
 
         # for dueDate, only subtract time which overlaps with break time
-        if (dueTime >= brk["end"]):
+        # this only happens when dueDate is AFTER start of break
+        if (dueTime > brk["start"]):
             delta = min(dueTime, brk["end"]) - brk["start"]
             task["remTime"] -= delta
             print("\tdueDate overlap", delta)
