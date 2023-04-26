@@ -17,15 +17,15 @@ tasks = [
     "subject": "CS 145",
     "name": "Lab Report 8",
     "dueDate": datetime(month=4,day=30,year=2023,hour=12+11, minute=59),
-    "units": 3.0,
-    "gradeContrib": 3.0
+    "units": 4.0,
+    "gradeContrib": 2
 },
 {
     "subject": "CS 132",
     "name": "Long Exam",
     "dueDate": datetime(month=4,day=28,year=2023,hour=12+1, minute=0),
     "units": 3.0,
-    "gradeContrib": 3.0
+    "gradeContrib": 30
 },
 {
     "subject": "CS 180",
@@ -147,6 +147,7 @@ for task in tasks:
            task['name'],
            task['dueDate'],
            task['units'],
+           task['gradeContrib'],
            str(task["remTime"]),
         sep="\t\t")
     print()
