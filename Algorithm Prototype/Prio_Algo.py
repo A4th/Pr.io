@@ -117,6 +117,10 @@ for task in tasks:
     # so we subtract one day to only get the days "in the middle"
     # e.g. d0 | d1 d2 d3 | d4 has 3 middle days, (4-0)-1 = 3
     wholeDays = (dueDay - today.date() - timedelta(days=1)).days
+    # TODO: take advantage of the sorting of breaks and subjectScheds
+    # e.g. if break[n] does NOT overlap with todayTime, then neither does break[n-1] which has earlier timeslot
+    # similarly, if break[n] does NOT overlap with dueTime, then neither does break[n+1] which has later timeslot
+    # we don't do this for now since we need to loop over each break anyway (for subtracting breaks during wholeDays)
     for brk in breaks:
         # for each whole day, subtract complete duration of break
         task["remTime"] -= brk["duration"]*wholeDays
@@ -166,6 +170,28 @@ for task in tasks:
         firstBinTask = task
 
     clusters[-1].append(task)
-
 # TODO: merge clusters with small number of tasks (e.g. 8 bins with one task each)
 
+## Step 5. Distribute available time per cluster fairly.
+assert(len(clusters) > 2)   # For simplicity, we assume for now that there are more than one clusters
+print()
+for (i, cluster) in enumerate(clusters):
+    if i > 0:
+        clusterTime = clusters[i][0]["remTime"] - clusters[i-1][-1]["remTime"]
+    else:
+        clusterTime = clusters[i][-1]["remTime"]
+
+    totalContrib = sum(map(lambda task: task["units"]*task["gradeContrib"], cluster))
+    print("Cluster", chr(ord("A")+i), clusterTime, totalContrib)
+    for task in cluster:
+        allocTime = clusterTime * (task["units"]*task["gradeContrib"]) / totalContrib
+        print( f"[{task['subject']}]",
+            task['name'],
+            task['dueDate'],
+            task['units'],
+           task['gradeContrib'],
+            str(allocTime),
+            sep="\t\t")
+    print()
+
+# TODO: add resting times between each tasks (student can't work for hours straight)
