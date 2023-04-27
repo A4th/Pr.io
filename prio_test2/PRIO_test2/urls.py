@@ -18,5 +18,11 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', include("hello.urls"))
+    path('hello/', include("hello.urls"), name='hello'),
+    path('members/', include("django.contrib.auth.urls")),
+    path('members/', include("members.urls")),
 ]
+
+admin.site.site_header = "PR.IO Admin Hub | uwu"
+admin.site.site_title = "PR.IO"
+admin.site.index_title = "Welcome to PR.IO Admin"

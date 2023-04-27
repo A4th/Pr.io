@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+#course-select, #subjects-box {
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
+    background-color: purple;
+    background-position: 20px 20px;
+    color: white;
+    width: 45%;
+    margin-left: 5%;
+}
+
+/* TODO: make view height of subjects box relative to parent div instead of hardcoded */
+#subjects-box {
+    width: 80%;
+    height: 300px;
+    overflow: auto;
+}
+
+#course-subjects > h3 {
+    font-size: large;
+}
+
+#course-subjects label {
+    margin-left: 0%;
+    color: white;
+}
+
+#control-buttons {
+    margin-top: 5%;
+}
+
+#control-buttons button {
+    margin-left: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    float: right;
+}

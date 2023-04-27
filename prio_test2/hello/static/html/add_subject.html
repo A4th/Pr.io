@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script>
+        <!-- <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script> -->
         <title>Add Subject Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -12,9 +12,8 @@
         <div class="layout-container">
             <div class = "top-navigation-bar">
                 <header>
-                    <nav>
-                        <a href="{% url 'viewSched' %}" class="menu">PR.IO</a>
-                    </nav>
+                    <nav><a href="{% url 'viewSched' %}" class="menu">PR.IO</a></nav>
+                    <nav><a href="#" class="menu">LOGIN</a></nav>
                     <button class="help"><a href="#" id="help-text">?</a></button>
                 </header>
             </div>
@@ -25,25 +24,43 @@
                     <a href="{% url 'viewSched' %}" class="menu">View Schedule</a><br><br>
                     <a href="{% url 'addTask' %}" class="menu">Add Task</a><br><br>
                     <a href="{% url 'addSub' %}" class="menu">Add Subject</a><br><br>
-                    <a href="#" class="menu">Search</a><br><br>
-                    <a href="#" class="menu">Edit Subject</a><br><br>
+                    <a href="{% url 'checkSub' %}" class="menu">Search</a><br><br>
+                    <a href="{% url 'editSub' %}" class="menu">Edit Subject</a><br><br>
                 </div>
 
                 <div class = "main-container">
                     <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a>
                     <h3>SUBJECT INFORMATION</h3>
-                    <div id="error-bar" class="error-bar"></div>
-                    <div id="addSub"></div>
-                   
-                    <h3>Grading System / Breakdown</h3>
-                    <div id="gradeSysBox">
-                        <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button>
-                    </div><br><br>
-                    
-                    <div id="startEnd"></div><br>
-
-                    <a id="submit" class="control-button" onclick="inputsFunc()">Submit</a>
-                    <a id="cancel" class="control-button" href="#">Cancel</a>
+                    <form method = "POST" action="{% url 'addSubForm' %}">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div id="error-bar" class="error-bar"></div>
+                        <div id="addSub">
+                            <label for="subName"> Subject Information </label>
+                            <input id="subName", name="subName" class="input-field" type="text" placeholder="...enter subject name"></input>
+                            <br><br>
+                            <label for="numUnits"> No. of Units </label>
+                            <input id="numUnits", name="numUnits" class="input-field" type="number" placeholder="...enter number of units"></input>
+                            <br><br>
+                        </div>
+                        <!-- {{ form.subName }} -->
+                        <h3>Grading System / Breakdown</h3>
+                        <div id="gradeSysBox">
+                            <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button>
+                        </div><br><br>
+                        
+                        <div id="startEnd">
+                            <label for="subStart"> Start Time </label>
+                            <input id="start", name="subStart" class="input-field" type="datetime-local"></input>
+                            <br><br>
+                            <label for="subEnd"> End Time </label>
+                            <input id="end", name="subEnd" class="input-field" type="datetime-local"></input>
+                            <br><br>
+                        </div><br>
+                        
+                        <input type="submit" value ="Submit" id="submit" class="control-button" onclick="inputsFunc()"></input>
+                        <input type="submit" value ="Cancel" id="cancel" class="control-button" href="#"></input>
+                    </form>
                 </div>
                 <div class = "details-pane">
                     <h1>Details:</h1>

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'hello',
+    'members',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'PRIO_test2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'hello\static\html'],
+        'DIRS': [BASE_DIR, 'hello/static/html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,6 +70,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'PRIO_test2.wsgi.application'
+
+LOGIN_REDIRECT_URL = 'viewSched'
+LOGIN_URL = 'login_user'
 
 
 # Database
@@ -116,14 +120,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+#STATIC_URL = 'static/'
+
+STATIC_URL = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [r"C:\Users\Lenovo x240\PRIO_test1\static"]
+# STATICFILES_DIRS = [r"/home/aforth/prio_test2/hello/static"]
+
+STATICFILES_DIRS = [r"C:\Users\Lenovo x240\PRIO_test2\hello\static"]
 
 ## insert file path here
 
