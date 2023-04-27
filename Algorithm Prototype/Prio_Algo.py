@@ -84,8 +84,9 @@ subjectScheds = []
 tasks.sort(key=lambda task: task["dueDate"])
 
 ## Step 2. Compute absolute time remaining
-# # # today = datetime.today()
-today = datetime(month=4, day=26, year=2023, hour=12+6, minute=0)
+# NOTE: "today" hardcoded to match example pre-computed values
+today = datetime.today()
+# today = datetime(month=4, day=26, year=2023, hour=12+6, minute=0)
 for task in tasks:
     # NOTE: directly mutates task records/objects for simplicity
     task["absTime"] = task["dueDate"] - today
@@ -105,8 +106,9 @@ subjectScheds.sort(key=lambda subjSched: subjSched["start"])
 
 # for each task, subtract time of break/subject Sched which overlaps with the current time up to the deadline
 # in other words, subtract breaks/schedules from absolute remaining time for doing task
+# NOTE: This routine assumes that breaks do NOT span multiple days (e.g. 9pm to 4am of next day are not allowed)
 for task in tasks:
-    print(task["name"])
+    # print(task["name"])
     # NOTE: directly mutates task records/objects for simplicity
     task["remTime"] = task["absTime"]
     dueDay = task["dueDate"].date()
@@ -125,38 +127,38 @@ for task in tasks:
         # for each whole day, subtract complete duration of break
         task["remTime"] -= brk["duration"]*wholeDays
 
-        print(todayTime, dueTime, brk["start"], brk["end"])
+        # print(todayTime, dueTime, brk["start"], brk["end"])
         # for today, only subtract time which overlaps with break time
         # this only happens when todayTime is AT or BEFORE end of break
         if (todayTime <= brk["end"]):
             delta = brk["end"] - max(todayTime, brk["start"])
             task["remTime"] -= delta
-            print("\ttoday overlap", delta)
+            # print("\ttoday overlap", delta)
 
         # for dueDate, only subtract time which overlaps with break time
         # this only happens when dueDate is AFTER start of break
         if (dueTime > brk["start"]):
             delta = min(dueTime, brk["end"]) - brk["start"]
             task["remTime"] -= delta
-            print("\tdueDate overlap", delta)
+            # print("\tdueDate overlap", delta)
     #
     # for subjSched in subjectScheds:
     #   TODO: implement
-    print()
+    # print()
 
 # Sort tasks by remaining time
 tasks.sort(key=lambda task: task["remTime"])
-print(*tasks,sep="\n")
-
-for task in tasks:
-    print( f"[{task['subject']}]",
-           task['name'],
-           task['dueDate'],
-           task['units'],
-           task['gradeContrib'],
-           str(task["remTime"]),
-        sep="\t\t")
-    print()
+# print(*tasks,sep="\n")
+#
+# for task in tasks:
+#     print( f"[{task['subject']}]",
+#            task['name'],
+#            task['dueDate'],
+#            task['units'],
+#            task['gradeContrib'],
+#            str(task["remTime"]),
+#         sep="\t")
+#     print()
 
 
 ## Step 4. Group requirements into clusters
@@ -184,16 +186,20 @@ for (i, cluster) in enumerate(clusters):
         clusterTime = clusters[i][-1]["remTime"]
 
     totalContrib = sum(map(lambda task: task["units"]*task["gradeContrib"], cluster))
-    print("Cluster", chr(ord("A")+i), clusterTime, totalContrib)
+    print("Cluster", chr(ord("A")+i))
+    # print("Cluster", chr(ord("A")+i), clusterTime, totalContrib)
+    # TODO: remove dirty hacks for aligning output columns (spaces in labels, etc.)
+    print("Subject        ", "Task    ", "Due Date        ", "Units", "% of Grade", "Allocated Time", "Time before deadline", sep="\t")
     for task in cluster:
         allocTime = clusterTime * (task["units"]*task["gradeContrib"]) / totalContrib
         print( f"[{task['subject']}]",
             task['name'],
             task['dueDate'],
             task['units'],
-           task['gradeContrib'],
+           task['gradeContrib'], "",
             str(allocTime),
-            sep="\t\t")
+            str(task["absTime"]),
+            sep="\t")
     print()
 
 # TODO: add resting times between each tasks (student can't work for hours straight)
