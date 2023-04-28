@@ -1,4 +1,6 @@
 from datetime import datetime, time, timedelta
+import logging
+logging.basicConfig(filename='prio.log', encoding='utf-8', level=logging.DEBUG)
 
 # range of hours per bin (difference between time of longest
 # and shortest task in bin). Used for clustering
@@ -82,14 +84,39 @@ subjectScheds = []
 #### Prioritization Algorithm
 ## Step 1. Sort subjects by due date
 tasks.sort(key=lambda task: task["dueDate"])
+logging.info("Step 1. Sort subjects by due date")
+logging.info("Subject\tTask\t\t\tDue Date\t\tUnits\t\t% of Grade")
+for task in tasks:
+    logging.info("%s\t%s\t\t%s\t%f\t%f",
+        f"[{task['subject']}]",
+        task['name'],
+        task['dueDate'],
+        task['units'],
+        task['gradeContrib'],
+    )
+logging.info("\n")
 
-## Step 2. Compute absolute time remaining
+## Step 2. compute absolute time remaining
 # NOTE: "today" hardcoded to match example pre-computed values
 today = datetime.today()
 # today = datetime(month=4, day=26, year=2023, hour=12+6, minute=0)
 for task in tasks:
     # NOTE: directly mutates task records/objects for simplicity
     task["absTime"] = task["dueDate"] - today
+tasks.sort(key=lambda task: task["dueDate"])
+logging.info("Step 2. compute absolute time remaining")
+logging.info("Subject\tTask\t\t\tDue Date\t\tUnits\t\t% of Grade\tTime before deadline")
+for task in tasks:
+    logging.info("%s\t%s\t\t%s\t%f\t%f\t%s",
+        f"[{task['subject']}]",
+        task['name'],
+        task['dueDate'],
+        task['units'],
+        task['gradeContrib'],
+        str(task["absTime"]),
+    )
+logging.info("\n")
+
 
 ## Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
 # Preliminary step: pre-compute lengths of breaks and subject schedules
@@ -148,17 +175,19 @@ for task in tasks:
 
 # Sort tasks by remaining time
 tasks.sort(key=lambda task: task["remTime"])
-# print(*tasks,sep="\n")
-#
-# for task in tasks:
-#     print( f"[{task['subject']}]",
-#            task['name'],
-#            task['dueDate'],
-#            task['units'],
-#            task['gradeContrib'],
-#            str(task["remTime"]),
-#         sep="\t")
-#     print()
+logging.info("Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.")
+logging.info("Subject\tTask\t\t\tDue Date\t\tUnits\t\t% of Grade\tRemaining Time\tTime before deadline")
+for task in tasks:
+    logging.info("%s\t%s\t\t%s\t%f\t%f\t%s\t\t%s",
+        f"[{task['subject']}]",
+        task['name'],
+        task['dueDate'],
+        task['units'],
+        task['gradeContrib'],
+        str(task["remTime"]),
+        str(task["absTime"]),
+    )
+logging.info("\n")
 
 
 ## Step 4. Group requirements into clusters
@@ -175,6 +204,22 @@ for task in tasks:
 
     clusters[-1].append(task)
 # TODO: merge clusters with small number of tasks (e.g. 8 bins with one task each)
+
+logging.info("Step 4. Group requirements into clusters")
+for (i, cluster) in enumerate(clusters):
+    logging.info("Cluster %s", chr(ord("A")+i))
+    logging.info("Subject\tTask\t\t\tDue Date\t\tUnits\t\t% of Grade\tRemaining Time\t\t\tTime before deadline")
+    for task in cluster:
+        logging.info("%s\t%s\t\t%s\t%f\t%f\t%s\t\t%s",
+            f"[{task['subject']}]",
+            task['name'],
+            task['dueDate'],
+            task['units'],
+            task['gradeContrib'],
+            str(task["remTime"]),
+            str(task["absTime"]),
+        )
+logging.info("\n")
 
 ## Step 5. Distribute available time per cluster fairly.
 assert(len(clusters) > 2)   # For simplicity, we assume for now that there are more than one clusters
