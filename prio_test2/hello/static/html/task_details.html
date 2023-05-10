@@ -44,7 +44,9 @@
                         <label for="reqNames"> Input Requirement Type</label>
                         <select id="reqField" name ="reqType" class="dropdown"></input>
                         {% for reqName, gradeNum in reqTypes.items %}
+                        {% if reqName|length > 0%}
                             <option>{{ reqName }}</option>
+                        {% endif %}
                         {% endfor %}
                         </select>
                         {% endif %}

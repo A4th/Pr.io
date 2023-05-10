@@ -45,6 +45,9 @@ def addSubForm(request):
             reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
             reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
 
+            gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5 = map(lambda num: num or 0,
+                                            (gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5))
+
             print(subName, numUnits, subStart, subEnd)
             addSub_details = Subject(
                 subName = subName, numUnits = numUnits,
@@ -129,6 +132,10 @@ def editSubForm(request, subject_id):
         reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
         reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
         reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
+
+        gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5 = map(lambda num: num or 0,
+                                        (gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5))
+
 
         subject.subName = subName
         subject.numUnits = numUnits
