@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Path, PurePath
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -129,9 +129,9 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [r"/home/aforth/Pr.io/prio_test2/hello/static/"]
+# NOTE: Pr.io repository folder must be under your home directory (or symlinked)
+STATICFILES_DIRS = [PurePath(Path.home(), "Pr.io", "prio_test2", "hello", "static")]
 
-#STATICFILES_DIRS = [r"C:\Users\Lenovo x240\PRIO_test2\hello\static"]
 
 ## insert file path here
 
