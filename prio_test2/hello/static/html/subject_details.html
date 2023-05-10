@@ -48,16 +48,30 @@
                         <div id="error-bar" class="error-bar"></div>
                         <div id="addSub">
                             <label for="subName"> Edit Subject Information </label>
-                            <input id="subName", name="subName" class="input-field" type="text" placeholder={{subject.subName}}></input>
+                            <input id="subName", name="subName" class="input-field" type="text" value="{{subject}}"></input>
                             <br><br>
                             <label for="numUnits"> Edit No. of Units </label>
-                            <input id="numUnits", name="numUnits" class="input-field" type="number" placeholder="{{subject.numUnits}}"></input>
+                            <input id="numUnits", name="numUnits" class="input-field" type="number" value={{subject.numUnits}}></input>
                             <br><br>
                         </div>
                         <!-- {{ form.subName }} -->
                         <h3>Edit Grading System / Breakdown</h3>
                         <div id="gradeSysBox">
-                            <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button>
+                            <input name="reqName1" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam" value="{{subject.reqName1}}">
+                            <input name="gradeNum1" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100" value={{subject.gradeNum1}}>
+
+                            <input name="reqName2" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam" value="{{subject.reqName2}}">
+                            <input name="gradeNum2" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100" value={{subject.gradeNum2}}>
+
+                            <input name="reqName3" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam" value="{{subject.reqName3}}">
+                            <input name="gradeNum3" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100" value={{subject.gradeNum3}}>
+
+                            <input name="reqName4" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam" value="{{subject.reqName4}}">
+                            <input name="gradeNum4" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100" value={{subject.gradeNum4}}>
+
+                            <input name="reqName5" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam" value="{{subject.reqName5}}">
+                            <input name="gradeNum5" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100" value={{subject.gradeNum5}}>
+
                         </div><br><br>
                         
                         <div id="startEnd">
@@ -70,7 +84,7 @@
                         </div><br>
                         
                         <input type="submit" value ="Save" id="submit" class="control-button" onclick="inputsFunc()"></input>
-                        <input type="submit" value ="Cancel" id="cancel" class="control-button" href="#"></input>
+                        <input type="submit" value ="Cancel" id="cancel" class="control-button" href="{% url 'editSub' %}"></input>
                     </form>
                 </div>
                 <div class = "details-pane">
