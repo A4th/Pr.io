@@ -15,4 +15,4 @@ def login_user(request):
         else:
             return redirect('login')
     else:
-        return render(request, 'authentication/login.html', {})
+        return render(request, 'registration/login.html', {})
