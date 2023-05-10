@@ -150,6 +150,16 @@ header {
     background-position: 20px 20px;
 }
 
+.dropdown {
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
+    background-color: purple;
+    background-position: 20px 20px;
+    color: white;
+    width: 45%;
+    margin-left: 5%;
+}
+
 .error-bar {
     display: none;
     background-color: #ffe5ff;

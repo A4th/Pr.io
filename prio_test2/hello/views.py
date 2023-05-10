@@ -103,7 +103,14 @@ def addTaskForm(request):
 def task_details(request, subject_id):
     if request.user.is_authenticated:
         subject = get_object_or_404(Subject, pk=subject_id)
-        context = {'subject': subject}
+        reqTypes = {
+            subject.reqName1: subject.gradeNum1,
+            subject.reqName2: subject.gradeNum2,
+            subject.reqName3: subject.gradeNum3,
+            subject.reqName4: subject.gradeNum4,
+            subject.reqName5: subject.gradeNum5
+        }
+        context = {'subject': subject, 'reqTypes': reqTypes}
         return render(request, 'task_details.html', context)
     return redirect("login")
 

@@ -37,16 +37,17 @@
                         {{ form }}
                         <div id="error-bar" class="error-bar"></div>
                         <div id="addSub">
-                            <h3>SUBJECT DATABASE</h3>
-                              <label>{{subject.reqName1}}</label>
-                              <label>{{subject.reqName2}}</label>
-                              <label>{{subject.reqName3}}</label>
-                              <label>{{subject.reqName4}}</label>
-                              <label>{{subject.reqName5}}</label>
-                            <br><br>  
-                            <label for="reqNames"> Input Requirement Type</label>
-                            <input id="reqType", name="reqType" class="input-field" type="text"></input>
 
+                        {% if reqTypes %}
+                        <label for="reqNames"> Input Requirement Type</label>
+                        <select id="reqField" name ="reqType" class="dropdown">
+                        {% for reqName, gradeNum in reqTypes.items %}
+{% comment %}                         {% if "reqName" in field %} {% endcomment %}
+                            <option>{{ reqName }}</option>
+{% comment %}                         {% endif %} {% endcomment %}
+                        {% endfor %}
+                        </select>
+                        {% endif %}
                            
                             <br><br>
                             <label for="subName"> Add Task Name </label>
