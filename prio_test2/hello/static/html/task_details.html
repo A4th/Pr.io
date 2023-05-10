@@ -1,0 +1,87 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script> -->
+        <title>Add Subject Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/add_subject.css' %}"/>
+    </head>
+    <body>
+        <div class="layout-container">
+            <div class = "top-navigation-bar">
+                <header>
+                    <nav><a href="{% url 'viewSched' %}" class="menu">PR.IO</a></nav>
+                    <nav><a href="#" class="menu">LOGIN</a></nav>
+                    <button class="help"><a href="#" id="help-text">?</a></button>
+                </header>
+            </div>
+
+            <div class="below-nav-bar">
+                <div class = "left-navigation-bar">
+                    <br>
+                    <a href="{% url 'viewSched' %}" class="menu">View Schedule</a><br><br>
+                    <a href="{% url 'addTask' %}" class="menu">Add Task</a><br><br>
+                    <a href="{% url 'addSub' %}" class="menu">Add Subject</a><br><br>
+                    <a href="{% url 'checkSub' %}" class="menu">Search</a><br><br>
+                    <a href="{% url 'editSub' %}" class="menu">Edit Subject</a><br><br>
+                </div>
+
+                <div class = "main-container">
+                    <!-- <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a> -->
+                    <h3>ADD TASK INFORMATION</h3>
+                    <form method = "POST" action="{% url 'addTaskForm' %}">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div id="error-bar" class="error-bar"></div>
+                        <div id="addSub">
+                            <h3>SUBJECT DATABASE</h3>
+                              <label>{{subject.reqName1}}</label>
+                              <label>{{subject.reqName2}}</label>
+                              <label>{{subject.reqName3}}</label>
+                              <label>{{subject.reqName4}}</label>
+                              <label>{{subject.reqName5}}</label>
+                            <br><br>  
+                            <label for="reqNames"> Input Requirement Type</label>
+                            <input id="reqType", name="reqType" class="input-field" type="text"></input>
+
+                           
+                            <br><br>
+                            <label for="subName"> Add Task Name </label>
+                            <input id="subName", name="taskName" class="input-field" type="text"></input>
+                            <br><br>
+                            <label for="numUnits">Edit Date </label>
+                            <input id="numUnits", name="dueDate" class="input-field" type="datetime-local"></input>
+                            <br><br>
+
+                
+              
+                        </div>
+                        {{ form.subName }}
+                        <!-- <h3>Edit Grading System / Breakdown</h3>
+                        <div id="gradeSysBox">
+                            <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button>
+                        </div><br><br>
+                        
+                        <div id="startEnd">
+                            <label for="subStart">Edit Start Time </label>
+                            <input id="start", name="subStart" class="input-field" type="datetime-local"></input>
+                            <br><br>
+                            <label for="subEnd">Edit End Time </label>
+                            <input id="end", name="subEnd" class="input-field" type="datetime-local"></input>
+                            <br><br>
+                        </div><br> -->
+                        
+                        <input type="submit" value ="Save" id="submit" class="control-button" onclick="inputsFunc()"></input>
+                        <input type="submit" value ="Cancel" id="cancel" class="control-button" href="#"></input>
+                    </form>
+                </div>
+                <div class = "details-pane">
+                    <h1>Details:</h1>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

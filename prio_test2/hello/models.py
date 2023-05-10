@@ -4,8 +4,12 @@ from django.db import models
 
 
 class Task(models.Model):
+    reqType = models.CharField(max_length=50,default = "")
+
     taskName = models.CharField(max_length=50,default = "")
     dueDate = models.DateTimeField()
+    def __str__(self):
+        return self.taskName
 
 
 class Subject(models.Model):

@@ -2,7 +2,7 @@ from django.shortcuts import render,  get_object_or_404
 from django.http import HttpResponse
 from .forms import Subjectform
 from django.contrib import messages
-from .models import Subject
+from .models import Subject,Task
 
 # Create your views here.
 def index(request):
@@ -12,7 +12,9 @@ def addSub(request):
     return render(request, 'add_subject.html')
 
 def addTask(request):
-    return render(request, "add_task.html")
+    subjects = Subject.objects.all()
+    context = {'subjects': subjects}
+    return render(request, "add_task.html",context)
 
 def addCourseSub(request):
     return render(request, "add_course_subjects.html")
@@ -25,27 +27,6 @@ def addSubForm(request):
     # print("Hello World????? 1", dir(request))
     # print(request.body)
     if request.method == "POST":
-        # reqsdict = {
-        # # "subName" : request.POST["subName"],
-        # "numUnits" : request.POST["numUnits"],
-        # "subStart" : request.POST["subStart"],
-        # "subEnd" : request.POST["subEnd"],
-        
-        # "reqName1" : request.POST["reqName1"],
-        # "gradeNum1" : request.POST["gradeNum1"],
-
-        # "reqName2" : request.POST["reqName2"],
-        # "gradeNum2" : request.POST["gradeNum2"],
-
-        # "reqName3" : request.POST["reqName3"],
-        # "gradeNum3" : request.POST["gradeNum3"],
-
-        # "reqName4" : request.POST["reqName4"],
-        # "gradeNum4" : request.POST["gradeNum4"],
-
-        # "reqName5" : request.POST["reqName5"],
-        # "gradeNum5" : request.POST["gradeNum5"],
-        # }
         subName = request.POST["subName"]
         numUnits = request.POST["numUnits"]
         subStart = request.POST["subStart"]
@@ -108,4 +89,29 @@ def subject_details(request, subject_id):
     context = {'subject': subject}
     return render(request, 'subject_details.html', context)
 
+def addTaskForm(request):
+    # print(request)
+    # print("Hello World????? 1", dir(request))
+    # print(request.body)
+    subjects = Subject.objects.all()
+    context = {'subjects': subjects}
+    if request.method == "POST":
+        reqType = request.POST["reqType"]
+        taskName = request.POST["taskName"]
+        dueDate = request.POST["dueDate"]
 
+        addTask_details = Task(
+        reqType = reqType,
+        taskName=taskName,
+        dueDate=dueDate
+        )
+
+        addTask_details.save()
+
+    return render(request, 'add_task.html',context)
+
+
+def task_details(request, subject_id):
+    subject = get_object_or_404(Subject, pk=subject_id)
+    context = {'subject': subject}
+    return render(request, 'task_details.html', context)

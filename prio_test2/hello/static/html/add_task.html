@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script type="text/javascript" src="{% static 'js/add_task.js' %}" defer></script>
+        <!-- <script type="text/javascript" src="{% static 'js/add_task.js' %}" defer></script> -->
         <title>Add Task Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -30,18 +30,19 @@
                 </div>  
 
                 <div class = "main-container">
-                    <h3>TASK DETAILS</h3><br>
-                    <form>
-                    <div id="taskFields"></div>
-                   
-                    
-                    <label id="dueDate_label" class="field_label" for="dueDate">Due Date:</label>
-                    <input type="datetime-local" class="input-field" id="dueDate">
-                    <br>
-                    <br>
-
-                    <a id="submit" class="control-button" onclick="inputsFunc()">DONE</a>
-                    </form>
+                    <h3>SELECT SUBJECT TO ADD TASKS FOR</h3>
+              
+                    <h1>Add Task stuff</h1>
+      
+                    {% if subjects %}
+                        <ul>
+                        {% for subject in subjects %}
+                            <li><a href="{% url 'task_details' subject.id %}">{{ subject}}</a></li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No subjects found.</p>
+                    {% endif %}
                 </div>
 
                 <div class = "details-pane">
