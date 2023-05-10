@@ -4,8 +4,8 @@ from django.db import models
 
 
 class Task(models.Model):
+    subName = models.ForeignKey("Subject", on_delete=models.CASCADE)
     reqType = models.CharField(max_length=50,default = "")
-
     taskName = models.CharField(max_length=50,default = "")
     dueDate = models.DateTimeField()
     def __str__(self):

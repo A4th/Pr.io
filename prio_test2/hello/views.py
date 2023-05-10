@@ -87,11 +87,13 @@ def addTaskForm(request):
         subjects = Subject.objects.all()
         context = {'subjects': subjects}
         if request.method == "POST":
+            subject_id = request.POST["subject_id"]
             reqType = request.POST["reqType"]
             taskName = request.POST["taskName"]
             dueDate = request.POST["dueDate"]
 
-            addTask_details = Task(
+            subject = get_object_or_404(Subject, pk=subject_id)
+            addTask_details = Task(subName=subject,
                 reqType = reqType, taskName=taskName, dueDate=dueDate
             )
             addTask_details.save()
@@ -110,7 +112,7 @@ def task_details(request, subject_id):
             subject.reqName4: subject.gradeNum4,
             subject.reqName5: subject.gradeNum5
         }
-        context = {'subject': subject, 'reqTypes': reqTypes}
+        context = {'subject': subject, 'reqTypes': reqTypes, "subject_id": subject_id}
         return render(request, 'task_details.html', context)
     return redirect("login")
 
