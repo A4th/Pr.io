@@ -11,6 +11,7 @@ def index(request):
 
 def addSub(request):
     if request.user.is_authenticated:
+        
         return render(request, 'add_subject.html')
     return redirect("login")
 

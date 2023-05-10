@@ -23,6 +23,6 @@ urlpatterns = [
     path('members/', include("members.urls")),
 ]
 
-admin.site.site_header = "PR.IO Admin Hub | uwu"
+admin.site.site_header = "PR.IO Admin Hub"
 admin.site.site_title = "PR.IO"
 admin.site.index_title = "Welcome to PR.IO Admin"

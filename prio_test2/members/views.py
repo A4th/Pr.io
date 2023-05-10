@@ -11,8 +11,13 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
-            return redirect('hello')
+            login(request, user)
+            return redirect('viewSched')
         else:
             return redirect('login')
     else:
         return render(request, 'registration/login.html', {})
+    
+def logout_user(request):
+    logout(request)
+    return redirect('login')
