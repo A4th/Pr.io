@@ -129,9 +129,9 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# STATICFILES_DIRS = [r"/home/aforth/prio_test2/hello/static"]
+STATICFILES_DIRS = [r"/home/aforth/Pr.io/prio_test2/hello/static/"]
 
-STATICFILES_DIRS = [r"C:\Users\Lenovo x240\PRIO_test2\hello\static"]
+#STATICFILES_DIRS = [r"C:\Users\Lenovo x240\PRIO_test2\hello\static"]
 
 ## insert file path here
 

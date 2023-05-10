@@ -35,7 +35,7 @@
               {% if subjects %}
                   <ul>
                   {% for subject in subjects %}
-                      <li><a href="{% url 'subject_details' subject.id %}">{{ subject.subName }}</a></li>
+                      <li><a href="{% url 'subject_details' subject.id %}">{{ subject }}</a></li>
                   {% endfor %}
                   </ul>
               {% else %}

@@ -21,21 +21,76 @@ def viewSched(request):
     return render(request, "view_schedule.html")
 
 def addSubForm(request):
-    print("Hello World?????")
     # print(request)
     # print("Hello World????? 1", dir(request))
     # print(request.body)
     if request.method == "POST":
-        print("TSENELIN")
+        # reqsdict = {
+        # # "subName" : request.POST["subName"],
+        # "numUnits" : request.POST["numUnits"],
+        # "subStart" : request.POST["subStart"],
+        # "subEnd" : request.POST["subEnd"],
+        
+        # "reqName1" : request.POST["reqName1"],
+        # "gradeNum1" : request.POST["gradeNum1"],
+
+        # "reqName2" : request.POST["reqName2"],
+        # "gradeNum2" : request.POST["gradeNum2"],
+
+        # "reqName3" : request.POST["reqName3"],
+        # "gradeNum3" : request.POST["gradeNum3"],
+
+        # "reqName4" : request.POST["reqName4"],
+        # "gradeNum4" : request.POST["gradeNum4"],
+
+        # "reqName5" : request.POST["reqName5"],
+        # "gradeNum5" : request.POST["gradeNum5"],
+        # }
         subName = request.POST["subName"]
         numUnits = request.POST["numUnits"]
         subStart = request.POST["subStart"]
         subEnd = request.POST["subEnd"]
+
+        reqName1 = request.POST["reqName1"]
+        gradeNum1 = request.POST["gradeNum1"]
+
+        reqName2 = request.POST["reqName2"]
+        gradeNum2 = request.POST["gradeNum2"]
+
+        reqName3 = request.POST["reqName3"]
+        gradeNum3 = request.POST["gradeNum3"]
+
+        reqName4 = request.POST["reqName4"]
+        gradeNum4 = request.POST["gradeNum4"]
+
+        reqName5 = request.POST["reqName5"]
+        gradeNum5 = request.POST["gradeNum5"]
+
+
+
         print(subName, numUnits, subStart, subEnd)
-        addSub_details = Subject(subName = subName, numUnits = numUnits, subStart = subStart, subEnd = subEnd)
+        addSub_details = Subject(
+        subName=subName,
+        numUnits=numUnits,
+        subStart=subStart,
+        subEnd=subEnd,
+        reqName1=reqName1,
+        gradeNum1=gradeNum1,
+        reqName2=reqName2,
+        gradeNum2=gradeNum2,
+        reqName3=reqName3,
+        gradeNum3=gradeNum3,
+        reqName4=reqName4,
+        gradeNum4=gradeNum4,
+        reqName5=reqName5,
+        gradeNum5=gradeNum5
+    )
+
         addSub_details.save()
+
+
     
-    print("KIMMY")
+   
     return render(request, 'add_subject.html')
 
 def checkSub(request):
