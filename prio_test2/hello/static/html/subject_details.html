@@ -42,7 +42,7 @@
                 <div class = "main-container">
                     <!-- <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a> -->
                     <h3>EDIT SUBJECT INFORMATION</h3>
-                    <form method = "POST" action="{% url 'addSubForm' %}">
+                    <form method = "POST" action="{% url 'editSubForm' subject.id %}">
                         {% csrf_token %}
                         {{ form }}
                         <div id="error-bar" class="error-bar"></div>

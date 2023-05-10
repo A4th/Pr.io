@@ -1,8 +1,8 @@
 from django.shortcuts import render,  get_object_or_404, redirect
 from django.http import HttpResponse
-from .forms import Subjectform
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+# from .forms import Subjectform
+# from django.contrib import messages
+# from django.contrib.auth.decorators import login_required
 from .models import Subject,Task
 
 # Create your views here.
@@ -43,7 +43,6 @@ def addSubForm(request):
             reqName2, gradeNum2 = request.POST["reqName2"], request.POST["gradeNum2"]
             reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
             reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
-
             reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
 
             print(subName, numUnits, subStart, subEnd)
@@ -107,4 +106,33 @@ def task_details(request, subject_id):
         context = {'subject': subject}
         return render(request, 'task_details.html', context)
     return redirect("login")
-    
+
+def editSubForm(request, subject_id):
+    subject = Subject.objects.get(id=subject_id)
+
+    if request.method == "POST":
+        subName = request.POST["subName"]
+        numUnits = request.POST["numUnits"]
+        subStart = request.POST["subStart"]
+        subEnd = request.POST["subEnd"]
+        reqName1, gradeNum1 = request.POST["reqName1"], request.POST["gradeNum1"]
+        reqName2, gradeNum2 = request.POST["reqName2"], request.POST["gradeNum2"]
+        reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
+        reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
+        reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
+
+        subject.subName = subName
+        subject.numUnits = numUnits
+        subject.subStart = subStart
+        subject.subEnd = subEnd
+        subject.reqName1, subject.gradeNum1 = reqName1, gradeNum1
+        subject.reqName2, subject.gradeNum2 = reqName2, gradeNum2
+        subject.reqName3, subject.gradeNum3 = reqName3, gradeNum3
+        subject.reqName4, subject.gradeNum4 = reqName4, gradeNum4
+        subject.reqName5, subject.gradeNum5 = reqName5, gradeNum5
+
+        subject.save()
+    # return render(request, "edit_subject.html", context)
+    subjects = Subject.objects.all()
+    context = {'subjects': subjects}
+    return render(request, 'edit_subject.html', context)
