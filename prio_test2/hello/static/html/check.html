@@ -36,7 +36,7 @@
                        {% endfor %}
                     <h3>TASKS SAVED: (Subject: Task Name)</h3>
                        {% for item in all_task %}
-                         <label>{{item.subName}}: {{item}}</label><br>
+                         <label>{{item.subName}}: {{item}}, {{item.dueDate}}</label><br>
                        {% endfor %}
                 </div>
                 <div class = "details-pane">
