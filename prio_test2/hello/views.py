@@ -5,6 +5,7 @@ from django.http import HttpResponse
 # from django.contrib.auth.decorators import login_required
 from .models import Subject,Task,DegreeProgram
 from hello.Prio_Algo import TaskSched, prioritizationAlgorithm
+import json
 
 # Create your views here.
 def index(request):
@@ -25,12 +26,43 @@ def addTask(request):
 
 def addCourseSub(request):
     if request.user.is_authenticated:
-        degreeprogram = DegreeProgram.objects.all
-        context = {'degreeprogram': degreeprogram}
+        degreeprogram = DegreeProgram.objects.all()
+        context = {'degreeprogram': degreeprogram, "degprog_id": -1}
+        return render(request, "add_course_subjects.html", context)
 
-
-        return render(request, "add_course_subjects.html",context)
     return redirect("login")
+
+def addCourseSubList(request):
+    if request.user.is_authenticated:
+        degreeprogram = DegreeProgram.objects.all()
+        context = {'degreeprogram': degreeprogram}
+        if request.method == "POST":
+            degprog_id = int(request.POST.get("degprog_id", -1))
+            context['degprog_id'] = degprog_id
+            if degprog_id != -1:
+                subjects = DegreeProgram.objects.get(pk=degprog_id).jsonData
+                subjects = list(sorted(subjects.keys()))
+                context['subjects'] = subjects
+
+        return render(request, "add_course_subjects.html", context)
+    return redirect("login")
+
+def addCourseSubForm(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    if request.method == "POST":
+        degprog_id = int(request.POST.get("degprog_id"))
+        subjects = request.POST.getlist("chosenSubs");
+
+        subToUnit = DegreeProgram.objects.get(pk=degprog_id).jsonData
+        for subject in subjects:
+            newSub = Subject(subName=subject, numUnits= subToUnit[subject])
+            newSub.save()
+
+    degreeprogram = DegreeProgram.objects.all()
+    context = {'degreeprogram': degreeprogram}
+    return render(request, "add_course_subjects.html", context)
 
 def viewSched(request):
     if request.user.is_authenticated:

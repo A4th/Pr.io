@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script type="text/javascript" src="{% static 'js/add_course_subjects.js' %}" defer></script>
+<!--         <script type="text/javascript" src="{% static 'js/add_course_subjects.js' %}" defer></script> -->
         <title>Add Course Subjects</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -33,7 +33,7 @@
 
               <!-- insert how to query the subject -->
 
-              <form method = "POST" action="{% url 'subject_details' %}"> 
+              <form method = "POST" action="{% url 'addCourseSubList' %}">
                 {% csrf_token %}
                 <label for="degprog_id">Degree Program:</label>
                 <select id="degprog_id" name ="degprog_id" class="dropdown" onchange="this.form.submit()"></input>
@@ -41,9 +41,9 @@
                 {% if degreeprogram %}
                 {% for degprog in degreeprogram %}
                 {% if degprog.degName|length > 0%}
-                    <option value = {{ degprog.id }}>
-                    {% if degprog.id  == degprog.id %}
-                  
+                    <option value = {{ degprog.id }}
+                    {% if degprog.id  == degprog_id %}
+                    selected="selected"
                     {% endif %}
                     >{{ degprog.degName }}</option>
                 {% endif %}
@@ -52,14 +52,26 @@
                 </select>
             </form>
 
-
-            
-
-
+            <form method = "POST" action="{% url 'addCourseSubForm' %}">
+              {% csrf_token %}
+               <!-- submit degprog_id as part of form -->
+              <input type="hidden" value={{ degprog_id }} name="degprog_id" id="degprog_id"></input>
               <div id="course-subjects">
+              <div id="subjects-box" class="scroll">
+              {% if subjects %}
+              {% for subject in subjects %}
+              <div class="subject-entry">
+              <label><input type="checkbox" value="{{ subject }}" name="chosenSubs"></input>{{ subject }}</label>
               </div>
-              <div id="control-buttons">
+              {% endfor %}
+              {% endif %}
               </div>
+              </div>
+              {% if degprog_id != -1 %}
+              <input type="submit" value ="Add Subjects" id="submit" class="control-button" onclick="inputsFunc()"></input>
+              {% endif %}
+            </form>
+
         </div>
             </div>
         </div>
