@@ -20,6 +20,13 @@ class TaskSched(object):
     def endDate(self):
         return f"{self.end.year}-{str(self.end.month).zfill(2)}-{str(self.end.day).zfill(2)}"
 
+    # For debugging
+    def startDateTime(self):
+        return self.start.isoformat()
+    
+    def endDateTime(self):
+        return self.end.isoformat()
+
 
 def prioritizationAlgorithm(taskModels):
     # range of hours per bin (difference between time of longest
@@ -159,10 +166,13 @@ def prioritizationAlgorithm(taskModels):
     ## Step 2. compute absolute time remaining
     # NOTE: "today" hardcoded to match example pre-computed values
     today = datetime.today()
+    print("Today: ", str(today))
     # today = datetime(month=4, day=26, year=2023, hour=12+6, minute=0)
 
-    # Convert today datetime to utc
+    # # Convert today datetime to utc
     today = today.astimezone(timezone.utc)
+    print("Today as UTC: ", str(today))
+
     for task in tasks:
         # NOTE: directly mutates task records/objects for simplicity
         task["absTime"] = task["dueDate"] - today
@@ -286,6 +296,11 @@ def prioritizationAlgorithm(taskModels):
 
     ## Step 5. Distribute available time per cluster fairly.
     # assert(len(clusters) > 2)   # For simplicity, we assume for now that there are more than one clusters
+    
+    taskSchedObjects = []
+    
+    startTime = today  # First task is today
+
     print()
     for (i, cluster) in enumerate(clusters):
         if i > 0:
@@ -297,17 +312,40 @@ def prioritizationAlgorithm(taskModels):
         print("Cluster", chr(ord("A")+i))
         # print("Cluster", chr(ord("A")+i), clusterTime, totalContrib)
         # TODO: remove dirty hacks for aligning output columns (spaces in labels, etc.)
-        print("Subject        ", "Task    ", "Due Date        ", "Units", "% of Grade", "Allocated Time", "Time before deadline", sep="\t")
+        print("Subject        ", "Task    ", "Due Date        ", "Units", "% of Grade", "Allocated Time", "Time before deadline", "Start time", "                  End time", sep="\t")
+
         for task in cluster:
             allocTime = max(MIN_SESSION, clusterTime * (task["units"]*task["gradeContrib"]) / totalContrib)
+            
+            endTime = startTime + allocTime
+            
             print( f"[{task['subject']}]",
                 task['name'],
                 task['dueDate'],
                 task['units'],
-            task['gradeContrib'], "",
+                task['gradeContrib'], "",
                 str(allocTime),
                 str(task["absTime"]),
+                str(startTime),
+                str(endTime),
                 sep="\t")
+
+            taskObject = TaskSched(task['name'], startTime, endTime)
+            taskSchedObjects.append(taskObject)
+
+            startTime = endTime  # No breaks yet.
+
         print()
+
+    i = 0
+    for taskObject in taskSchedObjects:
+        print("task Object #", i)
+        print("Task name:" , taskObject.name)
+        print("Start datetime: ", taskObject.startDateTime())
+        print("Start endtime: ", taskObject.endDateTime())
+        print("\n")
+        i += 1
+
+    return taskSchedObjects
 
     # TODO: add resting times between each tasks (student can't work for hours straight)

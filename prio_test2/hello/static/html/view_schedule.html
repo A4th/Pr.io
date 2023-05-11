@@ -24,8 +24,8 @@
                     {% for task in tasks %}
                     {
                         title: '{{ task.name }}',
-                        start: '{{ task.startDate }}',
-                        end: '{{ task.endDate }}',
+                        start: '{{ task.startDateTime }}',
+                        end: '{{ task.endDateTime }}',
                     },
                     {% endfor %}
                     {% endif %}

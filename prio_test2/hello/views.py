@@ -32,10 +32,10 @@ def viewSched(request):
     if request.user.is_authenticated:
         tasks = []
         # TODO: uses tasks directly for now; use return value of prioritizationAlgorithm to compute actual task schedules
-        prioritizationAlgorithm(Task.objects.all())
-        for task in Task.objects.all():
-            task = TaskSched(task.taskName, None, task.dueDate)
-            tasks.append(task)
+        tasks = prioritizationAlgorithm(Task.objects.all())
+        # for task in Task.objects.all():
+        #     task = TaskSched(task.taskName, None, task.dueDate)
+        #     tasks.append(task)
 
         context = {'tasks': tasks}
         return render(request, "view_schedule.html", context)
