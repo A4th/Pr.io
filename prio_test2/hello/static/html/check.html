@@ -30,9 +30,13 @@
 
                 <div class = "main-container">
                     <!-- <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a> -->
-                    <h3>SUBJECT DATABASE</h3>
-                       {% for item in all %}
-                         <label>{{item}}</label>
+                    <h3>SUBJECTS SAVED:</h3>
+                       {% for item in all_sub %}
+                         <label>{{item}}</label><br>
+                       {% endfor %}
+                    <h3>TASKS SAVED: (Subject: Task Name)</h3>
+                       {% for item in all_task %}
+                         <label>{{item.subName}}: {{item}}</label><br>
                        {% endfor %}
                 </div>
                 <div class = "details-pane">
