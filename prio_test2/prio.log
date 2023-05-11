@@ -1,0 +1,145 @@
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /hello/admin
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 5:23:01.560429
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 12:08:01.560429
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	14 days, 5:23:01.560429
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 13:10:01.560429		-1 day, 5:23:01.560429
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 18:55:01.560429		-1 day, 12:08:01.560429
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	8 days, 22:10:01.560429		14 days, 5:23:01.560429
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 13:10:01.560429		-1 day, 5:23:01.560429
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 18:55:01.560429		-1 day, 12:08:01.560429
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	8 days, 22:10:01.560429		14 days, 5:23:01.560429
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 5:21:53.642382
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 12:06:53.642382
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	14 days, 5:21:53.642382
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 13:10:53.642382		-1 day, 5:21:53.642382
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 18:55:53.642382		-1 day, 12:06:53.642382
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	8 days, 22:10:53.642382		14 days, 5:21:53.642382
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 13:10:53.642382		-1 day, 5:21:53.642382
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 18:55:53.642382		-1 day, 12:06:53.642382
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	8 days, 22:10:53.642382		14 days, 5:21:53.642382
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 5:21:31.360328
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 12:06:31.360328
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	14 days, 5:21:31.360328
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 13:10:31.360328		-1 day, 5:21:31.360328
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 18:55:31.360328		-1 day, 12:06:31.360328
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	8 days, 22:10:31.360328		14 days, 5:21:31.360328
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS266]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-1 day, 13:10:31.360328		-1 day, 5:21:31.360328
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-1 day, 18:55:31.360328		-1 day, 12:06:31.360328
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS266]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	8 days, 22:10:31.360328		14 days, 5:21:31.360328
+INFO:root:
+
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\PRIO_test2\hello\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\PRIO_test2\hello\views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /hello/editSub/23/change
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\Pr.io\PRIO_test2\hello\views.py", line 161, in editSubForm
+    subject.save()
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 812, in save
+    self.save_base(
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 863, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 976, in _save_table
+    updated = self._do_update(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\base.py", line 1040, in _do_update
+    return filtered._update(values) > 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\query.py", line 1216, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor = super().execute_sql(result_type)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1385, in execute_sql
+    sql, params = self.as_sql()
+                  ^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\sql\compiler.py", line 1788, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\fields\__init__.py", line 925, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\fields\__init__.py", line 1576, in get_db_prep_value
+    value = self.get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\fields\__init__.py", line 1554, in get_prep_value
+    value = super().get_prep_value(value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\fields\__init__.py", line 1433, in get_prep_value
+    return self.to_python(value)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\db\models\fields\__init__.py", line 1536, in to_python
+    raise exceptions.ValidationError(
+django.core.exceptions.ValidationError: ['“” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[.uuuuuu]][TZ] format.']
