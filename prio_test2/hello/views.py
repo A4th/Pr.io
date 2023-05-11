@@ -91,9 +91,12 @@ def edit_subject(request):
 def subject_details(request):
     if request.user.is_authenticated:
         if request.method == "POST":
-            subject_id = request.POST.get("subject_id", 0)
-            subject = get_object_or_404(Subject, pk=subject_id)
-            context = {'subjects': Subject.objects.all(), 'subject': subject, "subject_id": int(subject_id)}
+            subject_id = int(request.POST.get("subject_id", 0))
+            context = {'subjects': Subject.objects.all(), "subject_id": subject_id}
+
+            if subject_id != -1:
+                subject = get_object_or_404(Subject, pk=subject_id)
+                context['subject'] =  subject
             return render(request, 'edit_subject.html', context)
     return redirect("login")
     
