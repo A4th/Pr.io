@@ -1,6 +1,16 @@
 from django.db import models
+import json
 
 # Create your models here.
+
+
+
+
+class DegreeProgram(models.Model):
+    degName = models.CharField(max_length=255)
+    jsonData = models.JSONField()
+    def __str__(self):
+        return self.degName
 
 
 class Task(models.Model):
