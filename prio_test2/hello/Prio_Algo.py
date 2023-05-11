@@ -26,6 +26,10 @@ def prioritizationAlgorithm(taskModels):
     # and shortest task in bin). Used for clustering
     BIN_HOUR = 8
 
+    MIN_SESSION = timedelta(minutes=30)      # minimum minutes per task/session
+    MAX_SESSION = timedelta(minutes=3*60)    # maximum minutes per task/session
+
+
     # Convert from (django) task models to simple key-value dicts
     tasks = []
 
@@ -295,7 +299,7 @@ def prioritizationAlgorithm(taskModels):
         # TODO: remove dirty hacks for aligning output columns (spaces in labels, etc.)
         print("Subject        ", "Task    ", "Due Date        ", "Units", "% of Grade", "Allocated Time", "Time before deadline", sep="\t")
         for task in cluster:
-            allocTime = clusterTime * (task["units"]*task["gradeContrib"]) / totalContrib
+            allocTime = max(MIN_SESSION, clusterTime * (task["units"]*task["gradeContrib"]) / totalContrib)
             print( f"[{task['subject']}]",
                 task['name'],
                 task['dueDate'],
