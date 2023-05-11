@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # from django.contrib import messages
 # from django.contrib.auth.decorators import login_required
 from .models import Subject,Task
-from hello.Prio_Algo import TaskSched
+from hello.Prio_Algo import TaskSched, prioritizationAlgorithm
 
 # Create your views here.
 def index(request):
@@ -31,7 +31,8 @@ def addCourseSub(request):
 def viewSched(request):
     if request.user.is_authenticated:
         tasks = []
-        # TODO: uses tasks diretly for now; use Prio_Algo to compute actual task schedules
+        # TODO: uses tasks directly for now; use return value of prioritizationAlgorithm to compute actual task schedules
+        prioritizationAlgorithm(Task.objects.all())
         for task in Task.objects.all():
             task = TaskSched(task.taskName, None, task.dueDate)
             tasks.append(task)

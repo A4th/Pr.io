@@ -1,4 +1,11 @@
-from datetime import datetime, time, timedelta
+from datetime import datetime, time, timedelta, timezone
+from hello.models import Subject,Task
+
+import logging
+logging.basicConfig(filename='prio.log', encoding='utf-8', level=logging.DEBUG)
+
+
+
 # Helper class for easy formatting/access of attributes in Django templates
 class TaskSched(object):
     def __init__(self, name, start, end):
@@ -14,62 +21,94 @@ class TaskSched(object):
         return f"{self.end.year}-{str(self.end.month).zfill(2)}-{str(self.end.day).zfill(2)}"
 
 
-if __name__ == "__main__":
-
-    import logging
-    logging.basicConfig(filename='prio.log', encoding='utf-8', level=logging.DEBUG)
-
+def prioritizationAlgorithm(taskModels):
     # range of hours per bin (difference between time of longest
     # and shortest task in bin). Used for clustering
     BIN_HOUR = 8
 
-    #### Test Data
-    tasks = [
-    {
-        "subject": "CS 192",
-        "name": "Sprint 3",
-        "dueDate": datetime(month=4,day=28,year=2023,hour=9, minute=20),
-        "units": 3.0,
-        "gradeContrib": 3.6
-    },
-    {
-        "subject": "CS 145",
-        "name": "Lab Report 8",
-        "dueDate": datetime(month=4,day=30,year=2023,hour=12+11, minute=59),
-        "units": 4.0,
-        "gradeContrib": 2
-    },
-    {
-        "subject": "CS 132",
-        "name": "Long Exam",
-        "dueDate": datetime(month=4,day=28,year=2023,hour=12+1, minute=0),
-        "units": 3.0,
-        "gradeContrib": 30
-    },
-    {
-        "subject": "CS 180",
-        "name": "Problem Set",
-        "dueDate": datetime(month=4,day=28,year=2023,hour=12+11, minute=59),
-        "units": 3.0,
-        "gradeContrib": 6.667
-    },
-    {
-        "subject": "CS 153",
-        "name": "Problem Set",
-        "dueDate": datetime(month=4,day=28,year=2023,hour=12+11, minute=59),
-        "units": 3.0,
-        "gradeContrib": 4
-    },
-    {
-        "subject": "CS 145",
-        "name": "Problem Set 15",
-        "dueDate": datetime(month=4,day=30,year=2023,hour=12+11, minute=59),
-        "units": 4.0,
-        "gradeContrib": 2
-    }
-    ]
+    # Convert from (django) task models to simple key-value dicts
+    tasks = []
 
+    # holds computed grade contribution per requirement in task
+    # NOTE: this is computed by dividing a subject task type's total gradeContrib
+    # over the total number of task in the subject with the same task type
+    subReqContrib = {}
+    for task in taskModels:
+        key = (task.subName_id, task.reqType)
+        subject = task.subName
+        if key not in subReqContrib:
+            # find all tasks in the same subject with the same task type
+            same_reqType = taskModels.filter(subName=task.subName, reqType=task.reqType)
 
+            # get total gradeContrib for this task type in the subject
+            # NOTE: assumes that the gradeContrib is hardcoded in the Subject model as
+            # reqName1, gradeNum1, reqName2, gradeNum2, ..., reqName5, gradeNum5
+            for i in range(1, 5+1):
+                if getattr(subject, f"reqName{i}") == task.reqType:
+                    subReqContrib[key] = float(getattr(subject, f"gradeNum{i}") / len(same_reqType))
+                    break
+            else:
+                print(f"WARNING: {subject} {task.reqType} not found. Skipping task")
+                continue
+
+        # dueDate_timedelta = timedelta(**{
+        #     attrib: getattr(task.dueDate, attrib)
+        #     for attrib in ("year", "month", "day", "hour", "minute")
+        # })
+        tasks.append({
+            "subject": subject.subName,
+            "name": task.taskName,
+            "dueDate": task.dueDate,
+            "units": subject.numUnits,
+            "gradeContrib": subReqContrib[key]
+        })
+
+    # #### Test Data
+    # tasks = [
+    # {
+    #     "subject": "CS 192",
+    #     "name": "Sprint 3",
+    #     "dueDate": datetime(month=4,day=28,year=2023,hour=9, minute=20),
+    #     "units": 3.0,
+    #     "gradeContrib": 3.6
+    # },
+    # {
+    #     "subject": "CS 145",
+    #     "name": "Lab Report 8",
+    #     "dueDate": datetime(month=4,day=30,year=2023,hour=12+11, minute=59),
+    #     "units": 4.0,
+    #     "gradeContrib": 2
+    # },
+    # {
+    #     "subject": "CS 132",
+    #     "name": "Long Exam",
+    #     "dueDate": datetime(month=4,day=28,year=2023,hour=12+1, minute=0),
+    #     "units": 3.0,
+    #     "gradeContrib": 30
+    # },
+    # {
+    #     "subject": "CS 180",
+    #     "name": "Problem Set",
+    #     "dueDate": datetime(month=4,day=28,year=2023,hour=12+11, minute=59),
+    #     "units": 3.0,
+    #     "gradeContrib": 6.667
+    # },
+    # {
+    #     "subject": "CS 153",
+    #     "name": "Problem Set",
+    #     "dueDate": datetime(month=4,day=28,year=2023,hour=12+11, minute=59),
+    #     "units": 3.0,
+    #     "gradeContrib": 4
+    # },
+    # {
+    #     "subject": "CS 145",
+    #     "name": "Problem Set 15",
+    #     "dueDate": datetime(month=4,day=30,year=2023,hour=12+11, minute=59),
+    #     "units": 4.0,
+    #     "gradeContrib": 2
+    # }
+    # ]
+    print(tasks)
     # HACK: use timedelta instead of time so that we can subtract
     breaks = [
     {
@@ -117,6 +156,9 @@ if __name__ == "__main__":
     # NOTE: "today" hardcoded to match example pre-computed values
     today = datetime.today()
     # today = datetime(month=4, day=26, year=2023, hour=12+6, minute=0)
+
+    # Convert today datetime to utc
+    today = today.astimezone(timezone.utc)
     for task in tasks:
         # NOTE: directly mutates task records/objects for simplicity
         task["absTime"] = task["dueDate"] - today
@@ -239,7 +281,7 @@ if __name__ == "__main__":
     logging.info("\n")
 
     ## Step 5. Distribute available time per cluster fairly.
-    assert(len(clusters) > 2)   # For simplicity, we assume for now that there are more than one clusters
+    # assert(len(clusters) > 2)   # For simplicity, we assume for now that there are more than one clusters
     print()
     for (i, cluster) in enumerate(clusters):
         if i > 0:
