@@ -4,6 +4,7 @@ from django.http import HttpResponse
 # from django.contrib import messages
 # from django.contrib.auth.decorators import login_required
 from .models import Subject,Task
+from hello.Prio_Algo import TaskSched
 
 # Create your views here.
 def index(request):
@@ -29,7 +30,14 @@ def addCourseSub(request):
 
 def viewSched(request):
     if request.user.is_authenticated:
-        return render(request, "view_schedule.html")
+        tasks = []
+        # TODO: uses tasks diretly for now; use Prio_Algo to compute actual task schedules
+        for task in Task.objects.all():
+            task = TaskSched(task.taskName, None, task.dueDate)
+            tasks.append(task)
+
+        context = {'tasks': tasks}
+        return render(request, "view_schedule.html", context)
     return redirect("login")
 
 def addSubForm(request):

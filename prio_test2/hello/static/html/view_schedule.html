@@ -20,15 +20,15 @@
                     },
 
                     events:[
+                    {% if tasks %}
+                    {% for task in tasks %}
                     {
-                        title: 'Implementing the Calendar',
-                        start: '2023-03-19',
-                        end: '2023-03-22'
+                        title: '{{ task.name }}',
+                        start: '{{ task.startDate }}',
+                        end: '{{ task.endDate }}',
                     },
-                    {
-                        title: 'CS 194 Sprint 2 Review',
-                        start: '2023-03-24'
-                    }
+                    {% endfor %}
+                    {% endif %}
                     ]
                 });
                 calendar.render();
