@@ -124,6 +124,10 @@ header {
     border-radius: 25px;
     background-color: purple;
     text-decoration: none;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
 }
 
 .control-button:hover, .subject-entry:hover {
