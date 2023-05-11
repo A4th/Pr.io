@@ -26,8 +26,8 @@ class Subject(models.Model):
     # subID = models.IntegerField()
     subName = models.CharField(max_length=50)
     numUnits = models.IntegerField()
-    subStart = models.DateTimeField()
-    subEnd = models.DateTimeField()
+    subStart = models.DateTimeField(null=True)
+    subEnd = models.DateTimeField(null=True)
 
     reqName1 = models.CharField(max_length=50,default = "")
     gradeNum1 = models.DecimalField(max_digits=5,decimal_places=2,default = 0)
