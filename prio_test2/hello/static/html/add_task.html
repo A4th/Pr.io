@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -25,25 +26,78 @@
                     <a href="{% url 'addTask' %}" class="menu">Add Task</a><br><br>
                     <a href="{% url 'addSub' %}" class="menu">Add Subject</a><br><br>
                     <a href="{% url 'checkSub' %}" class="menu">Search</a><br><br>
-                    <a href="{% url 'checkSub' %}" class="menu">Edit Subject</a><br><br>
-                </div>  
-
-                <div class = "main-container">
-                    <h3>SELECT SUBJECT TO ADD TASKS FOR</h3>
-              
-                    <!-- <h3>Add Task stuff</h3> -->
-      
-                    {% if subjects %}
-                        <ul>
-                        {% for subject in subjects %}
-                            <li><a href="{% url 'task_details' subject.id %}">{{ subject}}</a></li>
-                        {% endfor %}
-                        </ul>
-                    {% else %}
-                        <p>No subjects found.</p>
-                    {% endif %}
+                    <a href="{% url 'editSub' %}" class="menu">Edit Subject</a><br><br>
                 </div>
 
+                <div class = "main-container">
+                    <!-- <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a> -->
+                    <h3>ADD TASK INFORMATION</h3>
+                    <form method = "POST" action="{% url 'task_details' %}">
+                        {% csrf_token %}
+                        <label for="subject_id">Subject:</label>
+                        <select id="subject_id" name ="subject_id" class="dropdown" onchange="this.form.submit()"></input>
+                            <option value=-1>--CHOOSE SUBJECT TO EDIT--</option>
+                        {% if subjects %}
+                        {% for subject in subjects %}
+                        {% if subject.subName|length > 0%}
+                            <option value = {{ subject.id }}
+                            {% if subject_id  == subject.id %}
+                            selected="selected"
+                            {% endif %}
+                            >{{ subject.subName }}</option>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        </select>
+                    </form>
+
+                    <form method = "POST" action="{% url 'addTaskForm' %}">
+                        <!-- hidden input to hold subject_id so that it is included in form POST-->
+                        <input type="hidden" value="{{ subject_id }}" name="subject_id">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div id="error-bar" class="error-bar"></div>
+                        <div id="addSub">
+
+                        <label for="reqNames"> Input Requirement Type</label>
+                        <select id="reqField" name ="reqType" class="dropdown"></input>
+                        {% for reqName, gradeNum in reqTypes.items %}
+                        {% if reqName|length > 0%}
+                            <option>{{ reqName }}</option>
+                        {% endif %}
+                        {% endfor %}
+                        </select>
+
+                            <br><br>
+                            <label for="subName"> Add Task Name </label>
+                            <input id="subName" name="taskName" class="input-field" type="text"></input>
+                            <br><br>
+                            <label for="numUnits">Edit Date </label>
+                            <input id="numUnits" name="dueDate" class="input-field" type="datetime-local"></input>
+                            <br><br>
+
+
+
+                        </div>
+                        {{ form.subName }}
+                        <!-- <h3>Edit Grading System / Breakdown</h3>
+                        <div id="gradeSysBox">
+                            <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button>
+                        </div><br><br>
+
+                        <div id="startEnd">
+                            <label for="subStart">Edit Start Time </label>
+                            <input id="start", name="subStart" class="input-field" type="datetime-local"></input>
+                            <br><br>
+                            <label for="subEnd">Edit End Time </label>
+                            <input id="end", name="subEnd" class="input-field" type="datetime-local"></input>
+                            <br><br>
+                        </div><br> -->
+
+                        <input type="submit" value ="Save" id="submit" class="control-button" onclick="inputsFunc()"></input>
+                        <input type="submit" value ="Cancel" id="cancel" class="control-button" href="#"></input>
+                    </form>
+                </div>
                 <div class = "details-pane">
                     <h1>Details:</h1>
                 </div>

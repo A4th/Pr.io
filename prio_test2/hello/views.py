@@ -19,7 +19,7 @@ def addSub(request):
 def addTask(request):
     if request.user.is_authenticated:
         subjects = Subject.objects.all()
-        context = {'subjects': subjects}
+        context = {'subjects': subjects, "subject_id": -1}
         return render(request, "add_task.html",context)
     return redirect("login")
 
@@ -120,18 +120,26 @@ def addTaskForm(request):
     return redirect("login")
 
     
-def task_details(request, subject_id):
+def task_details(request):
     if request.user.is_authenticated:
-        subject = get_object_or_404(Subject, pk=subject_id)
-        reqTypes = {
-            subject.reqName1: subject.gradeNum1,
-            subject.reqName2: subject.gradeNum2,
-            subject.reqName3: subject.gradeNum3,
-            subject.reqName4: subject.gradeNum4,
-            subject.reqName5: subject.gradeNum5
-        }
-        context = {'subject': subject, 'reqTypes': reqTypes, "subject_id": subject_id}
-        return render(request, 'task_details.html', context)
+        subject_id = int(request.POST.get("subject_id", 0))
+        context = {'subjects': Subject.objects.all(), "subject_id": subject_id}
+
+        if subject_id != -1:
+            subject = get_object_or_404(Subject, pk=subject_id)
+            context['subject'] =  subject
+
+            subject = get_object_or_404(Subject, pk=subject_id)
+            reqTypes = {
+                subject.reqName1: subject.gradeNum1,
+                subject.reqName2: subject.gradeNum2,
+                subject.reqName3: subject.gradeNum3,
+                subject.reqName4: subject.gradeNum4,
+                subject.reqName5: subject.gradeNum5
+            }
+
+            context['reqTypes'] = reqTypes
+        return render(request, 'add_task.html', context)
     return redirect("login")
 
 def editSubForm(request, subject_id):
