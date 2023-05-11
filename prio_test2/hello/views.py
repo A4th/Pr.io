@@ -84,15 +84,17 @@ def checkSub(request):
 def edit_subject(request):
     if request.user.is_authenticated:
         subjects = Subject.objects.all()
-        context = {'subjects': subjects}
+        context = {'subjects': subjects, "subject_id": -1}
         return render(request, 'edit_subject.html', context)
     return redirect("login")
     
-def subject_details(request, subject_id):
+def subject_details(request):
     if request.user.is_authenticated:
-        subject = get_object_or_404(Subject, pk=subject_id)
-        context = {'subject': subject}
-        return render(request, 'subject_details.html', context)
+        if request.method == "POST":
+            subject_id = request.POST.get("subject_id", 0)
+            subject = get_object_or_404(Subject, pk=subject_id)
+            context = {'subjects': Subject.objects.all(), 'subject': subject, "subject_id": int(subject_id)}
+            return render(request, 'edit_subject.html', context)
     return redirect("login")
     
 def addTaskForm(request):
@@ -159,8 +161,8 @@ def editSubForm(request, subject_id):
             subject.reqName5, subject.gradeNum5 = reqName5, gradeNum5
 
             subject.save()
-        # return render(request, "edit_subject.html", context)
+
         subjects = Subject.objects.all()
-        context = {'subjects': subjects}
+        context = {'subjects': subjects, "subject_id": -1}
         return render(request, 'edit_subject.html', context)
     return redirect("login")

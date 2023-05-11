@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
@@ -11,10 +11,10 @@ urlpatterns = [
     path("viewSched/", views.viewSched, name="viewSched"),
     path("addSubForm/", views.addSubForm, name="addSubForm"),
     path("editSub/",views.edit_subject,name = "editSub"),
-    path("editSub/<int:subject_id>",views.subject_details,name = "subject_details"),
-    path("editSub/<int:subject_id>/change", views.editSubForm, name="editSubForm"),
+    path("editSubDetails/",views.subject_details,name = "subject_details"),
+    re_path("editSub/(?P<subject_id>-?[0-9]+)/change\Z", views.editSubForm, name="editSubForm"),
     path("checkSub/", views.checkSub, name="checkSub"),
     
 ]
 
-#https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js 
+#https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js
