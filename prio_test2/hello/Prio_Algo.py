@@ -330,7 +330,7 @@ def prioritizationAlgorithm(taskModels):
                 str(endTime),
                 sep="\t")
 
-            taskObject = TaskSched(task['name'], startTime, endTime)
+            taskObject = TaskSched(task['name'], startTime, max(startTime + MIN_SESSION,  min(endTime, startTime + MAX_SESSION)))
             taskSchedObjects.append(taskObject)
 
             startTime = endTime  # No breaks yet.
