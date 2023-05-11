@@ -333,18 +333,19 @@ def prioritizationAlgorithm(taskModels):
             taskObject = TaskSched(task['name'], startTime, max(startTime + MIN_SESSION,  min(endTime, startTime + MAX_SESSION)))
             taskSchedObjects.append(taskObject)
 
-            startTime = endTime  # No breaks yet.
+            startTime = endTime + timedelta(hours=1) # No breaks yet.
+            print("StartTime: ", startTime)
 
         print()
 
-    i = 0
-    for taskObject in taskSchedObjects:
-        print("task Object #", i)
-        print("Task name:" , taskObject.name)
-        print("Start datetime: ", taskObject.startDateTime())
-        print("Start endtime: ", taskObject.endDateTime())
-        print("\n")
-        i += 1
+    # i = 0
+    # for taskObject in taskSchedObjects:
+    #     print("task Object #", i)
+    #     print("Task name:" , taskObject.name)
+    #     print("Start datetime: ", taskObject.startDateTime())
+    #     print("Start endtime: ", taskObject.endDateTime())
+    #     print("\n")
+    #     i += 1
 
     return taskSchedObjects
 
