@@ -3,7 +3,7 @@ from django.http import HttpResponse
 # from .forms import Subjectform
 # from django.contrib import messages
 # from django.contrib.auth.decorators import login_required
-from .models import Subject,Task
+from .models import Subject,Task,DegreeProgram
 from hello.Prio_Algo import TaskSched, prioritizationAlgorithm
 
 # Create your views here.
@@ -25,7 +25,11 @@ def addTask(request):
 
 def addCourseSub(request):
     if request.user.is_authenticated:
-        return render(request, "add_course_subjects.html")
+        degreeprogram = DegreeProgram.objects.all
+        context = {'degreeprogram': degreeprogram}
+
+
+        return render(request, "add_course_subjects.html",context)
     return redirect("login")
 
 def viewSched(request):

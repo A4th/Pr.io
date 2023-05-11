@@ -29,7 +29,32 @@
                 </div>
             <div class = "main-container">
               <h3>ADD COURSE SUBJECTS</h3>
-              <select name="courses" id="course-select"></select>
+              <!-- <select name="courses" id="course-select"></select> -->
+
+              <!-- insert how to query the subject -->
+
+              <form method = "POST" action="{% url 'subject_details' %}"> 
+                {% csrf_token %}
+                <label for="degprog_id">Degree Program:</label>
+                <select id="degprog_id" name ="degprog_id" class="dropdown" onchange="this.form.submit()"></input>
+                    <option value=-1>--CHOOSE DEGREE PROGRAM--</option>
+                {% if degreeprogram %}
+                {% for degprog in degreeprogram %}
+                {% if degprog.degName|length > 0%}
+                    <option value = {{ degprog.id }}>
+                    {% if degprog.id  == degprog.id %}
+                  
+                    {% endif %}
+                    >{{ degprog.degName }}</option>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+                </select>
+            </form>
+
+
+            
+
 
               <div id="course-subjects">
               </div>

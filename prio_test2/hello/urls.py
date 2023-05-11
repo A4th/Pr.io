@@ -14,6 +14,8 @@ urlpatterns = [
     path("editSubDetails/",views.subject_details,name = "subject_details"),
     re_path("editSub/(?P<subject_id>-?[0-9]+)/change\Z", views.editSubForm, name="editSubForm"),
     path("checkSub/", views.checkSub, name="checkSub"),
+
+    #insert path here on add_course_subject
     
 ]
 
