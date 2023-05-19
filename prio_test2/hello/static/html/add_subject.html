@@ -29,8 +29,8 @@
                         <div id="gradeSysBox">
                             <input name="reqName1" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
                             <input name="gradeNum1" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
-                            <button id="add_gradeSys" class="control-button" onclick="addGradeSys()">+</button>
-                            <button hidden id="del_gradeSys" class="control-button" onclick="delGradeSys()">-</button>
+                            <button type="button" id="add_gradeSys" class="control-button" onclick="addGradeSys()">+</button>
+                            <button hidden type="button" id="del_gradeSys" class="control-button" onclick="delGradeSys()">-</button>
 
                             <input hidden name="reqName2" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
                             <input hidden name="gradeNum2" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
@@ -60,7 +60,7 @@
                     </form>
 
                     <!-- Add subjects data in HTML for access in javascript -->
-                    {{ subjects|json_script:"subjects-data" }}
+                    {{ subjects_json|json_script:"subjects-data" }}
     {% include "navigation_end.html" %}
     </body>
 </html>

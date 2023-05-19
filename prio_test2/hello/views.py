@@ -15,11 +15,11 @@ def addSub(request):
     if not request.user.is_authenticated:
         return redirect("login")
 
-    subjects = {}
+    subjects_json = {}
     for sub in Subject.objects.all():
-        subjects[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
+        subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
 
-    context = {"subjects": subjects}
+    context = {"subjects_json": subjects_json}
     return render(request, 'add_subject.html', context)
 
 def addTask(request):
