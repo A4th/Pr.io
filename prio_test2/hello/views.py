@@ -23,34 +23,37 @@ def addSub(request):
     return render(request, 'add_subject.html', context)
 
 def addTask(request):
-    if request.user.is_authenticated:
-        subjects = Subject.objects.all()
-        context = {'subjects': subjects, "subject_id": -1}
-        return render(request, "add_task.html",context)
-    return redirect("login")
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    subjects = Subject.objects.all()
+    context = {'subjects': subjects, "subject_id": -1}
+    return render(request, "add_task.html",context)
 
 def addCourseSub(request):
-    if request.user.is_authenticated:
-        degreeprogram = DegreeProgram.objects.all()
-        context = {'degreeprogram': degreeprogram, "degprog_id": -1}
-        return render(request, "add_course_subjects.html", context)
+    if not request.user.is_authenticated:
+        return redirect("login")
 
-    return redirect("login")
+    degreeprogram = DegreeProgram.objects.all()
+    context = {'degreeprogram': degreeprogram, "degprog_id": -1}
+    return render(request, "add_course_subjects.html", context)
+
 
 def addCourseSubList(request):
-    if request.user.is_authenticated:
-        degreeprogram = DegreeProgram.objects.all()
-        context = {'degreeprogram': degreeprogram}
-        if request.method == "POST":
-            degprog_id = int(request.POST.get("degprog_id", -1))
-            context['degprog_id'] = degprog_id
-            if degprog_id != -1:
-                subjects = DegreeProgram.objects.get(pk=degprog_id).jsonData
-                subjects = list(sorted(subjects.keys()))
-                context['subjects'] = subjects
+    if not request.user.is_authenticated:
+        return redirect("login")
 
-        return render(request, "add_course_subjects.html", context)
-    return redirect("login")
+    degreeprogram = DegreeProgram.objects.all()
+    context = {'degreeprogram': degreeprogram}
+    if request.method == "POST":
+        degprog_id = int(request.POST.get("degprog_id", -1))
+        context['degprog_id'] = degprog_id
+        if degprog_id != -1:
+            subjects = DegreeProgram.objects.get(pk=degprog_id).jsonData
+            subjects = list(sorted(subjects.keys()))
+            context['subjects'] = subjects
+
+    return render(request, "add_course_subjects.html", context)
 
 def addCourseSubForm(request):
     if not request.user.is_authenticated:
@@ -70,17 +73,18 @@ def addCourseSubForm(request):
     return render(request, "add_course_subjects.html", context)
 
 def viewSched(request):
-    if request.user.is_authenticated:
-        tasks = []
-        # TODO: uses tasks directly for now; use return value of prioritizationAlgorithm to compute actual task schedules
-        tasks = prioritizationAlgorithm(Task.objects.all())
-        # for task in Task.objects.all():
-        #     task = TaskSched(task.taskName, None, task.dueDate)
-        #     tasks.append(task)
+    if not request.user.is_authenticated:
+        return redirect("login")
 
-        context = {'tasks': tasks}
-        return render(request, "view_schedule.html", context)
-    return redirect("login")
+    tasks = []
+    # TODO: uses tasks directly for now; use return value of prioritizationAlgorithm to compute actual task schedules
+    tasks = prioritizationAlgorithm(Task.objects.all())
+    # for task in Task.objects.all():
+    #     task = TaskSched(task.taskName, None, task.dueDate)
+    #     tasks.append(task)
+
+    context = {'tasks': tasks}
+    return render(request, "view_schedule.html", context)
 
 def addSubForm(request):
     if not request.user.is_authenticated:
@@ -116,11 +120,12 @@ def addSubForm(request):
    
 
 def checkSub(request):
-    if request.user.is_authenticated:
-        all_sub = Subject.objects.all
-        all_task = Task.objects.all
-        return render(request,'check.html',{'all_sub':all_sub, 'all_task': all_task})     
-    return redirect("login")
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    all_sub = Subject.objects.all
+    all_task = Task.objects.all
+    return render(request,'check.html',{'all_sub':all_sub, 'all_task': all_task})
     
 
 def edit_subject(request):
@@ -154,46 +159,47 @@ def subject_details(request):
         return render(request, 'edit_subject.html', context)
     
 def addTaskForm(request):
-    if request.user.is_authenticated:
-        subjects = Subject.objects.all()
-        context = {'subjects': subjects}
-        if request.method == "POST":
-            subject_id = request.POST["subject_id"]
-            reqType = request.POST["reqType"]
-            taskName = request.POST["taskName"]
-            dueDate = request.POST["dueDate"]
+    if not request.user.is_authenticated:
+        return redirect("login")
 
-            subject = get_object_or_404(Subject, pk=subject_id)
-            addTask_details = Task(subName=subject,
-                reqType = reqType, taskName=taskName, dueDate=dueDate
-            )
-            addTask_details.save()
+    subjects = Subject.objects.all()
+    context = {'subjects': subjects}
+    if request.method == "POST":
+        subject_id = request.POST["subject_id"]
+        reqType = request.POST["reqType"]
+        taskName = request.POST["taskName"]
+        dueDate = request.POST["dueDate"]
 
-        return render(request, 'add_task.html',context)
-    return redirect("login")
+        subject = get_object_or_404(Subject, pk=subject_id)
+        addTask_details = Task(subName=subject,
+            reqType = reqType, taskName=taskName, dueDate=dueDate
+        )
+        addTask_details.save()
 
+    return render(request, 'add_task.html',context)
     
 def task_details(request):
-    if request.user.is_authenticated:
-        subject_id = int(request.POST.get("subject_id", 0))
-        context = {'subjects': Subject.objects.all(), "subject_id": subject_id}
+    if not request.user.is_authenticated:
+        return redirect("login")
 
-        if subject_id != -1:
-            subject = get_object_or_404(Subject, pk=subject_id)
-            context['subject'] =  subject
+    subject_id = int(request.POST.get("subject_id", 0))
+    context = {'subjects': Subject.objects.all(), "subject_id": subject_id}
 
-            subject = get_object_or_404(Subject, pk=subject_id)
-            reqTypes = {
-                subject.reqName1: subject.gradeNum1,
-                subject.reqName2: subject.gradeNum2,
-                subject.reqName3: subject.gradeNum3,
-                subject.reqName4: subject.gradeNum4,
-                subject.reqName5: subject.gradeNum5
-            }
+    if subject_id != -1:
+        subject = get_object_or_404(Subject, pk=subject_id)
+        context['subject'] =  subject
 
-            context['reqTypes'] = reqTypes
-        return render(request, 'add_task.html', context)
-    return redirect("login")
+        subject = get_object_or_404(Subject, pk=subject_id)
+        reqTypes = {
+            subject.reqName1: subject.gradeNum1,
+            subject.reqName2: subject.gradeNum2,
+            subject.reqName3: subject.gradeNum3,
+            subject.reqName4: subject.gradeNum4,
+            subject.reqName5: subject.gradeNum5
+        }
+
+        context['reqTypes'] = reqTypes
+    return render(request, 'add_task.html', context)
 
 def editSubForm(request, subject_id):
     if not request.user.is_authenticated:
