@@ -10,6 +10,7 @@ function submitForm(form) {
     }
 
     // Input validation
+    // Check required fields
     for (let input in requiredInputs) {
         let userInput = document.querySelector(input);
         if(userInput.value.length == 0) {
@@ -18,12 +19,16 @@ function submitForm(form) {
         };
     }
 
-    // Save to database
-    // if (subjects.find(subject => subject.name == subject_data.name)) {
-    //     showErrorBar(`Error: Subject <b>${subject_data.name}</b> already exists.`);
-    // } else {
-    //     // No conflict, save to database
-    // }
+    // Check if subject name already exists
+    const newSub = document.getElementById("subName").value;
+    const subjects = JSON.parse(document.getElementById('subjects-data').textContent);
+    console.log(newSub, Object.keys(subjects));
+    if (Object.keys(subjects).find(subject => subject == newSub)) {
+        showErrorBar(`Error: Subject <b>${newSub}</b> already exists.`);
+        return;
+    }
+
+    // No validation errors, submit form
     form.submit();
 }
 

@@ -14,7 +14,6 @@
                     <h3>SUBJECT INFORMATION</h3>
                     <form method = "POST" action="{% url 'addSubForm' %}">
                         {% csrf_token %}
-                        {{ form }}
                         <div id="error-bar" class="error-bar"></div>
                         <div id="addSub">
                             <label for="subName"> Subject Name </label>
@@ -56,6 +55,9 @@
                         <input type="button" value ="Submit" id="submit-button" class="control-button" onclick="submitForm(this.form)"/>
                         <input type="button" value ="Cancel" id="cancel-button" class="control-button" onclick="this.form.reset()"/>
                     </form>
+
+                    <!-- Add subjects data in HTML for access in javascript -->
+                    {{ subjects|json_script:"subjects-data" }}
     {% include "navigation_end.html" %}
     </body>
 </html>

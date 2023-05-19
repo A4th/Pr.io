@@ -12,10 +12,15 @@ def index(request):
     return HttpResponse("umabot ka")
 
 def addSub(request):
-    if request.user.is_authenticated:
-        
-        return render(request, 'add_subject.html')
-    return redirect("login")
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    subjects = {}
+    for sub in Subject.objects.all():
+        subjects[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
+
+    context = {"subjects": subjects}
+    return render(request, 'add_subject.html', context)
 
 def addTask(request):
     if request.user.is_authenticated:
@@ -78,35 +83,36 @@ def viewSched(request):
     return redirect("login")
 
 def addSubForm(request):
-    if request.user.is_authenticated:
-        if request.method == "POST":
-            subName = request.POST["subName"]
-            numUnits = request.POST["numUnits"]
-            subStart = request.POST["subStart"]
-            subEnd = request.POST["subEnd"]
-            reqName1, gradeNum1 = request.POST["reqName1"], request.POST["gradeNum1"]
-            reqName2, gradeNum2 = request.POST["reqName2"], request.POST["gradeNum2"]
-            reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
-            reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
-            reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
+    if not request.user.is_authenticated:
+        return redirect("login")
 
-            gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5 = map(lambda num: num or 0,
-                                            (gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5))
+    if request.method == "POST":
+        subName = request.POST["subName"]
+        numUnits = request.POST["numUnits"]
+        subStart = request.POST["subStart"] or None
+        subEnd = request.POST["subEnd"] or None
+        reqName1, gradeNum1 = request.POST["reqName1"], request.POST["gradeNum1"]
+        reqName2, gradeNum2 = request.POST["reqName2"], request.POST["gradeNum2"]
+        reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
+        reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
+        reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
 
-            print(subName, numUnits, subStart, subEnd)
-            addSub_details = Subject(
-                subName = subName, numUnits = numUnits,
-                subStart = subStart, subEnd=subEnd,
-                reqName1=reqName1, gradeNum1=gradeNum1,
-                reqName2=reqName2, gradeNum2=gradeNum2,
-                reqName3=reqName3, gradeNum3=gradeNum3,
-                reqName4=reqName4, gradeNum4=gradeNum4,
-                reqName5=reqName5, gradeNum5=gradeNum5
-            )
-            addSub_details.save()
-   
-        return render(request, 'add_subject.html')
-    return redirect("login")
+        gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5 = map(lambda num: num or 0,
+                                        (gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5))
+
+        addSub_details = Subject(
+            subName = subName, numUnits = numUnits,
+            subStart = subStart, subEnd=subEnd,
+            reqName1=reqName1, gradeNum1=gradeNum1,
+            reqName2=reqName2, gradeNum2=gradeNum2,
+            reqName3=reqName3, gradeNum3=gradeNum3,
+            reqName4=reqName4, gradeNum4=gradeNum4,
+            reqName5=reqName5, gradeNum5=gradeNum5
+        )
+        addSub_details.save()
+
+        # go back to addSub page
+        return redirect("addSub")
    
 
 def checkSub(request):
