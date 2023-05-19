@@ -19,12 +19,12 @@ def addSub(request):
     context = {"subjects_json": subjects_json}
     return render(request, 'add_subject.html', context)
 
-def addTask(request):
+def addTask(request, subject_id=-1):
     if not request.user.is_authenticated:
         return redirect("login")
 
     subjects = Subject.objects.all()
-    context = {'subjects': subjects, "subject_id": -1}
+    context = {'subjects': subjects, "subject_id": subject_id}
     return render(request, "add_task.html",context)
 
 def addCourseSub(request):
@@ -65,9 +65,7 @@ def addCourseSubForm(request):
             newSub = Subject(subName=subject, numUnits= subToUnit[subject])
             newSub.save()
 
-    degreeprogram = DegreeProgram.objects.all()
-    context = {'degreeprogram': degreeprogram}
-    return render(request, "add_course_subjects.html", context)
+    return redirect("addCourseSub")
 
 def viewSched(request):
     if not request.user.is_authenticated:
@@ -112,9 +110,8 @@ def addSubForm(request):
         )
         addSub_details.save()
 
-        # go back to addSub page
-        return redirect("addSub")
-   
+    # go back to addSub page
+    return redirect("addSub")
 
 def checkSub(request):
     if not request.user.is_authenticated:
@@ -173,7 +170,12 @@ def addTaskForm(request):
         )
         addTask_details.save()
 
-    return render(request, 'add_task.html',context)
+        # TODO: make adding multiple tasks for same subject less cumbersome
+        # # in case user wants to add more tasks for same subject
+        # context["subject_id"] = subject_id
+        # return render(request, 'add_task.html',context)
+
+    return redirect("addTask")
     
 def task_details(request):
     if not request.user.is_authenticated:
