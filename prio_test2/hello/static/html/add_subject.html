@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
         <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script>
         <title>Add Subject Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,18 +29,20 @@
                         <div id="gradeSysBox">
                             <input name="reqName1" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
                             <input name="gradeNum1" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
+                            <button id="add_gradeSys" class="control-button" onclick="addGradeSys()">+</button>
+                            <button hidden id="del_gradeSys" class="control-button" onclick="delGradeSys()">-</button>
 
-                            <input name="reqName2" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
-                            <input name="gradeNum2" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
+                            <input hidden name="reqName2" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
+                            <input hidden name="gradeNum2" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
 
-                            <input name="reqName3" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
-                            <input name="gradeNum3" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
+                            <input hidden name="reqName3" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
+                            <input hidden name="gradeNum3" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
 
-                            <input name="reqName4" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
-                            <input name="gradeNum4" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
+                            <input hidden name="reqName4" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
+                            <input hidden name="gradeNum4" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
 
-                            <input name="reqName5" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
-                            <input name="gradeNum5" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
+                            <input hidden name="reqName5" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
+                            <input hidden name="gradeNum5" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
 
                         </div><br><br>
                         

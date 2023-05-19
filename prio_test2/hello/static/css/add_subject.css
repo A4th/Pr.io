@@ -6,8 +6,9 @@
     width: 45%;
 }
 
-#add_gradeSys {
-    margin-left: 1%;
+#add_gradeSys, #del_gradeSys {
+    padding-left: 0.5%;
+    padding-right: 0.5%;
 }
 
 #submit-button, #cancel-button, #addCL{
