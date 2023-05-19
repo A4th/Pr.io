@@ -9,26 +9,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/add_subject.css' %}"/>
     </head>
     <body>
-        <div class="layout-container">
-            <div class = "top-navigation-bar">
-                <header>
-                    <nav><a href="{% url 'viewSched' %}" class="menu">PR.IO</a></nav>
-                    <nav><a href="{% url 'logout' %}" class="menu">logout</a></nav>
-                    <button class="help"><a href="#" id="help-text">?</a></button>
-                </header>
-            </div>
-
-            <div class="below-nav-bar">
-                <div class = "left-navigation-bar">
-                    <br>
-                    <a href="{% url 'viewSched' %}" class="menu">View Schedule</a><br><br>
-                    <a href="{% url 'addTask' %}" class="menu">Add Task</a><br><br>
-                    <a href="{% url 'addSub' %}" class="menu">Add Subject</a><br><br>
-                    <a href="{% url 'checkSub' %}" class="menu">Search</a><br><br>
-                    <a href="{% url 'editSub' %}" class="menu">Edit Subject</a><br><br>
-                </div>
-
-                <div class = "main-container">
+    {% include "navigation_start.html" %}
                     <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a>
                     <h3>SUBJECT INFORMATION</h3>
                     <form method = "POST" action="{% url 'addSubForm' %}">
@@ -79,11 +60,6 @@
                         <input type="submit" value ="Submit" id="submit" class="control-button" onclick="inputsFunc()"></input>
                         <input type="submit" value ="Cancel" id="cancel" class="control-button" href="#"></input>
                     </form>
-                </div>
-                <div class = "details-pane">
-                    <h1>Details:</h1>
-                </div>
-            </div>
-        </div>
+    {% include "navigation_end.html" %}
     </body>
 </html>
