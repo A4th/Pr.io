@@ -8,9 +8,6 @@ from hello.Prio_Algo import TaskSched, prioritizationAlgorithm
 import json
 
 # Create your views here.
-def index(request):
-    return HttpResponse("umabot ka")
-
 def addSub(request):
     if not request.user.is_authenticated:
         return redirect("login")
