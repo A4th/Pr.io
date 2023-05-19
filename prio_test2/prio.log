@@ -2211,3 +2211,5 @@ INFO:root:
 
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\hello\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\PRIO_test2\urls.py changed, reloading.
