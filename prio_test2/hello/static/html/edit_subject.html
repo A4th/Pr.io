@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script> -->
+        <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
+        <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script>
         <title>Edit Subject Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -20,7 +21,7 @@
                             <option value=-1>--CHOOSE SUBJECT TO EDIT--</option>
                         {% if subjects %}
                         {% for subject in subjects %}
-                        {% if subject.subName|length > 0%}
+                        {% if subject.subName|length > 0 %}
                             <option value = {{ subject.id }}
                             {% if subject_id  == subject.id %}
                             selected="selected"
@@ -38,15 +39,15 @@
                         <div id="addSub">
                             {% if subject_id != -1 %}
                             <label for="subName"> New Subject Name </label>
-                            <input id="subName", name="subName" class="input-field" type="text" value="{{subject}}"></input>
+                            <input id="subName" name="subName" class="input-field" type="text" value="{{subject}}"></input>
                             <br>
                             {% endif %}
 
                             <label for="numUnits"> Edit No. of Units </label>
-                            <input id="numUnits", name="numUnits" class="input-field" type="number" value={{subject.numUnits}}></input>
+                            <input id="numUnits" name="numUnits" class="input-field" type="number" value={{subject.numUnits}}></input>
                             <br><br>
                         </div>
-                        <!-- {{ form.subName }} -->
+
                         <h3>Edit Grading System / Breakdown</h3>
                         <div id="gradeSysBox">
                             <input name="reqName1" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam" value="{{subject.reqName1}}">
@@ -63,29 +64,30 @@
 
                             <input name="reqName5" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam" value="{{subject.reqName5}}">
                             <input name="gradeNum5" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100" value={{subject.gradeNum5}}>
+                            <button type="button" hidden id="add_gradeSys" class="control-button" onclick="addGradeSys()">+</button>
+                            <button type="button" id="del_gradeSys" class="control-button" onclick="delGradeSys()">-</button>
 
                         </div><br><br>
 
                         <div id="startEnd">
                             <label for="subStart">Edit Start Time </label>
-                            <input id="start", name="subStart" class="input-field" type="datetime-local"></input>
+                            <input id="start" name="subStart" class="input-field" type="datetime-local"></input>
                             <br><br>
                             <label for="subEnd">Edit End Time </label>
-                            <input id="end", name="subEnd" class="input-field" type="datetime-local"></input>
+                            <input id="end" name="subEnd" class="input-field" type="datetime-local"></input>
                             <br><br>
                         </div><br>
 
-                        <input type="submit" value ="Save" id="submit" class="control-button" onclick="inputsFunc()"
+                        <input type="button" value ="Save" id="submit-button" class="control-button" onclick="submitForm(this.form)"
                         {% if subject_id == -1 %}
                         disabled
                         {% endif %}
                         ></input>
-                        <input type="submit" value ="Cancel" id="cancel" class="control-button" href="{% url 'editSub' %}"
-                        {% if subject_id == -1 %}
-                        disabled
-                        {% endif %}
-                        ></input>
+                        <input type="button" value ="Reset" id="cancel-button" class="control-button" onclick="this.form.reset()"/>
                     </form>
+
+                    <!-- Add subjects data in HTML for access in javascript -->
+                    {{ subjects_json|json_script:"subjects-data" }}
     {% include "navigation_end.html" %}
     </body>
 </html>

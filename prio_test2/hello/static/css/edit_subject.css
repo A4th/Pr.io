@@ -26,6 +26,11 @@
     color: white;
 }
 
-#submit {
+#submit-button {
     margin-left: 55%;
+}
+
+#add_gradeSys, #del_gradeSys {
+    padding-left: 0.5%;
+    padding-right: 0.5%;
 }

@@ -124,23 +124,34 @@ def checkSub(request):
     
 
 def edit_subject(request):
-    if request.user.is_authenticated:
-        subjects = Subject.objects.all()
-        context = {'subjects': subjects, "subject_id": -1}
-        return render(request, 'edit_subject.html', context)
-    return redirect("login")
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    subjects = Subject.objects.all()
+    subjects_json = {}
+    for sub in subjects:
+        subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
+
+    context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": -1}
+    return render(request, 'edit_subject.html', context)
     
 def subject_details(request):
-    if request.user.is_authenticated:
-        if request.method == "POST":
-            subject_id = int(request.POST.get("subject_id", 0))
-            context = {'subjects': Subject.objects.all(), "subject_id": subject_id}
+    if not request.user.is_authenticated:
+        return redirect("login")
 
-            if subject_id != -1:
-                subject = get_object_or_404(Subject, pk=subject_id)
-                context['subject'] =  subject
-            return render(request, 'edit_subject.html', context)
-    return redirect("login")
+    if request.method == "POST":
+        subject_id = int(request.POST.get("subject_id", 0))
+        subjects = Subject.objects.all()
+        subjects_json = {}
+        for sub in subjects:
+            subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
+
+        context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": subject_id}
+
+        if subject_id != -1:
+            subject = get_object_or_404(Subject, pk=subject_id)
+            context['subject'] =  subject
+        return render(request, 'edit_subject.html', context)
     
 def addTaskForm(request):
     if request.user.is_authenticated:
@@ -185,37 +196,35 @@ def task_details(request):
     return redirect("login")
 
 def editSubForm(request, subject_id):
-    if request.user.is_authenticated:
-        subject = Subject.objects.get(id=subject_id)
+    if not request.user.is_authenticated:
+        return redirect("login")
 
-        if request.method == "POST":
-            subName = request.POST["subName"]
-            numUnits = request.POST["numUnits"]
-            subStart = request.POST["subStart"]
-            subEnd = request.POST["subEnd"]
-            reqName1, gradeNum1 = request.POST["reqName1"], request.POST["gradeNum1"]
-            reqName2, gradeNum2 = request.POST["reqName2"], request.POST["gradeNum2"]
-            reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
-            reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
-            reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
+    subject = Subject.objects.get(id=subject_id)
+    if request.method == "POST":
+        subName = request.POST["subName"]
+        numUnits = request.POST["numUnits"]
+        subStart = request.POST["subStart"] or None
+        subEnd = request.POST["subEnd"] or None
+        reqName1, gradeNum1 = request.POST["reqName1"], request.POST["gradeNum1"]
+        reqName2, gradeNum2 = request.POST["reqName2"], request.POST["gradeNum2"]
+        reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
+        reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
+        reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
 
-            gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5 = map(lambda num: num or 0,
-                                            (gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5))
+        gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5 = map(lambda num: num or 0,
+                                        (gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5))
 
 
-            subject.subName = subName
-            subject.numUnits = numUnits
-            subject.subStart = subStart
-            subject.subEnd = subEnd
-            subject.reqName1, subject.gradeNum1 = reqName1, gradeNum1
-            subject.reqName2, subject.gradeNum2 = reqName2, gradeNum2
-            subject.reqName3, subject.gradeNum3 = reqName3, gradeNum3
-            subject.reqName4, subject.gradeNum4 = reqName4, gradeNum4
-            subject.reqName5, subject.gradeNum5 = reqName5, gradeNum5
+        subject.subName = subName
+        subject.numUnits = numUnits
+        subject.subStart = subStart
+        subject.subEnd = subEnd
+        subject.reqName1, subject.gradeNum1 = reqName1, gradeNum1
+        subject.reqName2, subject.gradeNum2 = reqName2, gradeNum2
+        subject.reqName3, subject.gradeNum3 = reqName3, gradeNum3
+        subject.reqName4, subject.gradeNum4 = reqName4, gradeNum4
+        subject.reqName5, subject.gradeNum5 = reqName5, gradeNum5
 
-            subject.save()
+        subject.save()
 
-        subjects = Subject.objects.all()
-        context = {'subjects': subjects, "subject_id": -1}
-        return render(request, 'edit_subject.html', context)
-    return redirect("login")
+    return redirect("editSub");
