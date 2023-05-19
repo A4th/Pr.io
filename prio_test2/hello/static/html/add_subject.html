@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script> -->
+        <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script>
         <title>Add Subject Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -17,17 +17,16 @@
                         {{ form }}
                         <div id="error-bar" class="error-bar"></div>
                         <div id="addSub">
-                            <label for="subName"> Subject Information </label>
-                            <input id="subName", name="subName" class="input-field" type="text" placeholder="...enter subject name"></input>
+                            <label for="subName"> Subject Name </label>
+                            <input id="subName" name="subName" class="input-field" type="text" placeholder="...enter subject name" required/>
                             <br><br>
                             <label for="numUnits"> No. of Units </label>
-                            <input id="numUnits", name="numUnits" class="input-field" type="number" placeholder="...enter number of units"></input>
+                            <input id="numUnits" name="numUnits" class="input-field" type="number" placeholder="...enter number of units" required/>
                             <br><br>
                         </div>
-                        <!-- {{ form.subName }} -->
+
                         <h3>Grading System / Breakdown</h3>
                         <div id="gradeSysBox">
-                            <!-- <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button> -->
                             <input name="reqName1" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
                             <input name="gradeNum1" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
 
@@ -43,22 +42,19 @@
                             <input name="reqName5" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
                             <input name="gradeNum5" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
 
-                            
-                                                        <!-- <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button> -->
-
                         </div><br><br>
                         
                         <div id="startEnd">
                             <label for="subStart"> Start Time </label>
-                            <input id="start", name="subStart" class="input-field" type="datetime-local"></input>
+                            <input id="start" name="subStart" class="input-field" type="datetime-local"/>
                             <br><br>
                             <label for="subEnd"> End Time </label>
-                            <input id="end", name="subEnd" class="input-field" type="datetime-local"></input>
+                            <input id="end" name="subEnd" class="input-field" type="datetime-local"/>
                             <br><br>
                         </div><br>
                         
-                        <input type="submit" value ="Submit" id="submit" class="control-button" onclick="inputsFunc()"></input>
-                        <input type="submit" value ="Cancel" id="cancel" class="control-button" href="#"></input>
+                        <input type="button" value ="Submit" id="submit-button" class="control-button" onclick="submitForm(this.form)"/>
+                        <input type="button" value ="Cancel" id="cancel-button" class="control-button" onclick="this.form.reset()"/>
                     </form>
     {% include "navigation_end.html" %}
     </body>

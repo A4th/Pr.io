@@ -10,14 +10,14 @@
     margin-left: 1%;
 }
 
-#submit, #cancel, #addCL{
+#submit-button, #cancel-button, #addCL{
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 0.5%;
     padding-bottom: 0.5%
 }
 
-#submit {
+#submit-button {
     margin-left: 55%;
     margin-right: 1%;
 }
