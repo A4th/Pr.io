@@ -2213,3 +2213,1040 @@ WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\hello\views.py changed, reloading.
 INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\PRIO_test2\urls.py changed, reloading.
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 1:03:49.796423
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:48:49.796423
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:51:49.796423
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 16:09:49.796423
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 1:00:49.796423
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-7 days, 1:15:49.796423
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:27:49.796423
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-5 days, 1:15:49.796423
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 1:03:49.796423
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	11 days, 1:17:49.796423
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 19:03:49.796423		-10 days, 1:03:49.796423
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:48:49.796423		-10 days, 7:48:49.796423
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:51:49.796423		-8 days, 13:51:49.796423
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:52:49.796423		-8 days, 16:09:49.796423
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 16:00:49.796423		-7 days, 1:00:49.796423
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:15:49.796423		-7 days, 1:15:49.796423
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:27:49.796423		-7 days, 4:27:49.796423
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:15:49.796423		-5 days, 1:15:49.796423
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 4:03:49.796423		5 days, 1:03:49.796423
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:17:49.796423		11 days, 1:17:49.796423
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 19:03:49.796423		-10 days, 1:03:49.796423
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:48:49.796423		-10 days, 7:48:49.796423
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:51:49.796423		-8 days, 13:51:49.796423
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:52:49.796423		-8 days, 16:09:49.796423
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 16:00:49.796423		-7 days, 1:00:49.796423
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:15:49.796423		-7 days, 1:15:49.796423
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:27:49.796423		-7 days, 4:27:49.796423
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:15:49.796423		-5 days, 1:15:49.796423
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 4:03:49.796423		5 days, 1:03:49.796423
+INFO:root:Cluster E
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:17:49.796423		11 days, 1:17:49.796423
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 1:03:38.568470
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:48:38.568470
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:51:38.568470
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 16:09:38.568470
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 1:00:38.568470
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-7 days, 1:15:38.568470
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:27:38.568470
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-5 days, 1:15:38.568470
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 1:03:38.568470
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	11 days, 1:17:38.568470
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 19:03:38.568470		-10 days, 1:03:38.568470
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:48:38.568470		-10 days, 7:48:38.568470
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:51:38.568470		-8 days, 13:51:38.568470
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:52:38.568470		-8 days, 16:09:38.568470
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 16:00:38.568470		-7 days, 1:00:38.568470
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:15:38.568470		-7 days, 1:15:38.568470
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:27:38.568470		-7 days, 4:27:38.568470
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:15:38.568470		-5 days, 1:15:38.568470
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 4:03:38.568470		5 days, 1:03:38.568470
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:17:38.568470		11 days, 1:17:38.568470
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 19:03:38.568470		-10 days, 1:03:38.568470
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:48:38.568470		-10 days, 7:48:38.568470
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:51:38.568470		-8 days, 13:51:38.568470
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:52:38.568470		-8 days, 16:09:38.568470
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 16:00:38.568470		-7 days, 1:00:38.568470
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:15:38.568470		-7 days, 1:15:38.568470
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:27:38.568470		-7 days, 4:27:38.568470
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:15:38.568470		-5 days, 1:15:38.568470
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 4:03:38.568470		5 days, 1:03:38.568470
+INFO:root:Cluster E
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:17:38.568470		11 days, 1:17:38.568470
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 1:00:45.259041
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:45:45.259041
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:48:45.259041
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 16:06:45.259041
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:57:45.259041
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-7 days, 1:12:45.259041
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:24:45.259041
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-5 days, 1:12:45.259041
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 1:00:45.259041
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	11 days, 1:14:45.259041
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 19:00:45.259041		-10 days, 1:00:45.259041
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:45:45.259041		-10 days, 7:45:45.259041
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:48:45.259041		-8 days, 13:48:45.259041
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:49:45.259041		-8 days, 16:06:45.259041
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:57:45.259041		-7 days, 0:57:45.259041
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:12:45.259041		-7 days, 1:12:45.259041
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:24:45.259041		-7 days, 4:24:45.259041
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:12:45.259041		-5 days, 1:12:45.259041
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 4:00:45.259041		5 days, 1:00:45.259041
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:14:45.259041		11 days, 1:14:45.259041
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 19:00:45.259041		-10 days, 1:00:45.259041
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:45:45.259041		-10 days, 7:45:45.259041
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:48:45.259041		-8 days, 13:48:45.259041
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:49:45.259041		-8 days, 16:06:45.259041
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:57:45.259041		-7 days, 0:57:45.259041
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:12:45.259041		-7 days, 1:12:45.259041
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:24:45.259041		-7 days, 4:24:45.259041
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:12:45.259041		-5 days, 1:12:45.259041
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 4:00:45.259041		5 days, 1:00:45.259041
+INFO:root:Cluster E
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:14:45.259041		11 days, 1:14:45.259041
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 1:00:21.775998
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:45:21.775998
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:48:21.775998
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 16:06:21.775998
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:57:21.775998
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-7 days, 1:12:21.775998
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:24:21.775998
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-5 days, 1:12:21.775998
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 1:00:21.775998
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	11 days, 1:14:21.775998
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 19:00:21.775998		-10 days, 1:00:21.775998
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:45:21.775998		-10 days, 7:45:21.775998
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:48:21.775998		-8 days, 13:48:21.775998
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:49:21.775998		-8 days, 16:06:21.775998
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:57:21.775998		-7 days, 0:57:21.775998
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:12:21.775998		-7 days, 1:12:21.775998
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:24:21.775998		-7 days, 4:24:21.775998
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:12:21.775998		-5 days, 1:12:21.775998
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 4:00:21.775998		5 days, 1:00:21.775998
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:14:21.775998		11 days, 1:14:21.775998
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 19:00:21.775998		-10 days, 1:00:21.775998
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:45:21.775998		-10 days, 7:45:21.775998
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:48:21.775998		-8 days, 13:48:21.775998
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:49:21.775998		-8 days, 16:06:21.775998
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:57:21.775998		-7 days, 0:57:21.775998
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:12:21.775998		-7 days, 1:12:21.775998
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:24:21.775998		-7 days, 4:24:21.775998
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:12:21.775998		-5 days, 1:12:21.775998
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 4:00:21.775998		5 days, 1:00:21.775998
+INFO:root:Cluster E
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:14:21.775998		11 days, 1:14:21.775998
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:59:44.413224
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:44:44.413224
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:47:44.413224
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 16:05:44.413224
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:56:44.413224
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-7 days, 1:11:44.413224
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:23:44.413224
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-5 days, 1:11:44.413224
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:59:44.413224
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	11 days, 1:13:44.413224
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:59:44.413224		-10 days, 0:59:44.413224
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:44:44.413224		-10 days, 7:44:44.413224
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:47:44.413224		-8 days, 13:47:44.413224
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:48:44.413224		-8 days, 16:05:44.413224
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:56:44.413224		-7 days, 0:56:44.413224
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:11:44.413224		-7 days, 1:11:44.413224
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:23:44.413224		-7 days, 4:23:44.413224
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:11:44.413224		-5 days, 1:11:44.413224
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:59:44.413224		5 days, 0:59:44.413224
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:13:44.413224		11 days, 1:13:44.413224
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:59:44.413224		-10 days, 0:59:44.413224
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:44:44.413224		-10 days, 7:44:44.413224
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:47:44.413224		-8 days, 13:47:44.413224
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:48:44.413224		-8 days, 16:05:44.413224
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:56:44.413224		-7 days, 0:56:44.413224
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:11:44.413224		-7 days, 1:11:44.413224
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:23:44.413224		-7 days, 4:23:44.413224
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:11:44.413224		-5 days, 1:11:44.413224
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:59:44.413224		5 days, 0:59:44.413224
+INFO:root:Cluster E
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:13:44.413224		11 days, 1:13:44.413224
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:59:29.768381
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:44:29.768381
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:47:29.768381
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 16:05:29.768381
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:56:29.768381
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-7 days, 1:11:29.768381
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:23:29.768381
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-5 days, 1:11:29.768381
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:59:29.768381
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	11 days, 1:13:29.768381
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:59:29.768381		-10 days, 0:59:29.768381
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:44:29.768381		-10 days, 7:44:29.768381
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:47:29.768381		-8 days, 13:47:29.768381
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:48:29.768381		-8 days, 16:05:29.768381
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:56:29.768381		-7 days, 0:56:29.768381
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:11:29.768381		-7 days, 1:11:29.768381
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:23:29.768381		-7 days, 4:23:29.768381
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:11:29.768381		-5 days, 1:11:29.768381
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:59:29.768381		5 days, 0:59:29.768381
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:13:29.768381		11 days, 1:13:29.768381
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:59:29.768381		-10 days, 0:59:29.768381
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:44:29.768381		-10 days, 7:44:29.768381
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:47:29.768381		-8 days, 13:47:29.768381
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:48:29.768381		-8 days, 16:05:29.768381
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:56:29.768381		-7 days, 0:56:29.768381
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:11:29.768381		-7 days, 1:11:29.768381
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:23:29.768381		-7 days, 4:23:29.768381
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:11:29.768381		-5 days, 1:11:29.768381
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:59:29.768381		5 days, 0:59:29.768381
+INFO:root:Cluster E
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:13:29.768381		11 days, 1:13:29.768381
+INFO:root:
+
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\hello\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\PRIO_test2\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\hello\urls.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:58:13.353972
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:43:13.353972
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:46:13.353972
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 16:04:13.353972
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:55:13.353972
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-7 days, 1:10:13.353972
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:22:13.353972
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-5 days, 1:10:13.353972
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:58:13.353972
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	11 days, 1:12:13.353972
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:58:13.353972		-10 days, 0:58:13.353972
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:43:13.353972		-10 days, 7:43:13.353972
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:46:13.353972		-8 days, 13:46:13.353972
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:47:13.353972		-8 days, 16:04:13.353972
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:55:13.353972		-7 days, 0:55:13.353972
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:10:13.353972		-7 days, 1:10:13.353972
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:22:13.353972		-7 days, 4:22:13.353972
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:10:13.353972		-5 days, 1:10:13.353972
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:58:13.353972		5 days, 0:58:13.353972
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:12:13.353972		11 days, 1:12:13.353972
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:58:13.353972		-10 days, 0:58:13.353972
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:43:13.353972		-10 days, 7:43:13.353972
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:46:13.353972		-8 days, 13:46:13.353972
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:47:13.353972		-8 days, 16:04:13.353972
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:55:13.353972		-7 days, 0:55:13.353972
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:10:13.353972		-7 days, 1:10:13.353972
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:22:13.353972		-7 days, 4:22:13.353972
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:10:13.353972		-5 days, 1:10:13.353972
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:58:13.353972		5 days, 0:58:13.353972
+INFO:root:Cluster E
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:12:13.353972		11 days, 1:12:13.353972
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:54:43.495348
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:39:43.495348
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:42:43.495348
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 16:00:43.495348
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:51:43.495348
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-7 days, 1:06:43.495348
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:18:43.495348
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-5 days, 1:06:43.495348
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:54:43.495348
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:58:43.495348
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	11 days, 1:08:43.495348
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:54:43.495348		-10 days, 0:54:43.495348
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:39:43.495348		-10 days, 7:39:43.495348
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:42:43.495348		-8 days, 13:42:43.495348
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:43:43.495348		-8 days, 16:00:43.495348
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:51:43.495348		-7 days, 0:51:43.495348
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:06:43.495348		-7 days, 1:06:43.495348
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:18:43.495348		-7 days, 4:18:43.495348
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:06:43.495348		-5 days, 1:06:43.495348
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:54:43.495348		5 days, 0:54:43.495348
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:58:43.495348		7 days, 7:58:43.495348
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:08:43.495348		11 days, 1:08:43.495348
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:54:43.495348		-10 days, 0:54:43.495348
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:39:43.495348		-10 days, 7:39:43.495348
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:42:43.495348		-8 days, 13:42:43.495348
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:43:43.495348		-8 days, 16:00:43.495348
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:51:43.495348		-7 days, 0:51:43.495348
+INFO:root:[ECE 164]	Lab Exercise 10		2023-05-13 11:23:00+00:00	1.000000	20.000000	-5 days, 16:06:43.495348		-7 days, 1:06:43.495348
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:18:43.495348		-7 days, 4:18:43.495348
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	seatwork 10		2023-05-15 11:23:00+00:00	1.000000	20.000000	-4 days, 22:06:43.495348		-5 days, 1:06:43.495348
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:54:43.495348		5 days, 0:54:43.495348
+INFO:root:Cluster E
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:58:43.495348		7 days, 7:58:43.495348
+INFO:root:Cluster F
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[ECE 164]	wonderfulproject		2023-05-31 11:25:00+00:00	1.000000	20.000000	6 days, 22:08:43.495348		11 days, 1:08:43.495348
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:53:50.305635
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:38:50.305635
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:41:50.305635
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 15:59:50.305635
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:50:50.305635
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:17:50.305635
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:53:50.305635
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:57:50.305635
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:53:50.305635		-10 days, 0:53:50.305635
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:38:50.305635		-10 days, 7:38:50.305635
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:41:50.305635		-8 days, 13:41:50.305635
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:42:50.305635		-8 days, 15:59:50.305635
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:50:50.305635		-7 days, 0:50:50.305635
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:17:50.305635		-7 days, 4:17:50.305635
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:53:50.305635		5 days, 0:53:50.305635
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:57:50.305635		7 days, 7:57:50.305635
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:53:50.305635		-10 days, 0:53:50.305635
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:38:50.305635		-10 days, 7:38:50.305635
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:41:50.305635		-8 days, 13:41:50.305635
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:42:50.305635		-8 days, 15:59:50.305635
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:50:50.305635		-7 days, 0:50:50.305635
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:17:50.305635		-7 days, 4:17:50.305635
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:53:50.305635		5 days, 0:53:50.305635
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:57:50.305635		7 days, 7:57:50.305635
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:53:24.720198
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:38:24.720198
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:41:24.720198
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 15:59:24.720198
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:50:24.720198
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:17:24.720198
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:53:24.720198
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:57:24.720198
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:53:24.720198		-10 days, 0:53:24.720198
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:38:24.720198		-10 days, 7:38:24.720198
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:41:24.720198		-8 days, 13:41:24.720198
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:42:24.720198		-8 days, 15:59:24.720198
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:50:24.720198		-7 days, 0:50:24.720198
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:17:24.720198		-7 days, 4:17:24.720198
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:53:24.720198		5 days, 0:53:24.720198
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:57:24.720198		7 days, 7:57:24.720198
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:53:24.720198		-10 days, 0:53:24.720198
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:38:24.720198		-10 days, 7:38:24.720198
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:41:24.720198		-8 days, 13:41:24.720198
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:42:24.720198		-8 days, 15:59:24.720198
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:50:24.720198		-7 days, 0:50:24.720198
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:17:24.720198		-7 days, 4:17:24.720198
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:53:24.720198		5 days, 0:53:24.720198
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:57:24.720198		7 days, 7:57:24.720198
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:53:18.093354
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:38:18.093354
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:41:18.093354
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 15:59:18.093354
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:50:18.093354
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:17:18.093354
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:53:18.093354
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:57:18.093354
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:53:18.093354		-10 days, 0:53:18.093354
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:38:18.093354		-10 days, 7:38:18.093354
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:41:18.093354		-8 days, 13:41:18.093354
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:42:18.093354		-8 days, 15:59:18.093354
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:50:18.093354		-7 days, 0:50:18.093354
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:17:18.093354		-7 days, 4:17:18.093354
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:53:18.093354		5 days, 0:53:18.093354
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:57:18.093354		7 days, 7:57:18.093354
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:53:18.093354		-10 days, 0:53:18.093354
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:38:18.093354		-10 days, 7:38:18.093354
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:41:18.093354		-8 days, 13:41:18.093354
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:42:18.093354		-8 days, 15:59:18.093354
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:50:18.093354		-7 days, 0:50:18.093354
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:17:18.093354		-7 days, 4:17:18.093354
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:53:18.093354		5 days, 0:53:18.093354
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:57:18.093354		7 days, 7:57:18.093354
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:49:44.284919
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:34:44.284919
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:37:44.284919
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 15:55:44.284919
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:46:44.284919
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:13:44.284919
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:49:44.284919
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:53:44.284919
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:49:44.284919		-10 days, 0:49:44.284919
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:34:44.284919		-10 days, 7:34:44.284919
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:37:44.284919		-8 days, 13:37:44.284919
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:38:44.284919		-8 days, 15:55:44.284919
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:46:44.284919		-7 days, 0:46:44.284919
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:13:44.284919		-7 days, 4:13:44.284919
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:49:44.284919		5 days, 0:49:44.284919
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:53:44.284919		7 days, 7:53:44.284919
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:49:44.284919		-10 days, 0:49:44.284919
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:34:44.284919		-10 days, 7:34:44.284919
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:37:44.284919		-8 days, 13:37:44.284919
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:38:44.284919		-8 days, 15:55:44.284919
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:46:44.284919		-7 days, 0:46:44.284919
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:13:44.284919		-7 days, 4:13:44.284919
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:49:44.284919		5 days, 0:49:44.284919
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:53:44.284919		7 days, 7:53:44.284919
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:43:58.079139
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:28:58.079139
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:31:58.079139
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 15:49:58.079139
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:40:58.079139
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:07:58.079139
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:43:58.079139
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:47:58.079139
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:43:58.079139		-10 days, 0:43:58.079139
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:28:58.079139		-10 days, 7:28:58.079139
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:31:58.079139		-8 days, 13:31:58.079139
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:32:58.079139		-8 days, 15:49:58.079139
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:40:58.079139		-7 days, 0:40:58.079139
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:07:58.079139		-7 days, 4:07:58.079139
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:43:58.079139		5 days, 0:43:58.079139
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:47:58.079139		7 days, 7:47:58.079139
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:43:58.079139		-10 days, 0:43:58.079139
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:28:58.079139		-10 days, 7:28:58.079139
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:31:58.079139		-8 days, 13:31:58.079139
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:32:58.079139		-8 days, 15:49:58.079139
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:40:58.079139		-7 days, 0:40:58.079139
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:07:58.079139		-7 days, 4:07:58.079139
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:43:58.079139		5 days, 0:43:58.079139
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:47:58.079139		7 days, 7:47:58.079139
+INFO:root:
+
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\PRIO_test2\urls.py changed, reloading.
+WARNING:django.request:Not Found: /hello/
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:43:33.814713
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:28:33.814713
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:31:33.814713
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 15:49:33.814713
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:40:33.814713
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:07:33.814713
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:43:33.814713
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:47:33.814713
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:43:33.814713		-10 days, 0:43:33.814713
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:28:33.814713		-10 days, 7:28:33.814713
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:31:33.814713		-8 days, 13:31:33.814713
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:32:33.814713		-8 days, 15:49:33.814713
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:40:33.814713		-7 days, 0:40:33.814713
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:07:33.814713		-7 days, 4:07:33.814713
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:43:33.814713		5 days, 0:43:33.814713
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:47:33.814713		7 days, 7:47:33.814713
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:43:33.814713		-10 days, 0:43:33.814713
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:28:33.814713		-10 days, 7:28:33.814713
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:31:33.814713		-8 days, 13:31:33.814713
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:32:33.814713		-8 days, 15:49:33.814713
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:40:33.814713		-7 days, 0:40:33.814713
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:07:33.814713		-7 days, 4:07:33.814713
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:43:33.814713		5 days, 0:43:33.814713
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:47:33.814713		7 days, 7:47:33.814713
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:43:23.039903
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:28:23.039903
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:31:23.039903
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 15:49:23.039903
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:40:23.039903
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:07:23.039903
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:43:23.039903
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:47:23.039903
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:43:23.039903		-10 days, 0:43:23.039903
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:28:23.039903		-10 days, 7:28:23.039903
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:31:23.039903		-8 days, 13:31:23.039903
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:32:23.039903		-8 days, 15:49:23.039903
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:40:23.039903		-7 days, 0:40:23.039903
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:07:23.039903		-7 days, 4:07:23.039903
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:43:23.039903		5 days, 0:43:23.039903
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:47:23.039903		7 days, 7:47:23.039903
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:43:23.039903		-10 days, 0:43:23.039903
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:28:23.039903		-10 days, 7:28:23.039903
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:31:23.039903		-8 days, 13:31:23.039903
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:32:23.039903		-8 days, 15:49:23.039903
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:40:23.039903		-7 days, 0:40:23.039903
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:07:23.039903		-7 days, 4:07:23.039903
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:43:23.039903		5 days, 0:43:23.039903
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:47:23.039903		7 days, 7:47:23.039903
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-10 days, 0:43:20.668265
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-10 days, 7:28:20.668265
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-8 days, 13:31:20.668265
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-8 days, 15:49:20.668265
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-7 days, 0:40:20.668265
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-7 days, 4:07:20.668265
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	5 days, 0:43:20.668265
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	7 days, 7:47:20.668265
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:43:20.668265		-10 days, 0:43:20.668265
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:28:20.668265		-10 days, 7:28:20.668265
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:31:20.668265		-8 days, 13:31:20.668265
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:32:20.668265		-8 days, 15:49:20.668265
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:40:20.668265		-7 days, 0:40:20.668265
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:07:20.668265		-7 days, 4:07:20.668265
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:43:20.668265		5 days, 0:43:20.668265
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:47:20.668265		7 days, 7:47:20.668265
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 18:43:20.668265		-10 days, 0:43:20.668265
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-6 days, 0:28:20.668265		-10 days, 7:28:20.668265
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-5 days, 11:31:20.668265		-8 days, 13:31:20.668265
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-5 days, 11:32:20.668265		-8 days, 15:49:20.668265
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-5 days, 15:40:20.668265		-7 days, 0:40:20.668265
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-5 days, 18:07:20.668265		-7 days, 4:07:20.668265
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 3:43:20.668265		5 days, 0:43:20.668265
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	4 days, 15:47:20.668265		7 days, 7:47:20.668265
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
