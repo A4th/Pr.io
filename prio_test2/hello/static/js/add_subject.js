@@ -22,7 +22,7 @@ function submitForm(form) {
     // Check if subject name already exists
     const newSub = document.getElementById("subName").value;
     const subjects = JSON.parse(document.getElementById('subjects-data').textContent);
-    const currsubject = document.getElementById("currsubject").value;
+    const currsubject = document.getElementById("currsubject")?.value;
     // console.log(newSub, Object.keys(subjects));
     if (Object.keys(subjects).find(subject => subject == newSub && subject != currsubject)) {
         showErrorBar(`Error: Subject <b>${newSub}</b> already exists.`);
