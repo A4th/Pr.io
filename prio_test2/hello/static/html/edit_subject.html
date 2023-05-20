@@ -35,7 +35,8 @@
 
                     <form method = "POST" action="{% url 'editSubForm' subject_id %}">
                         {% csrf_token %}
-                        {{ form }}
+                        <!-- submit current subject name as part of form -->
+                        <input type="hidden" value="{{ subject.subName }}" name="currsubject" id="currsubject"></input>
                         <div id="addSub">
                             {% if subject_id != -1 %}
                             <label for="subName"> New Subject Name </label>

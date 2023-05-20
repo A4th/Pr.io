@@ -131,7 +131,7 @@ def edit_subject(request):
     for sub in subjects:
         subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
 
-    context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": -1}
+    context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": -1, "subject": ""}
     return render(request, 'edit_subject.html', context)
     
 def subject_details(request):
