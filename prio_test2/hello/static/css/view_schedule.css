@@ -11,12 +11,18 @@
 }
 
 .fc .fc-button-primary:not(:disabled).fc-button-active {
-    background-color: #FF00FF;
     color: white;
+    font-family: 'Courier New', Courier, monospace;    
 }
 
-.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+/* .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
 
+} */
+
+.fc .fc-button{
+    background-color: #000000;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;    
 }
 
 .fc .fc-button-primary:disabled {
@@ -40,4 +46,55 @@
 
 .fc-timegrid-axis-frame, .fc-timegrid-slot-label-frame {
     color: black;
+}
+
+.fc-col-header-cell-cushion{
+    color:white
+}
+
+.fc-daygrid-day-number{
+    color:white
+}
+
+.fc-toolbar-title{
+    color:white
+}
+
+.fc-event-title{
+    color:white;
+}
+
+.fc-event-time{
+    color:white;
+}
+
+#calendar{
+    position: absolute;
+    background-color: rgb(52, 48, 48);
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 1%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 2.5%;
+    border: solid black;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    width: 85%;
+    height: 85%;
+    top: 52.5%;
+    left: 50%;
+    transform: translate(-52.5%, -52.5%);
+
+}
+
+#welcome{
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+
+:root {
+    --fc-today-bg-color: rgb(17 54 88 / 75%);
 }
