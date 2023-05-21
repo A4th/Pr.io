@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="background-image: url({% static 'img/13189.jpg' %});">
+    <head>
+
+    {% if form.errors %}
+        <p>ERROR</p>
+    {% endif %}
+
+      <title>Register | Pr.io</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"/>
+    </head>
+    <body>
+        <form action="{% url 'register' %}" method="POST" class="form-container">
+            {% csrf_token %}
+
+            {{ form }}
+
+            <input type="submit" value="Submit" class="control-button">
+        </form>
+    </body>

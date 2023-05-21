@@ -24,3 +24,16 @@
     text-decoration: none;
 }
 
+.control-button:hover {
+    background-color: purple;
+    color: white;
+}
+
+a:link, a:visited {
+    font-size: 20px;
+    color: white;
+}
+
+html {
+    background-image: url('photo-1528819027803-5473f2bf7633.jpg');
+}

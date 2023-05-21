@@ -3250,3 +3250,766 @@ INFO:root:
 
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /members/login_user/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'templates'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py", line 20, in login_user
+    return render(request, 'registration/login.html', {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 23: 'templates'. Did you forget to register or load this tag?
+ERROR:django.request:Internal Server Error: /members/login_user/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 1026, in find_library
+    return parser.libraries[name]
+           ~~~~~~~~~~~~~~~~^^^^^^
+KeyError: 'templates'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py", line 20, in login_user
+    return render(request, 'registration/login.html', {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 1088, in load
+    lib = find_library(parser, name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\defaulttags.py", line 1028, in find_library
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: 'templates' is not a registered tag library. Must be one of:
+admin_list
+admin_modify
+admin_urls
+cache
+i18n
+l10n
+log
+static
+tz
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /members/register/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py", line 27, in register_user
+    return render(request, 'resgitration/register.html', {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: resgitration/register.html
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /members/login_user/photo-1528819027803-5473f2bf7633.jpg
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /members/login_user/photo-1528819027803-5473f2bf7633.jpg
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\urls.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-12 days, 20:01:42.038336
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-11 days, 2:46:42.038336
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-9 days, 8:49:42.038336
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-9 days, 11:07:42.038336
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-9 days, 19:58:42.038336
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 23:25:42.038336
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 20:01:42.038336
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	6 days, 3:05:42.038336
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 0:01:42.038336		-12 days, 20:01:42.038336
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:46:42.038336		-11 days, 2:46:42.038336
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:49:42.038336		-9 days, 8:49:42.038336
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:50:42.038336		-9 days, 11:07:42.038336
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:58:42.038336		-9 days, 19:58:42.038336
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:25:42.038336		-9 days, 23:25:42.038336
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 9:01:42.038336		3 days, 20:01:42.038336
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 21:05:42.038336		6 days, 3:05:42.038336
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-7 days, 0:01:42.038336		-12 days, 20:01:42.038336
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:46:42.038336		-11 days, 2:46:42.038336
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:49:42.038336		-9 days, 8:49:42.038336
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:50:42.038336		-9 days, 11:07:42.038336
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:58:42.038336		-9 days, 19:58:42.038336
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:25:42.038336		-9 days, 23:25:42.038336
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 9:01:42.038336		3 days, 20:01:42.038336
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 21:05:42.038336		6 days, 3:05:42.038336
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /members/register/
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py", line 42, in register_user
+    return render(request, 'registration/register.html', {'form':form,})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 8: 'endif'. Did you forget to register or load this tag?
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-12 days, 19:50:22.139386
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-11 days, 2:35:22.139386
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-9 days, 8:38:22.139386
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-9 days, 10:56:22.139386
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-9 days, 19:47:22.139386
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 23:14:22.139386
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 19:50:22.139386
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	6 days, 2:54:22.139386
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:50:22.139386		-12 days, 19:50:22.139386
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:35:22.139386		-11 days, 2:35:22.139386
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:38:22.139386		-9 days, 8:38:22.139386
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:39:22.139386		-9 days, 10:56:22.139386
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:47:22.139386		-9 days, 19:47:22.139386
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:14:22.139386		-9 days, 23:14:22.139386
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:50:22.139386		3 days, 19:50:22.139386
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:54:22.139386		6 days, 2:54:22.139386
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:50:22.139386		-12 days, 19:50:22.139386
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:35:22.139386		-11 days, 2:35:22.139386
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:38:22.139386		-9 days, 8:38:22.139386
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:39:22.139386		-9 days, 10:56:22.139386
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:47:22.139386		-9 days, 19:47:22.139386
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:14:22.139386		-9 days, 23:14:22.139386
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:50:22.139386		3 days, 19:50:22.139386
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:54:22.139386		6 days, 2:54:22.139386
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-12 days, 19:50:18.036588
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-11 days, 2:35:18.036588
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-9 days, 8:38:18.036588
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-9 days, 10:56:18.036588
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-9 days, 19:47:18.036588
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 23:14:18.036588
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 19:50:18.036588
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	6 days, 2:54:18.036588
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:50:18.036588		-12 days, 19:50:18.036588
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:35:18.036588		-11 days, 2:35:18.036588
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:38:18.036588		-9 days, 8:38:18.036588
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:39:18.036588		-9 days, 10:56:18.036588
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:47:18.036588		-9 days, 19:47:18.036588
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:14:18.036588		-9 days, 23:14:18.036588
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:50:18.036588		3 days, 19:50:18.036588
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:54:18.036588		6 days, 2:54:18.036588
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:50:18.036588		-12 days, 19:50:18.036588
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:35:18.036588		-11 days, 2:35:18.036588
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:38:18.036588		-9 days, 8:38:18.036588
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:39:18.036588		-9 days, 10:56:18.036588
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:47:18.036588		-9 days, 19:47:18.036588
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:14:18.036588		-9 days, 23:14:18.036588
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:50:18.036588		3 days, 19:50:18.036588
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:54:18.036588		6 days, 2:54:18.036588
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-12 days, 19:47:13.166908
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-11 days, 2:32:13.166908
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-9 days, 8:35:13.166908
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-9 days, 10:53:13.166908
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-9 days, 19:44:13.166908
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 23:11:13.166908
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 19:47:13.166908
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	6 days, 2:51:13.166908
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:47:13.166908		-12 days, 19:47:13.166908
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:32:13.166908		-11 days, 2:32:13.166908
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:35:13.166908		-9 days, 8:35:13.166908
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:36:13.166908		-9 days, 10:53:13.166908
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:44:13.166908		-9 days, 19:44:13.166908
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:11:13.166908		-9 days, 23:11:13.166908
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:47:13.166908		3 days, 19:47:13.166908
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:51:13.166908		6 days, 2:51:13.166908
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:47:13.166908		-12 days, 19:47:13.166908
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:32:13.166908		-11 days, 2:32:13.166908
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:35:13.166908		-9 days, 8:35:13.166908
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:36:13.166908		-9 days, 10:53:13.166908
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:44:13.166908		-9 days, 19:44:13.166908
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:11:13.166908		-9 days, 23:11:13.166908
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:47:13.166908		3 days, 19:47:13.166908
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:51:13.166908		6 days, 2:51:13.166908
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-12 days, 19:47:10.657343
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-11 days, 2:32:10.657343
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-9 days, 8:35:10.657343
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-9 days, 10:53:10.657343
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-9 days, 19:44:10.657343
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 23:11:10.657343
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 19:47:10.657343
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	6 days, 2:51:10.657343
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:47:10.657343		-12 days, 19:47:10.657343
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:32:10.657343		-11 days, 2:32:10.657343
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:35:10.657343		-9 days, 8:35:10.657343
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:36:10.657343		-9 days, 10:53:10.657343
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:44:10.657343		-9 days, 19:44:10.657343
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:11:10.657343		-9 days, 23:11:10.657343
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:47:10.657343		3 days, 19:47:10.657343
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:51:10.657343		6 days, 2:51:10.657343
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:47:10.657343		-12 days, 19:47:10.657343
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:32:10.657343		-11 days, 2:32:10.657343
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:35:10.657343		-9 days, 8:35:10.657343
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:36:10.657343		-9 days, 10:53:10.657343
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:44:10.657343		-9 days, 19:44:10.657343
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:11:10.657343		-9 days, 23:11:10.657343
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:47:10.657343		3 days, 19:47:10.657343
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:51:10.657343		6 days, 2:51:10.657343
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-12 days, 19:47:05.903062
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-11 days, 2:32:05.903062
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-9 days, 8:35:05.903062
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-9 days, 10:53:05.903062
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-9 days, 19:44:05.903062
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 23:11:05.903062
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 19:47:05.903062
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	6 days, 2:51:05.903062
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:47:05.903062		-12 days, 19:47:05.903062
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:32:05.903062		-11 days, 2:32:05.903062
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:35:05.903062		-9 days, 8:35:05.903062
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:36:05.903062		-9 days, 10:53:05.903062
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:44:05.903062		-9 days, 19:44:05.903062
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:11:05.903062		-9 days, 23:11:05.903062
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:47:05.903062		3 days, 19:47:05.903062
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:51:05.903062		6 days, 2:51:05.903062
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:47:05.903062		-12 days, 19:47:05.903062
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:32:05.903062		-11 days, 2:32:05.903062
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:35:05.903062		-9 days, 8:35:05.903062
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:36:05.903062		-9 days, 10:53:05.903062
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:44:05.903062		-9 days, 19:44:05.903062
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:11:05.903062		-9 days, 23:11:05.903062
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:47:05.903062		3 days, 19:47:05.903062
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:51:05.903062		6 days, 2:51:05.903062
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-12 days, 19:45:17.536541
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-11 days, 2:30:17.536541
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-9 days, 8:33:17.536541
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-9 days, 10:51:17.536541
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-9 days, 19:42:17.536541
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 23:09:17.536541
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 19:45:17.536541
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	6 days, 2:49:17.536541
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:45:17.536541		-12 days, 19:45:17.536541
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:30:17.536541		-11 days, 2:30:17.536541
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:33:17.536541		-9 days, 8:33:17.536541
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:34:17.536541		-9 days, 10:51:17.536541
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:42:17.536541		-9 days, 19:42:17.536541
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:09:17.536541		-9 days, 23:09:17.536541
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:45:17.536541		3 days, 19:45:17.536541
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:49:17.536541		6 days, 2:49:17.536541
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 23:45:17.536541		-12 days, 19:45:17.536541
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-7 days, 5:30:17.536541		-11 days, 2:30:17.536541
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 16:33:17.536541		-9 days, 8:33:17.536541
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 16:34:17.536541		-9 days, 10:51:17.536541
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 20:42:17.536541		-9 days, 19:42:17.536541
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 23:09:17.536541		-9 days, 23:09:17.536541
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 8:45:17.536541		3 days, 19:45:17.536541
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 20:49:17.536541		6 days, 2:49:17.536541
+INFO:root:
+
+ERROR:django.request:Internal Server Error: /members/logout_user
+Traceback (most recent call last):
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\AppData\Local\Programs\Python\Python311\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py", line 24, in logout_user
+    messages.success(request, ("You were logged-out successfully" + str(request.get['username'])))
+                                                                        ^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'get'
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico

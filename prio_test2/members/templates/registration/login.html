@@ -1,11 +1,13 @@
 {% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-image: url({% static 'img/13189.jpg' %});">
     <head>
       <title>Login | Pr.io</title>
       <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"/>
     </head>
     <body>
+        <!-- <img src="{% static 'img/photo-1528819027803-5473f2bf7633.jpg' %}" alt="home" /> -->
         <form action="" method="POST" class="form-container">
             {% csrf_token %}
 
@@ -18,6 +20,11 @@
               <input type="password" class="form-control" name="password">
             </div>
 
-            <input type="submit" value="Submit" class="control-button">
+            <span>
+              <p>Not a member? <a style="color: pink" href="{% url 'register' %}">Sign up</a></p>
+              
+            </span>
+
+            <button type="submit" value="Submit" class="control-button">Submit</button>
         </form>
     </body>
