@@ -223,6 +223,6 @@ header {
 
 #logout {
     position: absolute;
-    right: 3%;
-    top: -6.5%;
+    right: 8%;
+    white-space: nowrap;
 }
