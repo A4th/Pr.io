@@ -6,11 +6,15 @@ from django.http import HttpResponse
 from .models import Subject,Task,DegreeProgram
 from hello.Prio_Algo import TaskSched, prioritizationAlgorithm
 import json
+from django.core.exceptions import PermissionDenied
 
 # Create your views here.
 def addSub(request):
     if not request.user.is_authenticated:
         return redirect("login")
+    
+    if not request.user.has_perm('hello.add_subject'):
+        raise PermissionDenied() 
 
     subjects_json = {}
     for sub in Subject.objects.all():
@@ -23,6 +27,9 @@ def addTask(request, subject_id=-1):
     if not request.user.is_authenticated:
         return redirect("login")
 
+    if not request.user.has_perm('hello.add_task'):
+        raise PermissionDenied() 
+    
     subjects = Subject.objects.all()
     context = {'subjects': subjects, "subject_id": subject_id}
     return render(request, "add_task.html",context)
@@ -84,7 +91,7 @@ def viewSched(request):
 def addSubForm(request):
     if not request.user.is_authenticated:
         return redirect("login")
-
+    
     if request.method == "POST":
         subName = request.POST["subName"]
         numUnits = request.POST["numUnits"]
@@ -125,6 +132,9 @@ def checkSub(request):
 def edit_subject(request):
     if not request.user.is_authenticated:
         return redirect("login")
+    
+    if not request.user.has_perm('hello.update_subject'):
+        raise PermissionDenied() 
 
     subjects = Subject.objects.all()
     subjects_json = {}
