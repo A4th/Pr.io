@@ -105,6 +105,8 @@ a:hover{
     height: 45px;
     border-radius: 50%;
     background-color: white;
+    position: absolute;
+    right: 2.5%;
 }
 
 .help:hover{
@@ -217,4 +219,10 @@ header {
   50% { transform: translateX(-5px) }
   75% { transform: translateX(5px) }
   100% { transform: translateX(0) }
+}
+
+#logout {
+    position: absolute;
+    right: 3%;
+    top: -6.5%;
 }
