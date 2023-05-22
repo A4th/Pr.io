@@ -7,6 +7,7 @@ from .models import Subject,Task,DegreeProgram
 from hello.Prio_Algo import TaskSched, prioritizationAlgorithm
 import json
 from django.core.exceptions import PermissionDenied
+from members.models import *
 
 # Create your views here.
 def addSub(request):
@@ -16,6 +17,7 @@ def addSub(request):
     if not request.user.has_perm('hello.add_subject'):
         raise PermissionDenied() 
 
+    Subject.enrolee = request.user.id
     subjects_json = {}
     for sub in Subject.objects.all():
         subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
