@@ -219,3 +219,9 @@ header {
     right: 3%;
     top: -6.5%;
 }
+
+.status {
+    font-family: "Montserrat", sans-serif;
+    font-style: 'Montserrat';
+    color: white;
+}
