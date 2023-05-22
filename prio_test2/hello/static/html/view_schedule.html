@@ -14,9 +14,19 @@
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth',
                     headerToolbar: {
-                        left: 'prev, next today',
+                        left: 'prev,next today',
                         center: 'title',
-                        right: 'dayGridMonth, timeGridWeek, timeGridDay'
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    },
+                    buttonText: {
+                        prevYear: 'Prev Year',
+                        nextYear: 'Next Year',
+                        year: 'Year',
+                        today: 'Today',
+                        month: 'Month',
+                        week: 'Week',
+                        day: 'Day',
+                        list: 'List',
                     },
 
                     events:[
