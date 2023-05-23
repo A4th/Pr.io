@@ -37,8 +37,13 @@ def register_user(request):
             email = form.cleaned_data['email']
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
+            is_active = form.cleaned_data['is_active']
 
-            user = authenticate(email=email, username=username, password=password)
+            is_superuser = form.cleaned_data['is_superuser']
+            is_staff = form.cleaned_data['is_staff']
+
+            user = authenticate(email=email, username=username, password=password, 
+                                is_active=is_active, is_superuser=is_superuser, is_staff=is_staff)
             login(request, user)
             messages.success(request, ("You were logged out successfully, " + str(username)))
 
