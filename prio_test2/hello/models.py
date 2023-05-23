@@ -5,15 +5,6 @@ from django.contrib.auth.models import User
 # from .current_user import get_current_user
 
 # Create your models here.
-
-class WebUser(models.Model):
-    firstName = models.CharField('First Name', max_length=25, blank=False)
-    lastName = models.CharField('Last Name', max_length=25, blank=False)
-    email = models.EmailField('User Email', unique=True, blank=False)
-
-    def __str__(self):
-        return self.firstName + ' ' + self.lastName
-
 class DegreeProgram(models.Model):
     degName = models.CharField(max_length=255)
     jsonData = models.JSONField()

@@ -6,4 +6,3 @@ from .models import *
 admin.site.register(Task)
 admin.site.register(Subject)
 admin.site.register(DegreeProgram)
-admin.site.register(WebUser)
