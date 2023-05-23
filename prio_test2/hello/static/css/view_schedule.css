@@ -12,7 +12,7 @@
 
 .fc .fc-button-primary:not(:disabled).fc-button-active {
     color: white;
-    font-family: 'Courier New', Courier, monospace;    
+    font-family: Arial, Helvetica, sans-serif;   
 }
 
 /* .fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
@@ -22,7 +22,7 @@
 .fc .fc-button{
     background-color: #000000;
     color: white;
-    font-family: 'Courier New', Courier, monospace;    
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .fc .fc-button-primary:disabled {
@@ -53,7 +53,9 @@
 }
 
 .fc-daygrid-day-number{
-    color:white
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:20px;
 }
 
 .fc-toolbar-title{
@@ -66,6 +68,11 @@
 
 .fc-event-time{
     color:white;
+}
+
+.fc-col-header-cell-cushion{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
 
 #calendar{
@@ -86,7 +93,6 @@
     top: 52.5%;
     left: 50%;
     transform: translate(-52.5%, -52.5%);
-
 }
 
 #welcome{
