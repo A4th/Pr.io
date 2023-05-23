@@ -178,10 +178,11 @@ def addTaskForm(request):
         reqType = request.POST["reqType"]
         taskName = request.POST["taskName"]
         dueDate = request.POST["dueDate"]
+        enrolee = request.user
 
         subject = get_object_or_404(Subject, pk=subject_id)
         addTask_details = Task(subName=subject,
-            reqType = reqType, taskName=taskName, dueDate=dueDate
+            reqType = reqType, taskName=taskName, dueDate=dueDate, enrolee=enrolee
         )
         addTask_details.save()
 
