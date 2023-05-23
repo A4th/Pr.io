@@ -58,7 +58,6 @@ a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 32px;
-/*     color: white; */
     text-decoration: none;
 }
 
@@ -83,13 +82,22 @@ a:hover{
 }
 
 
-.menu{
+.menu {
     color: white;
     margin: 5%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    text-decoration: none;
 }
 
 #help-text{
     color: black;
+    margin: 5%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    text-decoration: none;
 }
 
 .help{
@@ -224,4 +232,13 @@ header {
     font-family: "Montserrat", sans-serif;
     font-style: 'Montserrat';
     color: white;
+}
+
+#loggedIn {
+    color: white;
+    margin: 5%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
 }
