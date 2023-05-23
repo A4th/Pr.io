@@ -14,8 +14,8 @@
                     <a href="{% url 'addTask' %}" class="menu">Add Task</a><br><br>
                     <a href="{% url 'checkSub' %}" class="menu">Search</a><br><br>
                     <a href="{% url 'addSub' %}" class="menu">Add Subject</a><br><br>
-                    <a href="{% url 'editSub' %}" class="menu">Edit Subject</a><br><br>
-                    <p class='menu'>LOGGED-IN USER: {{user.email}}</p>
+                    <a href="{% url 'editSub' %}" class="menu">Edit Subject</a><br><br><br><br><br><br><br><br>
+                    <p id="loggedIn" >User: {{user}} {{user.email}}</p>
                 </div>
 
                 <div class = "main-container">
