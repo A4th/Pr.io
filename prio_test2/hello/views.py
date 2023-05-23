@@ -25,71 +25,6 @@ def addSub(request):
     context = {"subjects_json": subjects_json}
     return render(request, 'add_subject.html', context)
 
-def addTask(request, subject_id=-1):
-    if not request.user.is_authenticated:
-        return redirect("login")
-
-    if not request.user.has_perm('hello.add_task'):
-        raise PermissionDenied() 
-    
-    subjects = Subject.objects.filter(enrolee=request.user)
-    context = {'subjects': subjects, "subject_id": subject_id}
-    return render(request, "add_task.html",context)
-    
-def addCourseSub(request):
-    if not request.user.is_authenticated:
-        return redirect("login")
-
-    degreeprogram = DegreeProgram.objects.all()
-    context = {'degreeprogram': degreeprogram, "degprog_id": -1}
-    return render(request, "add_course_subjects.html", context)
-
-
-def addCourseSubList(request):
-    if not request.user.is_authenticated:
-        return redirect("login")
-
-    degreeprogram = DegreeProgram.objects.all()
-    context = {'degreeprogram': degreeprogram}
-    if request.method == "POST":
-        degprog_id = int(request.POST.get("degprog_id", -1))
-        context['degprog_id'] = degprog_id
-        if degprog_id != -1:
-            subjects = DegreeProgram.objects.get(pk=degprog_id).jsonData
-            subjects = list(sorted(subjects.keys()))
-            context['subjects'] = subjects
-
-    return render(request, "add_course_subjects.html", context)
-
-def addCourseSubForm(request):
-    if not request.user.is_authenticated:
-        return redirect("login")
-
-    if request.method == "POST":
-        degprog_id = int(request.POST.get("degprog_id"))
-        subjects = request.POST.getlist("chosenSubs");
-
-        subToUnit = DegreeProgram.objects.get(pk=degprog_id).jsonData
-        for subject in subjects:
-            newSub = Subject(subName=subject, numUnits= subToUnit[subject], enrolee=request.user)
-            newSub.save()
-
-    return redirect("addCourseSub")
-
-def viewSched(request):
-    if not request.user.is_authenticated:
-        return redirect("login")
-
-    tasks = []
-    # TODO: uses tasks directly for now; use return value of prioritizationAlgorithm to compute actual task schedules
-    tasks = prioritizationAlgorithm(Task.objects.all())
-    # for task in Task.objects.all():
-    #     task = TaskSched(task.taskName, None, task.dueDate)
-    #     tasks.append(task)
-
-    context = {'tasks': tasks}
-    return render(request, "view_schedule.html", context)
-
 def addSubForm(request):
     if not request.user.is_authenticated:
         return redirect("login")
@@ -124,6 +59,122 @@ def addSubForm(request):
     # go back to addSub page
     return redirect("addSub")
 
+
+def addTask(request, subject_id=-1):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    if not request.user.has_perm('hello.add_task'):
+        raise PermissionDenied() 
+    
+    subjects = Subject.objects.filter(enrolee=request.user)
+    context = {'subjects': subjects, "subject_id": subject_id}
+    return render(request, "add_task.html",context)
+
+def addTaskForm(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    subjects = Subject.objects.filter(enrolee=request.user)
+    context = {'subjects': subjects}
+    if request.method == "POST":
+        subject_id = request.POST["subject_id"]
+        reqType = request.POST["reqType"]
+        taskName = request.POST["taskName"]
+        dueDate = request.POST["dueDate"]
+        enrolee = request.user
+
+        subject = get_object_or_404(Subject, pk=subject_id)
+        addTask_details = Task(subName=subject,
+            reqType = reqType, taskName=taskName, dueDate=dueDate, enrolee=enrolee
+        )
+        addTask_details.save()
+
+        # TODO: make adding multiple tasks for same subject less cumbersome
+        # # in case user wants to add more tasks for same subject
+        # context["subject_id"] = subject_id
+
+    return redirect("addTask")
+    
+def task_details(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    subject_id = int(request.POST.get("subject_id", 0))
+    context = {'subjects': Subject.objects.all, "subject_id": subject_id}
+
+    if subject_id != -1:
+        subject = get_object_or_404(Subject, pk=subject_id)
+        context['subject'] =  subject
+
+        subject = get_object_or_404(Subject, pk=subject_id)
+        reqTypes = {
+            subject.reqName1: subject.gradeNum1,
+            subject.reqName2: subject.gradeNum2,
+            subject.reqName3: subject.gradeNum3,
+            subject.reqName4: subject.gradeNum4,
+            subject.reqName5: subject.gradeNum5
+        }
+
+        context['reqTypes'] = reqTypes
+    return render(request, 'add_task.html', context)
+
+
+def addCourseSub(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    degreeprogram = DegreeProgram.objects.all()
+    context = {'degreeprogram': degreeprogram, "degprog_id": -1}
+    return render(request, "add_course_subjects.html", context)
+
+def addCourseSubList(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    degreeprogram = DegreeProgram.objects.all()
+    context = {'degreeprogram': degreeprogram}
+    if request.method == "POST":
+        degprog_id = int(request.POST.get("degprog_id", -1))
+        context['degprog_id'] = degprog_id
+        if degprog_id != -1:
+            subjects = DegreeProgram.objects.get(pk=degprog_id).jsonData
+            subjects = list(sorted(subjects.keys()))
+            context['subjects'] = subjects
+
+    return render(request, "add_course_subjects.html", context)
+
+def addCourseSubForm(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    if request.method == "POST":
+        degprog_id = int(request.POST.get("degprog_id"))
+        subjects = request.POST.getlist("chosenSubs");
+
+        subToUnit = DegreeProgram.objects.get(pk=degprog_id).jsonData
+        for subject in subjects:
+            newSub = Subject(subName=subject, numUnits= subToUnit[subject], enrolee=request.user)
+            newSub.save()
+
+    return redirect("addCourseSub")
+
+
+def viewSched(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    tasks = []
+    # TODO: uses tasks directly for now; use return value of prioritizationAlgorithm to compute actual task schedules
+    tasks = prioritizationAlgorithm(Task.objects.filter(enrolee=request.user))
+    # for task in Task.objects.all():
+    #     task = TaskSched(task.taskName, None, task.dueDate)
+    #     tasks.append(task)
+
+    context = {'tasks': tasks}
+    return render(request, "view_schedule.html", context)
+
+
 def checkSub(request):
     if not request.user.is_authenticated:
         return redirect("login")
@@ -131,6 +182,7 @@ def checkSub(request):
     all_sub = Subject.objects.filter(enrolee=request.user)
     all_task = Task.objects.all
     return render(request,'check.html',{'all_sub':all_sub, 'all_task': all_task})
+    
     
 def edit_subject(request):
     if not request.user.is_authenticated:
@@ -167,54 +219,6 @@ def subject_details(request):
             context['subject'] =  subject
         return render(request, 'edit_subject.html', context)
     
-def addTaskForm(request):
-    if not request.user.is_authenticated:
-        return redirect("login")
-
-    subjects = Subject.objects.filter(enrolee=request.user)
-    context = {'subjects': subjects}
-    if request.method == "POST":
-        subject_id = request.POST["subject_id"]
-        reqType = request.POST["reqType"]
-        taskName = request.POST["taskName"]
-        dueDate = request.POST["dueDate"]
-        enrolee = request.user
-
-        subject = get_object_or_404(Subject, pk=subject_id)
-        addTask_details = Task(subName=subject,
-            reqType = reqType, taskName=taskName, dueDate=dueDate, enrolee=enrolee
-        )
-        addTask_details.save()
-
-        # TODO: make adding multiple tasks for same subject less cumbersome
-        # # in case user wants to add more tasks for same subject
-        # context["subject_id"] = subject_id
-
-    return redirect("addTask")
-    
-def task_details(request):
-    if not request.user.is_authenticated:
-        return redirect("login")
-
-    subject_id = int(request.POST.get("subject_id", 0))
-    context = {'subjects': Subject.objects.all(), "subject_id": subject_id}
-
-    if subject_id != -1:
-        subject = get_object_or_404(Subject, pk=subject_id)
-        context['subject'] =  subject
-
-        subject = get_object_or_404(Subject, pk=subject_id)
-        reqTypes = {
-            subject.reqName1: subject.gradeNum1,
-            subject.reqName2: subject.gradeNum2,
-            subject.reqName3: subject.gradeNum3,
-            subject.reqName4: subject.gradeNum4,
-            subject.reqName5: subject.gradeNum5
-        }
-
-        context['reqTypes'] = reqTypes
-    return render(request, 'add_task.html', context)
-
 def editSubForm(request, subject_id):
     if not request.user.is_authenticated:
         return redirect("login")
