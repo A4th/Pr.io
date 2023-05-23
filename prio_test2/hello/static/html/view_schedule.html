@@ -13,6 +13,7 @@
             document.addEventListener('DOMContentLoaded', function() {
                 var calendarEl = document.getElementById('calendar');
                 var calendar = new FullCalendar.Calendar(calendarEl, {
+<<<<<<< HEAD
                     left: 'prev,next today',	
                         center: 'title',	
                         right: 'dayGridMonth,timeGridWeek,timeGridDay'	
@@ -27,6 +28,24 @@
                         day: 'Day',	
                         list: 'List',	
                     },	
+=======
+                    initialView: 'dayGridMonth',
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    },
+                    buttonText: {
+                        prevYear: 'Prev Year',
+                        nextYear: 'Next Year',
+                        year: 'Year',
+                        today: 'Today',
+                        month: 'Month',
+                        week: 'Week',
+                        day: 'Day',
+                        list: 'List',
+                    },
+>>>>>>> 79e3be6eb9bde0989f4ff99f849ae32f0704b497
 
                     events:[
                     {% if tasks %}
