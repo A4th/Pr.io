@@ -13,10 +13,11 @@
     <body>
         <form action="{% url 'register' %}" method="POST" class="form-container">
             {% csrf_token %}
-
+            
+            <h3>PR.IO NEW USER REGISTRATION FORM</h3>
             {{ form.as_p }}
 
-            <input type="submit" value="Submit" class="control-button"><br><br><br>
+            <br><input type="submit" value="Submit" class="control-button"><br><br>
             <a href="{% url 'login' %}">Go back to Login Page</a>
         </form>
         

@@ -3,15 +3,19 @@
 .form-container {
     background-color: purple;
     padding-left: 5%;
-    padding-top: 5%;
+    padding-right: 5%;
+    padding-top: 2.5%;
     padding-bottom: 5%;
     font-family: "Montserrat", sans-serif;
     font-size: 24px;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     color: white;
+    width: 60%;
+    position: absolute;
+    left: 5%;
 }
 
 .control-button {
@@ -36,4 +40,34 @@ a:link, a:visited {
 
 html {
     background-image: url('photo-1528819027803-5473f2bf7633.jpg');
+}
+
+.input-field {
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
+    background-color: white;
+    background-position: 20px 20px;
+    color: black;
+    text-align: right;
+    width: 45%;
+    position: absolute;
+    right: 9%;
+    border-color: purple;
+}
+
+.input-field:hover {
+    color: white;
+    background-color: #6C457C;
+    background-position: 20px 20px;
+}
+
+.input-field::placeholder {
+    color: gray;
+    background-color: #5B345B;
+    background-position: 20px 20px;
+}
+
+.check-field {
+    position: absolute;
+    left: 40%;
 }
