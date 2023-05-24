@@ -19,8 +19,8 @@
                     <form method = "POST" action="{% url 'task_details' %}">
                         {% csrf_token %}
                         <label for="subject_id">Subject:</label>
-                        <select id="subject_id" name ="subject_id" class="dropdown" onchange="this.form.submit()"></input>
-                            <option value=-1>---SELECT SUBJECT---</option>
+                        <select id="subject_id" name ="subject_id" class="dropdown" onchange="subjectChanged(this.form)"></input>
+                            <option value=-1>--SELECT SUBJECT--</option>
                         {% if subjects %}
                         {% for subject in subjects %}
                         {% if subject.subName|length > 0 and subject.enrolee == user %}
@@ -47,17 +47,29 @@
                         <select id="reqField" name ="reqType" class="dropdown" required></input>
                         {% for reqName, gradeNum in reqTypes.items %}
                         {% if reqName|length > 0%}
-                            <option>{{ reqName }}</option>
+                            <option
+                            {% if prevReqType and reqName == prevReqType %}
+                            selected="selected"
+                            {% endif %}
+                            > {{ reqName }} </option>
                         {% endif %}
                         {% endfor %}
                         </select>
 
                             <br><br>
                             <label for="taskName"> Task Name: </label>
-                            <input id="taskName" name="taskName" class="input-field" type="text" required></input>
+                            <input id="taskName" name="taskName" class="input-field" type="text" required
+                            {% if prevTaskName %}
+                            value="{{ prevTaskName}}"
+                            {% endif %}
+                            ></input>
                             <br><br>
                             <label for="dueDate">Due Date: </label>
-                            <input id="dueDate" name="dueDate" class="input-field" type="datetime-local" required></input>
+                            <input id="dueDate" name="dueDate" class="input-field" type="datetime-local" required
+                            {% if prevDueDate %}
+                            value="{{ prevDueDate}}"
+                            {% endif %}
+                            ></input>
                             <br><br>
                         </div>
                         <div id = "taskPageInputButtons">

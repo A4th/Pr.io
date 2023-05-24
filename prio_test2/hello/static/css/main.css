@@ -77,7 +77,7 @@ a:hover{
     color: #CC00CC;
 }
 
-.details-pane{
+.details-pane {
     background-color: #e3d8d8;
     flex-basis: 25%;
     float: left;

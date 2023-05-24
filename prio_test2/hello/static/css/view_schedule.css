@@ -95,6 +95,11 @@
     transform: translate(-52.5%, -52.5%);
 }
 
+/* Ensure that scrollbar is hidden since calendar will automatically fit screen*/
+.fc .fc-scroller{
+    overflow: hidden !important;
+}
+
 #welcome{
     font-family: 'Courier New', Courier, monospace;
     margin-left: 3%;

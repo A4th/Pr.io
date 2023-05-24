@@ -4,7 +4,7 @@
 function submitForm(form) {
     // reset error bar on each form submission
     hideErrorBar();
-    let requiredFields = [ "#reqField", "#taskName", "#dueDate" ];
+    let requiredFields = [ "#reqType", "#taskName", "#dueDate" ];
 
     // Identify required inputs and their label names
     let requiredInputs = {};
@@ -30,5 +30,20 @@ function submitForm(form) {
     }
 
     // No validation errors, submit form
+    form.submit();
+}
+
+function subjectChanged(form) {
+    // add previous reqType, taskName, dueDate values
+    let fieldIDs = [ "reqType", "taskName", "dueDate" ];
+    for (const id of fieldIDs) {
+        // HACK: Add to form by appending hidden input elements
+        let addInput = document.createElement("input");
+        addInput.setAttribute("type", "hidden");
+        addInput.setAttribute("name", id);
+        addInput.setAttribute("value", document.getElementById(id)?.value);
+        form.appendChild(addInput);
+    }
+
     form.submit();
 }
