@@ -55,3 +55,9 @@ class Subject(models.Model):
     def save_model(self, request, obj, form, change):
         obj.enrolee = request.user.id
         super().save_model(request, obj, form, change)
+
+    def getSubStart(self):
+        return self.subStart.strftime("%H:%M") if self.subStart is not None else None
+
+    def getSubEnd(self):
+        return self.subEnd.strftime("%H:%M") if self.subEnd is not None else None
