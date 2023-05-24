@@ -16,7 +16,8 @@ function submitForm(form) {
             newSubDays.push(dayCheckbox.value);
     });
     // console.log(newSub, newStart, newEnd, newSubDays);
-    if (newStart != '' || newEnd != '' || newSubDays.length > 0) {
+    const schedRequired = newStart != '' || newEnd != '' || newSubDays.length > 0;
+    if (schedRequired) {
         requiredFields.push("#start", "#end")
     }
     // console.log(requiredFields);
@@ -38,13 +39,13 @@ function submitForm(form) {
     }
 
     // If start/end time is set, require at least one day
-    if ((newStart != '' || newEnd != '') && newSubDays.length == 0) {
+    if (schedRequired && newSubDays.length == 0) {
         showErrorBar(`Error: Please select the days for the subject schedule.`);
         return;
     }
 
     // Ensure that start time < end time
-    if (newStart >= newEnd) {
+    if (schedRequired && newStart >= newEnd) {
         showErrorBar(`Error: Start Time must be before End Time.`);
         return;
     }

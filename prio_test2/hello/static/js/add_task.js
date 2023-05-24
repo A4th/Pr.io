@@ -4,7 +4,7 @@
 function submitForm(form) {
     // reset error bar on each form submission
     hideErrorBar();
-    let requiredFields = [  "#taskName", "#dueDate" ];
+    let requiredFields = [ "#reqField", "#taskName", "#dueDate" ];
 
     // Identify required inputs and their label names
     let requiredInputs = {};
