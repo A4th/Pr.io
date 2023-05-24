@@ -5,9 +5,11 @@ from django.http import HttpResponse
 # from django.contrib.auth.decorators import login_required
 from .models import *
 from hello.Prio_Algo import TaskSched, prioritizationAlgorithm
-import json
 from django.core.exceptions import PermissionDenied
 from members.models import *
+
+import json
+from datetime import time
 
 
 # String representation for days of the week
@@ -23,9 +25,15 @@ def addSub(request):
     if not request.user.has_perm('hello.add_subject'):
         raise PermissionDenied() 
 
+    subjects = Subject.objects.filter(enrolee=request.user)
+    # Sort subjects by start time for more efficient overlap checking
+    # Sort subjects without time at the bottom since they won't lead to conflict anyway
+    noTime = time(hour=23, minute=59)
+    subjects = sorted(subjects, key=lambda subject: subject.subStart or noTime)
+
     subjects_json = {}
-    for sub in Subject.objects.filter(enrolee=request.user):
-        subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
+    for sub in subjects:
+        subjects_json[sub.subName] = {"start": sub.getSubStart(), "end": sub.getSubEnd(), "subjDays": sub.subjDays}
 
     context = {"subjects_json": subjects_json, "days": days}
     return render(request, 'add_subject.html', context)

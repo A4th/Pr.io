@@ -29,6 +29,48 @@ function submitForm(form) {
         return;
     }
 
+    // Check if subject's time schedule conflicts with another subject
+    const newStart = document.getElementById("start").value;
+    const newEnd = document.getElementById("end").value;
+    let newSubDays = [];
+    document.getElementsByName("subjDays").forEach((dayCheckbox) => {
+        if (dayCheckbox.checked)
+            newSubDays.push(dayCheckbox.value);
+    });
+    // console.log(newSub, newStart, newEnd, newSubDays);
+
+    if (newSubDays !== null || newSubDays.length > 0
+        && newStart != '' && newEnd != '') {
+        for (const subject in subjects) {
+            // If we are in edit subject page, the newest subject should not conflict with itself
+            if (subject == currsubject) continue;
+            // console.log(subject, subjects[subject]);
+
+            // If two subjects are not done in same day, then they won't overlap
+            const subDays = subjects[subject].subjDays ?? [];
+            // TODO: use more efficient intersection algorithm
+            const overlapDays = subDays.filter((day) => newSubDays.includes(day))
+            // console.log(overlapDays);
+            if (overlapDays.length == 0) continue;
+
+            // NOTE: since start and end times are the same for each day, we only compare once
+            const subStart = subjects[subject].start;
+            const subEnd = subjects[subject].end;
+
+            // overlap range is given by overlapStart = max(start1, start2) and overlapEnd = min(end1, end2))
+            // Hence if overlapStart is less than overlapEnd, there is no overlap
+            const overlapStart = (subStart > newStart) ? subStart : newStart;       // MAX start
+            const overlapEnd = (subEnd < newEnd) ? subEnd : newEnd;                 // MIN endd
+            // console.log("Overlap time", overlapStart, overlapEnd);
+            if (overlapStart < overlapEnd) {
+                // TODO: use AM/PM format for time
+                // NOTE: Only prints days with overlap
+                showErrorBar(`Error: Schedule conflicts with <b>${subject} (${subStart}-${subEnd} ${overlapDays.join(" ")})</b>.`);
+                return;
+            }
+        }
+    }
+
     // No validation errors, submit form
     form.submit();
 }
