@@ -3,9 +3,27 @@
 function submitForm(form) {
     // reset error bar on each form submission
     hideErrorBar();
+    let requiredFields = [ "#subName", "#numUnits" ];
+
+    // If one of the start time, end time, and subject days have value,
+    // then ALL other fields in the group must have values
+    // NOTE: requirement for subjDays is handled in a different block since it has no single id
+    const newStart = document.getElementById("start").value;
+    const newEnd = document.getElementById("end").value;
+    let newSubDays = [];
+    document.getElementsByName("subjDays").forEach((dayCheckbox) => {
+        if (dayCheckbox.checked)
+            newSubDays.push(dayCheckbox.value);
+    });
+    // console.log(newSub, newStart, newEnd, newSubDays);
+    if (newStart != '' || newEnd != '' || newSubDays.length > 0) {
+        requiredFields.push("#start", "#end")
+    }
+    // console.log(requiredFields);
+
     // Identify required inputs and their label names
     let requiredInputs = {};
-    for (let fieldID of [ "#subName", "#numUnits" ]) {
+    for (let fieldID of requiredFields) {
         requiredInputs[fieldID] = document.querySelector(fieldID).labels[0].textContent;
     }
 
@@ -19,6 +37,18 @@ function submitForm(form) {
         };
     }
 
+    // If start/end time is set, require at least one day
+    if ((newStart != '' || newEnd != '') && newSubDays.length == 0) {
+        showErrorBar(`Error: Please select the days for the subject schedule.`);
+        return;
+    }
+
+    // Ensure that start time < end time
+    if (newStart >= newEnd) {
+        showErrorBar(`Error: Start Time must be before End Time.`);
+        return;
+    }
+
     // Check if subject name already exists
     const newSub = document.getElementById("subName").value;
     const subjects = JSON.parse(document.getElementById('subjects-data').textContent);
@@ -30,17 +60,7 @@ function submitForm(form) {
     }
 
     // Check if subject's time schedule conflicts with another subject
-    const newStart = document.getElementById("start").value;
-    const newEnd = document.getElementById("end").value;
-    let newSubDays = [];
-    document.getElementsByName("subjDays").forEach((dayCheckbox) => {
-        if (dayCheckbox.checked)
-            newSubDays.push(dayCheckbox.value);
-    });
-    // console.log(newSub, newStart, newEnd, newSubDays);
-
-    if (newSubDays !== null || newSubDays.length > 0
-        && newStart != '' && newEnd != '') {
+    if (newSubDays.length > 0 && newStart != '' && newEnd != '') {
         for (const subject in subjects) {
             // If we are in edit subject page, the newest subject should not conflict with itself
             if (subject == currsubject) continue;
