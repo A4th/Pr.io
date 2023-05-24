@@ -116,8 +116,16 @@ def task_details(request):
     if not request.user.is_authenticated:
         return redirect("login")
 
+
     subject_id = int(request.POST.get("subject_id", 0))
-    context = {'subjects': Subject.objects.filter(enrolee=request.user), "subject_id": subject_id}
+    # Old values from previous form (e.g. when values were edited before subject is chose)
+    reqType = request.POST.get("reqType", "")
+    taskName = request.POST.get("taskName", "")
+    dueDate = request.POST.get("dueDate", None)
+    enrolee = request.user
+
+    context = {'subjects': Subject.objects.filter(enrolee=enrolee), "subject_id": subject_id,
+               "prevTaskName": taskName, "prevDueDate": dueDate}
 
     if subject_id != -1:
         subject = get_object_or_404(Subject, pk=subject_id)
@@ -132,7 +140,13 @@ def task_details(request):
             subject.reqName5: subject.gradeNum5
         }
 
+        # Only keep previous reqType value if it is still present in new subject
+        if reqType not in reqTypes:
+            reqType = None
+
         context['reqTypes'] = reqTypes
+        context['prevReqType'] = reqType
+
     return render(request, 'add_task.html', context)
 
 
