@@ -6099,6 +6099,8 @@ WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
+<<<<<<< HEAD
+=======
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\members\views.py changed, reloading.
@@ -6121,6 +6123,7 @@ WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
+>>>>>>> origin/main
 INFO:root:Step 1. Sort subjects by due date
 INFO:root:Subject	Task			Due Date		Units		% of Grade
 INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000
@@ -6135,6 +6138,16 @@ INFO:root:
 
 INFO:root:Step 2. compute absolute time remaining
 INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+<<<<<<< HEAD
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-12 days, 7:27:35.563863
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-12 days, 14:12:35.563863
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-10 days, 20:15:35.563863
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-10 days, 22:33:35.563863
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-9 days, 7:24:35.563863
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 10:51:35.563863
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	3 days, 7:27:35.563863
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	5 days, 14:31:35.563863
+=======
 INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-13 days, 23:52:28.449812
 INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-12 days, 6:37:28.449812
 INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-10 days, 12:40:28.449812
@@ -6143,10 +6156,21 @@ INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-10 days, 
 INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-9 days, 3:16:28.449812
 INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 23:52:28.449812
 INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	5 days, 6:56:28.449812
+>>>>>>> origin/main
 INFO:root:
 
 INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
 INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+<<<<<<< HEAD
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 16:10:35.563863		-12 days, 7:27:35.563863
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-8 days, 21:55:35.563863		-12 days, 14:12:35.563863
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 8:58:35.563863		-10 days, 20:15:35.563863
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 8:59:35.563863		-10 days, 22:33:35.563863
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 13:07:35.563863		-9 days, 7:24:35.563863
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 15:34:35.563863		-9 days, 10:51:35.563863
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 1:10:35.563863		3 days, 7:27:35.563863
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 13:14:35.563863		5 days, 14:31:35.563863
+=======
 INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 11:52:28.449812		-13 days, 23:52:28.449812
 INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-8 days, 17:37:28.449812		-12 days, 6:37:28.449812
 INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 4:40:28.449812		-10 days, 12:40:28.449812
@@ -6155,11 +6179,30 @@ INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 8
 INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 11:16:28.449812		-9 days, 3:16:28.449812
 INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	1 day, 20:52:28.449812		2 days, 23:52:28.449812
 INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 8:56:28.449812		5 days, 6:56:28.449812
+>>>>>>> origin/main
 INFO:root:
 
 INFO:root:Step 4. Group requirements into clusters
 INFO:root:Cluster A
 INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+<<<<<<< HEAD
+INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 16:10:35.563863		-12 days, 7:27:35.563863
+INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-8 days, 21:55:35.563863		-12 days, 14:12:35.563863
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 149]	Quiz # 1		2023-05-12 23:59:00+00:00	4.000000	50.000000	-6 days, 8:58:35.563863		-10 days, 20:15:35.563863
+INFO:root:[cs165]	LE2		2023-05-13 02:17:00+00:00	3.000000	30.000000	-6 days, 8:59:35.563863		-10 days, 22:33:35.563863
+INFO:root:[Math 23]	k19		2023-05-13 11:08:00+00:00	4.000000	40.000000	-6 days, 13:07:35.563863		-9 days, 7:24:35.563863
+INFO:root:[Math 23]	Problem Set 1		2023-05-13 14:35:00+00:00	4.000000	5.000000	-6 days, 15:34:35.563863		-9 days, 10:51:35.563863
+INFO:root:Cluster C
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS270]	aasas		2023-05-25 11:11:00+00:00	4.000000	10.000000	2 days, 1:10:35.563863		3 days, 7:27:35.563863
+INFO:root:Cluster D
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Exam 01		2023-05-27 18:15:00+00:00	3.000000	50.000000	3 days, 13:14:35.563863		5 days, 14:31:35.563863
+INFO:root:
+
+=======
 INFO:root:[CS270]	abcvasfdasf		2023-05-10 11:11:00+00:00	4.000000	10.000000	-8 days, 11:52:28.449812		-13 days, 23:52:28.449812
 INFO:root:[CS 150]	hw2		2023-05-10 17:56:00+00:00	3.000000	0.000000	-8 days, 17:37:28.449812		-12 days, 6:37:28.449812
 INFO:root:Cluster B
@@ -9677,3 +9720,4 @@ WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 WARNING:django.request:Not Found: /favicon.ico
 INFO:django.utils.autoreload:C:\Users\Lenovo x240\Pr.io\prio_test2\hello\models.py changed, reloading.
+>>>>>>> origin/main

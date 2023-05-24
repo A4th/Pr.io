@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/view_schedule.css' %}"/>
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.5/index.global.min.js'></script>
+        <!-- <script src='fullcalendar-main/fullcalendar-main/scripts/standard-scripts.js'></script> -->
         <!-- TODO: Remove dummy/placeholder values below-->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -14,9 +15,19 @@
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth',
                     headerToolbar: {
-                        left: 'prev, next today',
+                        left: 'prev,next today',
                         center: 'title',
-                        right: 'dayGridMonth, timeGridWeek, timeGridDay'
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    },
+                    buttonText: {
+                        prevYear: 'Prev Year',
+                        nextYear: 'Next Year',
+                        year: 'Year',
+                        today: 'Today',
+                        month: 'Month',
+                        week: 'Week',
+                        day: 'Day',
+                        list: 'List',
                     },
 
                     events:[
@@ -39,9 +50,9 @@
     </head>
     <body>
     {% include "navigation_start.html" %}
-                    <h3>Hello {{ user }}! Welcome to PR.IO!</h3>
-                    <!-- <img src="wip.png" style="display: flex; justify-content: center;"> -->
-                    <div id = 'calendar'></div>
+        <!-- <h3 id="welcome">Hello &ltname&gt! Welcome to PR.IO!</h3> -->
+        <!-- <img src="wip.png" style="display: flex; justify-content: center;"> -->
+        <div id ="calendar"></div>
     {% include "navigation_end.html" %}
     </body>
 </html>
