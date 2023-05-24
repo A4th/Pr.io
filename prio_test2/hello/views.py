@@ -39,7 +39,9 @@ def addSubForm(request):
         reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
         reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
         reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
- 
+        subjDays = request.POST.getlist("subjDays")
+        assert(type(subjDays) == list)
+
         user = request.user
 
         gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5 = map(lambda num: num or 0,
@@ -52,7 +54,8 @@ def addSubForm(request):
             reqName2=reqName2, gradeNum2=gradeNum2,
             reqName3=reqName3, gradeNum3=gradeNum3,
             reqName4=reqName4, gradeNum4=gradeNum4,
-            reqName5=reqName5, gradeNum5=gradeNum5, enrolee=user
+            reqName5=reqName5, gradeNum5=gradeNum5,
+            subjDays=subjDays, enrolee=user
         )
         addSub_details.save()
 
