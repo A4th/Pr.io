@@ -208,9 +208,14 @@ def edit_subject(request):
         raise PermissionDenied() 
 
     subjects = Subject.objects.filter(enrolee=request.user)
+    # Sort subjects by start time for more efficient overlap checking
+    # Sort subjects without time at the bottom since they won't lead to conflict anyway
+    noTime = time(hour=23, minute=59)
+    subjects = sorted(subjects, key=lambda subject: subject.subStart or noTime)
+
     subjects_json = {}
     for sub in subjects:
-        subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd, "subjDays": sub.subjDays}
+        subjects_json[sub.subName] = {"start": sub.getSubStart(), "end": sub.getSubEnd(), "subjDays": sub.subjDays}
 
     context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": -1, "subject": "", "days": days}
     return render(request, 'edit_subject.html', context)
@@ -223,10 +228,14 @@ def subject_details(request):
         subject_id = int(request.POST.get("subject_id", 0))
 
         subjects = Subject.objects.filter(enrolee=request.user)
-        subjects_json = {}
+        # Sort subjects by start time for more efficient overlap checking
+        # Sort subjects without time at the bottom since they won't lead to conflict anyway
+        noTime = time(hour=23, minute=59)
+        subjects = sorted(subjects, key=lambda subject: subject.subStart or noTime)
 
+        subjects_json = {}
         for sub in subjects:
-            subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd, "subjDays": sub.subjDays}
+            subjects_json[sub.subName] = {"start": sub.getSubStart(), "end": sub.getSubEnd(), "subjDays": sub.subjDays}
 
         context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": subject_id, "days": days}
 
