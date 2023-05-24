@@ -77,6 +77,14 @@
                             <label for="subEnd">Edit End Time </label>
                             <input id="end" name="subEnd" value="{{ subject.getSubEnd }}" class="input-field" type="time"></input>
                             <br><br>
+
+                            {% for day in days %}
+                            <label><input type="checkbox" value="{{ day }}" name="subjDays"
+                            {% if day in subject.subjDays %}
+                            checked
+                            {% endif %}
+                            ></input>{{ day }}</label>
+                            {% endfor %}
                         </div><br>
 
                         <input type="button" value ="Save" id="submit-button" class="control-button" onclick="submitForm(this.form)"

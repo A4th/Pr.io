@@ -202,9 +202,9 @@ def edit_subject(request):
     subjects = Subject.objects.filter(enrolee=request.user)
     subjects_json = {}
     for sub in subjects:
-        subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
+        subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd, "subjDays": sub.subjDays}
 
-    context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": -1, "subject": ""}
+    context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": -1, "subject": "", "days": days}
     return render(request, 'edit_subject.html', context)
     
 def subject_details(request):
@@ -218,9 +218,9 @@ def subject_details(request):
         subjects_json = {}
 
         for sub in subjects:
-            subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
+            subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd, "subjDays": sub.subjDays}
 
-        context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": subject_id}
+        context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": subject_id, "days": days}
 
         if subject_id != -1:
             subject = get_object_or_404(Subject, pk=subject_id)
@@ -242,6 +242,7 @@ def editSubForm(request, subject_id):
         reqName3, gradeNum3 = request.POST["reqName3"], request.POST["gradeNum3"]
         reqName4, gradeNum4 = request.POST["reqName4"], request.POST["gradeNum4"]
         reqName5, gradeNum5 = request.POST["reqName5"], request.POST["gradeNum5"]
+        subjDays = request.POST.getlist("subjDays")
 
         gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5 = map(lambda num: num or 0,
                                         (gradeNum1, gradeNum2, gradeNum3, gradeNum4, gradeNum5))
@@ -256,6 +257,7 @@ def editSubForm(request, subject_id):
         subject.reqName3, subject.gradeNum3 = reqName3, gradeNum3
         subject.reqName4, subject.gradeNum4 = reqName4, gradeNum4
         subject.reqName5, subject.gradeNum5 = reqName5, gradeNum5
+        subject.subjDays = subjDays
 
         subject.save()
 
