@@ -9,6 +9,12 @@ import json
 from django.core.exceptions import PermissionDenied
 from members.models import *
 
+
+# String representation for days of the week
+# NOTE: made global since multiple view functions need it
+days = ["M", "T", "W", "Th", "Sat", "Sun"]
+
+
 # Create your views here.
 def addSub(request):
     if not request.user.is_authenticated:
@@ -21,8 +27,7 @@ def addSub(request):
     for sub in Subject.objects.filter(enrolee=request.user):
         subjects_json[sub.subName] = {"start": sub.subStart, "end": sub.subEnd}
 
-
-    context = {"subjects_json": subjects_json}
+    context = {"subjects_json": subjects_json, "days": days}
     return render(request, 'add_subject.html', context)
 
 def addSubForm(request):

@@ -54,12 +54,9 @@
                             <input id="end" name="subEnd" class="input-field" type="time"/>
                             <br><br>
 
-                           <label><input type="checkbox" value="M" name="subjDays"></input>M</label>
-                           <label><input type="checkbox" value="T" name="subjDays"></input>T</label>
-                           <label><input type="checkbox" value="W" name="subjDays"></input>W</label>
-                           <label><input type="checkbox" value="Th" name="subjDays"></input>Th</label>
-                           <label><input type="checkbox" value="Sat" name="subjDays"></input>Sat</label>
-                           <label><input type="checkbox" value="Sun" name="subjDays"></input>Sun</label>
+                            {% for day in days %}
+                            <label><input type="checkbox" value="{{ day }}" name="subjDays"></input>{{ day }}</label>
+                            {% endfor %}
                         </div><br>
                         
                         <input type="button" value ="Submit" id="submit-button" class="control-button" onclick="submitForm(this.form)"/>
