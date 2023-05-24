@@ -14,7 +14,7 @@ from datetime import time
 
 # String representation for days of the week
 # NOTE: made global since multiple view functions need it
-days = ["M", "T", "W", "Th", "Sat", "Sun"]
+days = ["M", "T", "W", "Th", "F", "Sat", "Sun"]
 
 
 # Create your views here.
