@@ -13,15 +13,15 @@
 
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Username:</label>
-              <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+              <input type="text" class="input-field" name="username" aria-describedby="emailHelp" placeholder="..username"><br>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password:</label>
-              <input type="password" class="form-control" name="password">
+              <input type="password" class="input-field" name="password" placeholder="..password"><br>
             </div>
 
             <span>
-              <p>Not a member? <a style="color: pink" href="{% url 'register' %}">Sign up</a></p>
+              <p class="form-label">Not a member? <a style="color: pink" href="{% url 'register' %}">Sign up</a></p>
               
             </span>
 
