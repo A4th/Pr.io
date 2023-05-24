@@ -13,12 +13,14 @@
     <body>
     {% include "navigation_start.html" %}
                     <!-- <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a> -->
-                    <h3>ADD TASK INFORMATION</h3>
+
+                    <h3>ADD TASK INFORMATION:</h3>
+                    <div id = "addTaskFields">
                     <form method = "POST" action="{% url 'task_details' %}">
                         {% csrf_token %}
                         <label for="subject_id">Subject:</label>
                         <select id="subject_id" name ="subject_id" class="dropdown" onchange="this.form.submit()"></input>
-                            <option value=-1>--SELECT SUBJECT--</option>
+                            <option value=-1>---SELECT SUBJECT---</option>
                         {% if subjects %}
                         {% for subject in subjects %}
                         {% if subject.subName|length > 0 and subject.enrolee == user %}
@@ -32,7 +34,7 @@
                         {% endif %}
                         </select>
                     </form>
-
+                    <br>
                     <form method = "POST" action="{% url 'addTaskForm' %}">
                         <!-- hidden input to hold subject_id so that it is included in form POST-->
                         <input type="hidden" value="{{ subject_id }}" name="subject_id">
@@ -41,7 +43,7 @@
                         <div id="error-bar" class="error-bar"></div>
                         <div id="addSub">
 
-                        <label for="reqField"> Input Requirement Type</label>
+                        <label for="reqField"> Input Requirement Type:</label>
                         <select id="reqField" name ="reqType" class="dropdown" required></input>
                         {% for reqName, gradeNum in reqTypes.items %}
                         {% if reqName|length > 0%}
@@ -51,18 +53,20 @@
                         </select>
 
                             <br><br>
-                            <label for="taskName"> Task Name </label>
+                            <label for="taskName"> Task Name: </label>
                             <input id="taskName" name="taskName" class="input-field" type="text" required></input>
                             <br><br>
-                            <label for="dueDate">Due Date </label>
+                            <label for="dueDate">Due Date: </label>
                             <input id="dueDate" name="dueDate" class="input-field" type="datetime-local" required></input>
                             <br><br>
-
                         </div>
-
+                        <div id = "taskPageInputButtons">
                         <input type="button" value ="Save" id="submit-button" class="control-button" onclick="submitForm(this.form)"></input>
                         <input type="button" value ="Cancel" id="cancel-button" class="control-button" href="this.form.reset()"></input>
+                        <div>
                     </form>
+                </div>
     {% include "navigation_end.html" %}
+    
     </body>
 </html>
