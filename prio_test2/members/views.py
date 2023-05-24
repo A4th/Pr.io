@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
+from .forms import *
+from django.contrib.auth.models import Group
 
 # Create your views here.
 
@@ -26,17 +28,27 @@ def logout_user(request):
 
 def register_user(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = RegisterUserForm(request.POST)
         if form.is_valid():
-            form.save()
+            hello = form.save()
+            group = Group.objects.get(name='Default_user')
+            hello.groups.add(group)
+
+            email = form.cleaned_data['email']
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
-            user = authenticate(username=username, password=password)
+            is_active = form.cleaned_data['is_active']
+
+            is_superuser = form.cleaned_data['is_superuser']
+            is_staff = form.cleaned_data['is_staff']
+
+            user = authenticate(email=email, username=username, password=password, 
+                                is_active=is_active, is_superuser=is_superuser, is_staff=is_staff)
             login(request, user)
-            # messages.success(request, ("You were logged out successfully, " + str(username)))
+            messages.success(request, ("You were logged out successfully, " + str(username)))
 
             return redirect('viewSched')
     else:
-        form = UserCreationForm()
+        form = RegisterUserForm()
 
     return render(request, 'registration/register.html', {'form':form,})

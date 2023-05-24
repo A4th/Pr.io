@@ -12,13 +12,21 @@
     {% include "navigation_start.html" %}
                     <!-- <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a> -->
                     <h3>SUBJECTS SAVED:</h3>
-                       {% for item in all_sub %}
-                         <label>{{item}}</label><br>
+                       {% for sub in all_sub %}
+                          {% if user == sub.enrolee %}
+                            <label>{{sub}}</label><br>
+                          {% endif %}
                        {% endfor %}
                     <h3>TASKS SAVED: (Subject: Task Name)</h3>
-                       {% for item in all_task %}
-                         <label>{{item.subName}}: {{item}}, {{item.dueDate}}</label><br>
+                    {% for sub in all_sub %}
+                    {% if user == sub.enrolee %}
+                       {% for task in all_task %}
+                         {% if sub == task.subName %}
+                         <label>{{task.subName}}: {{task}}, {{task.dueDate}}</label><br>
+                         {% endif %}
                        {% endfor %}
+                    {% endif %}
+                    {% endfor %}
     {% include "navigation_end.html" %}
     </body>
 </html>
