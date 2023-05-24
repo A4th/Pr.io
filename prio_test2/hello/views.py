@@ -117,7 +117,7 @@ def task_details(request):
         return redirect("login")
 
     subject_id = int(request.POST.get("subject_id", 0))
-    context = {'subjects': Subject.objects.all, "subject_id": subject_id}
+    context = {'subjects': Subject.objects.filter(enrolee=request.user), "subject_id": subject_id}
 
     if subject_id != -1:
         subject = get_object_or_404(Subject, pk=subject_id)
@@ -196,7 +196,7 @@ def checkSub(request):
         return redirect("login")
 
     all_sub = Subject.objects.filter(enrolee=request.user)
-    all_task = Task.objects.all
+    all_task = Task.objects.filter(enrolee=request.user)
     return render(request,'check.html',{'all_sub':all_sub, 'all_task': all_task})
     
     

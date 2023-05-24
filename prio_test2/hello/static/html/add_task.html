@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- <script type="text/javascript" src="{% static 'js/add_task.js' %}" defer></script> -->
+        <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
+        <script type="text/javascript" src="{% static 'js/add_task.js' %}" defer></script>
         <title>Add Task Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -40,8 +41,8 @@
                         <div id="error-bar" class="error-bar"></div>
                         <div id="addSub">
 
-                        <label for="reqNames"> Input Requirement Type</label>
-                        <select id="reqField" name ="reqType" class="dropdown"></input>
+                        <label for="reqField"> Input Requirement Type</label>
+                        <select id="reqField" name ="reqType" class="dropdown" required></input>
                         {% for reqName, gradeNum in reqTypes.items %}
                         {% if reqName|length > 0%}
                             <option>{{ reqName }}</option>
@@ -50,33 +51,17 @@
                         </select>
 
                             <br><br>
-                            <label for="subName"> Add Task Name </label>
-                            <input id="subName" name="taskName" class="input-field" type="text"></input>
+                            <label for="taskName"> Task Name </label>
+                            <input id="taskName" name="taskName" class="input-field" type="text" required></input>
                             <br><br>
-                            <label for="numUnits">Edit Date </label>
-                            <input id="numUnits" name="dueDate" class="input-field" type="datetime-local"></input>
+                            <label for="dueDate">Due Date </label>
+                            <input id="dueDate" name="dueDate" class="input-field" type="datetime-local" required></input>
                             <br><br>
-
-
 
                         </div>
-                        {{ form.subName }}
-                        <!-- <h3>Edit Grading System / Breakdown</h3>
-                        <div id="gradeSysBox">
-                            <button id="add_gradeSys" class="control-button" onclick="add_gradeSys()">+</button>
-                        </div><br><br>
 
-                        <div id="startEnd">
-                            <label for="subStart">Edit Start Time </label>
-                            <input id="start", name="subStart" class="input-field" type="datetime-local"></input>
-                            <br><br>
-                            <label for="subEnd">Edit End Time </label>
-                            <input id="end", name="subEnd" class="input-field" type="datetime-local"></input>
-                            <br><br>
-                        </div><br> -->
-
-                        <input type="submit" value ="Save" id="submit" class="control-button" onclick="inputsFunc()"></input>
-                        <input type="submit" value ="Cancel" id="cancel" class="control-button" href="#"></input>
+                        <input type="button" value ="Save" id="submit-button" class="control-button" onclick="submitForm(this.form)"></input>
+                        <input type="button" value ="Cancel" id="cancel-button" class="control-button" href="this.form.reset()"></input>
                     </form>
     {% include "navigation_end.html" %}
     </body>
