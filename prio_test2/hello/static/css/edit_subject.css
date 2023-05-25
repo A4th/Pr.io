@@ -10,6 +10,11 @@
     margin-left: 5%;
 }
 
+#subName, #numUnits, #start, #end {
+    position: absolute;
+    right: 15%;
+}
+
 /* TODO: make view height of subjects box relative to parent div instead of hardcoded */
 #subjects-box {
     width: 80%;

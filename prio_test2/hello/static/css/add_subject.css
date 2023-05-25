@@ -6,12 +6,17 @@
     width: 45%;
 }
 
+#subName, #numUnits, #start, #end {
+    position: absolute;
+    right: 15%;
+}
+
 #numUnits{
     margin-left: 2.25%;
 }
 
 #start{
-    margin-left: 4%;
+    margin-left: 10%;
 }
 
 #end{
