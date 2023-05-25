@@ -25,6 +25,8 @@ html, body {
 .below-nav-bar {
     display:inline-flex;
     flex-grow: 1;
+    /* TODO: Don't hardcode max height*/
+    max-height: 91.5%;
     background-color: rgb(63, 60, 86);
 }
 
@@ -44,6 +46,7 @@ html, body {
     background-color: black;
     height: 100%;
     float: left;
+    overflow: auto;
 }
 
 h3, label {
