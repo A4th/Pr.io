@@ -68,7 +68,7 @@ def prioritizationAlgorithm(taskModels):
         # })
         tasks.append({
             "subject": subject.subName,
-            "name": task.taskName,
+            "name": str(task),      # String representation of Task, not necessarily just name
             "dueDate": task.dueDate,
             "units": subject.numUnits,
             # set 1 as mininum gradeContrib to prevent divide by 0

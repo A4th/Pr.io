@@ -20,7 +20,7 @@ class Task(models.Model):
     enrolee = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return self.taskName
+        return f"{self.taskName} ({self.subName.subName})";
 
 
 class Subject(models.Model):
