@@ -27,7 +27,7 @@ html, body {
     display:inline-flex;
     flex-grow: 1;
     /* TODO: Don't hardcode max height*/
-    max-height: 91.5%;
+    max-height: 93%;
     background-color: rgb(63, 60, 86);
 }
 
