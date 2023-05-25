@@ -107,7 +107,8 @@
 }
 
 :root {
-    --fc-today-bg-color: rgb(17 54 88 / 75%);
+    --fc-today-bg-color: rgb(37, 99, 52);
+    /* --fc-today-bg-color: rgb(17 54 88 / 75%); */
 }
 
 .fc-timegrid-axis-cushion{
