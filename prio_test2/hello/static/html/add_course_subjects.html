@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-<!--         <script type="text/javascript" src="{% static 'js/add_course_subjects.js' %}" defer></script> -->
+        <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
+        <script type="text/javascript" src="{% static 'js/add_course_subjects.js' %}" defer></script>
         <title>Add Course Subjects</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -12,9 +13,7 @@
     <body>
     {% include "navigation_start.html" %}
               <h3>ADD COURSE SUBJECTS</h3>
-              <!-- <select name="courses" id="course-select"></select> -->
-
-              <!-- insert how to query the subject -->
+              <div id="error-bar" class="error-bar"></div>
 
               <form method = "POST" action="{% url 'addCourseSubList' %}">
                 {% csrf_token %}
@@ -54,7 +53,8 @@
               {% if degprog_id != -1 %}
               <br>
               <div id="submit">
-              <input type="submit" value ="Add Subjects" class="control-button" onclick="inputsFunc()"></input>
+              <input type="button" value ="Add Subjects" class="control-button" onclick="submitAddCourseSubjectsForm(this.form)"></input>
+              <input type="button" value ="Reset" id="cancel-button" class="control-button" onclick="this.form.reset()"/>
               </div>
               {% endif %}
             </form>
