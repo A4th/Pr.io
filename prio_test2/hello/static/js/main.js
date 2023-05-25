@@ -20,3 +20,9 @@ function hideErrorBar() {
     let errorBar = document.getElementById("error-bar");
     errorBar.classList.remove("error-bar-shake");
 }
+
+function showTaskDetails(taskEvent) {
+    // Ensure that details pane is visible
+    let detailsPane = document.getElementById("details-pane");
+    detailsPane.style = "display: inline";
+}

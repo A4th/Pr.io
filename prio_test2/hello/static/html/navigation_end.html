@@ -1,9 +1,42 @@
                 </div>
                  <div class="details-pane" id="details-pane" style="display:none">
-                    <div id="details-header">
+                    <div id="details-header" class="header-with-button">
                     <h1>Details:</h1>
-                    <button type="button" id="details-close" class="control-button"
+                    <button type="button" id="details-close" class="control-button header-button"
                         onclick="document.getElementById('details-pane').style = 'display:none'">X</button>
+                    </div>
+                    <div id="task-details">
+                    <input type="text" id="taskName" name="taskName" class="input-field"/>
+                    <br>
+
+                    <label for="taskSubject">Subject: </label>
+                    <output id="tasksubjec"></output>
+                    <br>
+
+                    <label for="taskStart">Task Start: </label>
+                    <output id="taskStart"></output>
+                    <br>
+
+                    <label for="taskEnd">Task End: </label>
+                    <output id="taskEnd"></output>
+                    <br>
+
+                    <br>
+
+                    <label for="taskReqType">Type: </label>
+                    <select id="taskReqType" name ="taskReqType" class="dropdown" onchange="" required></select>
+                    <br>
+
+                    <label for="taskDueDate">Due Date: </label>
+                    <input id="taskDueDate" name="taskDueDate" class="input-field" type="datetime-local" required/>
+                    <br>
+
+                    <br>
+
+                    <button type="button" id="save-task-button" class="control-button task-button">Save task Details</button>
+                    <br><br>
+                    <button type="button" id="remove-task-button" class="control-button task-button">Mark as Done/Remove</button>
+
                     </div>
                 </div>
             </div>

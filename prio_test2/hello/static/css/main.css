@@ -84,31 +84,49 @@ a:hover{
     color:  rgba(109, 175, 237, 0.75);
 }
 
+
+/* Details pane section */
 .details-pane {
     background-color: #e3d8d8;
     flex-basis: 25%;
     float: left;
 }
 
-.details-pane h1{
+.details-pane div {
     margin-left: 5%;
+}
+
+.details-pane :where(h1, label){
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 24px;
     color: black;
 }
 
-#details-header {
+.header-with-button {
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding-right: 5%;
 }
 
-#details-close {
-    width: 15%;
+.header-button {
     margin-left: auto;
 }
 
+.task-button {
+    float: right;
+    margin-right: 5%
+}
+
+#details-close {
+    width: 15%;
+}
+
+#taskName {
+    flex-grow: 1;
+    width: 90%;
+}
 
 .menu {
     color: white;
@@ -122,6 +140,7 @@ a:hover{
 .menu.active{
     color: rgba(109, 175, 237, 0.75)
 }
+/* End of Details pane section */
 
 
 #help-text{

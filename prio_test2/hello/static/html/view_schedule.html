@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
         <title>Pr.io</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" charset='utf-8' />
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -32,8 +33,7 @@
                     },
 
                     eventClick: function(info) {
-                        let detailsPane = document.getElementById("details-pane");
-                        detailsPane.style = "display: inline";
+                        showTaskDetails(info.event) ;
                     },
 
                     events:[
