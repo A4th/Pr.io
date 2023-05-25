@@ -11,7 +11,7 @@
     </head>
     <body>
     {% include "navigation_start.html" %}
-                    <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a>
+                    <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">Add Course Subjects</a>
                     <h3>SUBJECT INFORMATION</h3>
                     <form method = "POST" action="{% url 'addSubForm' %}">
                         {% csrf_token %}

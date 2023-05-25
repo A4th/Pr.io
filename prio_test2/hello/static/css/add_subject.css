@@ -37,7 +37,11 @@
 
 #addCL {
     margin-left: 2%;
-    background-color: rgb(55, 51, 66);
+    background-color: rgb(52, 48, 48);
+}
+
+#addCL:hover {
+    background-color: rgb(99, 95, 95);
 }
 
 #addSub{
