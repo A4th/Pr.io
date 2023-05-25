@@ -36,4 +36,5 @@ function showTaskDetails(taskEvent) {
     document.getElementById("taskEnd").value = taskEvent.extendedProps.endDate;
 
     document.getElementById("taskDueDate").value = taskEvent.extendedProps.dueDate;
+    document.getElementById("taskNotes").value = taskEvent.extendedProps.taskNotes;
 }

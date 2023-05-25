@@ -130,11 +130,16 @@ a:hover{
     width: 15%;
 }
 
-#taskName, #taskDueDate{
+#taskName, #taskDueDate, #taskNotes {
     flex-grow: 1;
     width: 90%;
     text-align: left;
 }
+
+#taskNotes {
+    height: 100%;
+}
+/* End of Details pane section */
 
 .menu {
     color: white;
@@ -148,7 +153,6 @@ a:hover{
 .menu.active{
     color: rgba(109, 175, 237, 0.75)
 }
-/* End of Details pane section */
 
 
 #help-text{
