@@ -12412,3 +12412,1231 @@ INFO:root:
 INFO:root:Step 4. Group requirements into clusters
 INFO:root:
 
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:58:51.575135
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:51.575135		1 day, 19:58:51.575135
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:51.575135		1 day, 19:58:51.575135
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:58:41.355018
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:41.355018		1 day, 19:58:41.355018
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:41.355018		1 day, 19:58:41.355018
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:58:27.421914
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:27.421914		1 day, 19:58:27.421914
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:27.421914		1 day, 19:58:27.421914
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:56:58.602504
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:58.602504		1 day, 19:56:58.602504
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:58.602504		1 day, 19:56:58.602504
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:56:53.607355
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:53.607355		1 day, 19:56:53.607355
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:53.607355		1 day, 19:56:53.607355
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:56:40.276141
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:40.276141		1 day, 19:56:40.276141
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:40.276141		1 day, 19:56:40.276141
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:56:35.744116
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:35.744116		1 day, 19:56:35.744116
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:35.744116		1 day, 19:56:35.744116
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:56:24.650256
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:24.650256		1 day, 19:56:24.650256
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:24.650256		1 day, 19:56:24.650256
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:56:22.566255
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:22.566255		1 day, 19:56:22.566255
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:22.566255		1 day, 19:56:22.566255
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:56:10.502029
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:10.502029		1 day, 19:56:10.502029
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:10.502029		1 day, 19:56:10.502029
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:56:08.054977
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:08.054977		1 day, 19:56:08.054977
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:08.054977		1 day, 19:56:08.054977
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:54:08.119381
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:08.119381		1 day, 19:54:08.119381
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:08.119381		1 day, 19:54:08.119381
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:53:57.623517
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:57.623517		1 day, 19:53:57.623517
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:57.623517		1 day, 19:53:57.623517
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:53:46.330583
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:46.330583		1 day, 19:53:46.330583
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:46.330583		1 day, 19:53:46.330583
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 19:53:33.892655
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:33.892655		1 day, 19:53:33.892655
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	50.000000	1 day, 5:29:33.892655		1 day, 19:53:33.892655
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:58:49.112746
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:52:49.112746
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:49.112746		14:58:49.112746
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:49.112746		1 day, 19:52:49.112746
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:49.112746		14:58:49.112746
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:49.112746		1 day, 19:52:49.112746
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:58:35.754150
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:52:35.754150
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:35.754150		14:58:35.754150
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:35.754150		1 day, 19:52:35.754150
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:35.754150		14:58:35.754150
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:35.754150		1 day, 19:52:35.754150
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:54:42.804711
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:48:42.804711
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:42.804711		14:54:42.804711
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:42.804711		1 day, 19:48:42.804711
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:42.804711		14:54:42.804711
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:42.804711		1 day, 19:48:42.804711
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:54:37.462530
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:48:37.462530
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:37.462530		14:54:37.462530
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:37.462530		1 day, 19:48:37.462530
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:37.462530		14:54:37.462530
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:37.462530		1 day, 19:48:37.462530
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:54:03.385842
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:48:03.385842
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:03.385842		14:54:03.385842
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:03.385842		1 day, 19:48:03.385842
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:03.385842		14:54:03.385842
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:03.385842		1 day, 19:48:03.385842
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:53:33.530348
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:47:33.530348
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:33.530348		14:53:33.530348
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:33.530348		1 day, 19:47:33.530348
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:33.530348		14:53:33.530348
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:33.530348		1 day, 19:47:33.530348
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:47:44.257965
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:41:44.257965
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:44.257965		14:47:44.257965
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:44.257965		1 day, 19:41:44.257965
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:44.257965		14:47:44.257965
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:44.257965		1 day, 19:41:44.257965
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:45:52.414545
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:39:52.414545
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:52.414545		14:45:52.414545
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:52.414545		1 day, 19:39:52.414545
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:52.414545		14:45:52.414545
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:52.414545		1 day, 19:39:52.414545
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:45:39.783861
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:39:39.783861
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:39.783861		14:45:39.783861
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:39.783861		1 day, 19:39:39.783861
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:39.783861		14:45:39.783861
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:39.783861		1 day, 19:39:39.783861
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:45:31.625348
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:39:31.625348
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:31.625348		14:45:31.625348
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:31.625348		1 day, 19:39:31.625348
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:31.625348		14:45:31.625348
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:31.625348		1 day, 19:39:31.625348
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:45:11.954506
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:39:11.954506
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:11.954506		14:45:11.954506
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:11.954506		1 day, 19:39:11.954506
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:11.954506		14:45:11.954506
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:11.954506		1 day, 19:39:11.954506
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:45:07.230810
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:39:07.230810
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:07.230810		14:45:07.230810
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:07.230810		1 day, 19:39:07.230810
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:07.230810		14:45:07.230810
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:07.230810		1 day, 19:39:07.230810
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:44:41.701308
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:38:41.701308
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:41.701308		14:44:41.701308
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:41.701308		1 day, 19:38:41.701308
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:41.701308		14:44:41.701308
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:41.701308		1 day, 19:38:41.701308
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:44:07.914533
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:38:07.914533
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:07.914533		14:44:07.914533
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:07.914533		1 day, 19:38:07.914533
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:07.914533		14:44:07.914533
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:07.914533		1 day, 19:38:07.914533
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:44:01.551028
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:38:01.551028
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:01.551028		14:44:01.551028
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:01.551028		1 day, 19:38:01.551028
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:01.551028		14:44:01.551028
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:01.551028		1 day, 19:38:01.551028
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:43:57.056012
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:37:57.056012
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:57.056012		14:43:57.056012
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:57.056012		1 day, 19:37:57.056012
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:57.056012		14:43:57.056012
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:57.056012		1 day, 19:37:57.056012
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:42.894489
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:42.894489
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:42.894489		14:40:42.894489
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:42.894489		1 day, 19:34:42.894489
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:42.894489		14:40:42.894489
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:42.894489		1 day, 19:34:42.894489
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:37.050366
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:37.050366
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:37.050366		14:40:37.050366
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:37.050366		1 day, 19:34:37.050366
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:37.050366		14:40:37.050366
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:37.050366		1 day, 19:34:37.050366
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:28.442111
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:28.442111
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:28.442111		14:40:28.442111
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:28.442111		1 day, 19:34:28.442111
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:28.442111		14:40:28.442111
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:28.442111		1 day, 19:34:28.442111
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:15.543028
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:15.543028
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:15.543028		14:40:15.543028
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:15.543028		1 day, 19:34:15.543028
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:15.543028		14:40:15.543028
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:15.543028		1 day, 19:34:15.543028
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:14.966127
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:14.966127
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.966127		14:40:14.966127
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.966127		1 day, 19:34:14.966127
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.966127		14:40:14.966127
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.966127		1 day, 19:34:14.966127
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:14.720969
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:14.720969
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.720969		14:40:14.720969
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.720969		1 day, 19:34:14.720969
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.720969		14:40:14.720969
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.720969		1 day, 19:34:14.720969
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:14.536244
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:14.536244
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.536244		14:40:14.536244
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.536244		1 day, 19:34:14.536244
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.536244		14:40:14.536244
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.536244		1 day, 19:34:14.536244
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:14.369437
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:14.369437
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.369437		14:40:14.369437
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.369437		1 day, 19:34:14.369437
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.369437		14:40:14.369437
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.369437		1 day, 19:34:14.369437
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:14.201659
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:14.201659
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.201659		14:40:14.201659
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.201659		1 day, 19:34:14.201659
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.201659		14:40:14.201659
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.201659		1 day, 19:34:14.201659
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:40:14.029581
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:34:14.029581
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.029581		14:40:14.029581
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.029581		1 day, 19:34:14.029581
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.029581		14:40:14.029581
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.029581		1 day, 19:34:14.029581
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:39:53.951328
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:33:53.951328
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:53.951328		14:39:53.951328
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:53.951328		1 day, 19:33:53.951328
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:53.951328		14:39:53.951328
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:53.951328		1 day, 19:33:53.951328
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:39:48.142759
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:33:48.142759
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:48.142759		14:39:48.142759
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:48.142759		1 day, 19:33:48.142759
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:48.142759		14:39:48.142759
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:48.142759		1 day, 19:33:48.142759
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:36:06.750868
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:30:06.750868
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:06.750868		14:36:06.750868
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:06.750868		1 day, 19:30:06.750868
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:06.750868		14:36:06.750868
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:06.750868		1 day, 19:30:06.750868
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:36:03.149472
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:30:03.149472
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:03.149472		14:36:03.149472
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:03.149472		1 day, 19:30:03.149472
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:03.149472		14:36:03.149472
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:03.149472		1 day, 19:30:03.149472
+INFO:root:
+
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /addCourseSub/favicon.png
+WARNING:django.request:Not Found: /addCourseSub/favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:33:17.655301
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:27:17.655301
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:17.655301		14:33:17.655301
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:17.655301		1 day, 19:27:17.655301
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:17.655301		14:33:17.655301
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:17.655301		1 day, 19:27:17.655301
+INFO:root:
+
+WARNING:django.request:Not Found: /addCourseSub/favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:28:14.079173
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:22:14.079173
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.079173		14:28:14.079173
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.079173		1 day, 19:22:14.079173
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:14.079173		14:28:14.079173
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:14.079173		1 day, 19:22:14.079173
+INFO:root:
+
+INFO:root:Step 1. Sort subjects by due date
+INFO:root:Subject	Task			Due Date		Units		% of Grade
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000
+INFO:root:
+
+INFO:root:Step 2. compute absolute time remaining
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	14:28:07.487282
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 19:22:07.487282
+INFO:root:
+
+INFO:root:Step 3. Subtract time needed for breaks, schedules and other necessary deductions from each absolute time.
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time	Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:07.487282		14:28:07.487282
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:07.487282		1 day, 19:22:07.487282
+INFO:root:
+
+INFO:root:Step 4. Group requirements into clusters
+INFO:root:Cluster A
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 2		2023-05-25 18:36:00+00:00	3.000000	25.000000	10:35:07.487282		14:28:07.487282
+INFO:root:Cluster B
+INFO:root:Subject	Task			Due Date		Units		% of Grade	Remaining Time			Time before deadline
+INFO:root:[CS 150]	Long Exam 1		2023-05-26 23:30:00+00:00	3.000000	25.000000	1 day, 5:29:07.487282		1 day, 19:22:07.487282
+INFO:root:
+

@@ -96,9 +96,9 @@
 }
 
 /* Ensure that scrollbar is hidden since calendar will automatically fit screen*/
-.fc .fc-scroller{
+/* .fc .fc-scroller{
     overflow: hidden !important;
-}
+} */
 
 #welcome{
     font-family: 'Courier New', Courier, monospace;

@@ -6,12 +6,15 @@
         <title>Check Saved Subjects</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/add_subject.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/check.css' %}"/>
+        <link rel="icon" href="{%static 'img/favicon.ico' %}" type="image/x-icon">
     </head>
     <body>
     {% include "navigation_start.html" %}
                     <!-- <br><a id="addCL" class="control-button" href="{% url 'addCourseSub' %}">> Add Course Subjects</a> -->
                     <h3>SUBJECTS SAVED WITH CORRESPONDING TASKS:</h3>
+
+                    <div id="checkList">
                        {% for sub in all_sub %}
                           {% if user == sub.enrolee %}
                             <label>{{sub}} ({{sub.numUnits}}.0 Units)</label><br>
@@ -21,8 +24,9 @@
                                  {% endif %}
                               {% endfor %}
                           {% endif %}
-                          <br><h3>_________________</h3>
+                          <h3>_________________</h3>
                        {% endfor %}
+                   </div>
                     <!-- <h3>TASKS SAVED: (Subject: Task Name)</h3>
                     {% for sub in all_sub %}
                     {% if user == sub.enrolee %}

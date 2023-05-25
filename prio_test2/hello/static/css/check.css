@@ -1,0 +1,13 @@
+#checkList{
+    background-color: rgb(52, 48, 48);
+    margin-left: 3%;
+    margin-right: 3%;
+    padding-top: 1.5%;
+    padding-left: 0.5%;
+    max-height: 75vh;
+    overflow: auto;
+}
+
+#checkList > label{
+    font-family: Arial, Helvetica, sans-serif;
+}
