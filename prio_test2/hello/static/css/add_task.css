@@ -28,3 +28,9 @@
     overflow: hidden;
 
 }
+
+#reqType, #taskName, #dueDate {
+    position: absolute;
+    right: 19%;
+    width: 40%;
+}
