@@ -29,6 +29,9 @@ function submitForm(form) {
         return;
     }
 
+    // TODO: replace with actual popup/message toast/bar/etc.
+    // NOTE: Technically message should be AFTER form submission, but that needs more work
+    alert("Task Added Successfully.");
     // No validation errors, submit form
     form.submit();
 }

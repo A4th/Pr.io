@@ -37,6 +37,8 @@
 
                     <form method = "POST" action="{% url 'editSubForm' subject_id %}">
                         {% csrf_token %}
+                        <!-- Since validation function is shared between Add/Edit subject, we submit actual type in form -->
+                        <input type="hidden" value="edit" name="subjPageType" id="subjPageType"></input>
                         <!-- submit current subject name as part of form -->
                         <input type="hidden" value="{{ subject.subName }}" name="currsubject" id="currsubject"></input>
                         <div id="addSub">

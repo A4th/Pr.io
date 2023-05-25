@@ -16,6 +16,8 @@
                     <h3>SUBJECT INFORMATION</h3>
                     <form method = "POST" action="{% url 'addSubForm' %}">
                         {% csrf_token %}
+                        <!-- Since validation function is shared between Add/Edit subject, we submit actual type in form -->
+                        <input type="hidden" value="add" name="subjPageType" id="subjPageType"></input>
                         <div id="error-bar" class="error-bar"></div>
                         <div id="addSub">
                             <label for="subName"> Subject Name: </label>

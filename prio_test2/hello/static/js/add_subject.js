@@ -92,6 +92,20 @@ function submitForm(form) {
         }
     }
 
+    // Construct message, based on if we are in the Add or Edit Subject page
+    let message = "Subject ";
+    const subjPageType = form.subjPageType.value;
+    if (subjPageType == "edit") {
+        message += "details updated";
+    } else {
+        message += "added";
+    }
+
+    message += " Successfully."
+
+    // TODO: replace with actual popup/message toast/bar/etc.
+    // NOTE: Technically message should be AFTER form submission, but that needs more work
+    alert(message);
     // No validation errors, submit form
     form.submit();
 }

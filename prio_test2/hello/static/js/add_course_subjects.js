@@ -18,6 +18,9 @@ function submitAddCourseSubjectsForm(form) {
         return;
     }
 
+    // TODO: replace with actual popup/message toast/bar/etc.
+    // NOTE: Technically message should be AFTER form submission, but that needs more work
+    alert("Course Subjects Successfully Added");
     // No validation errors, submit form
     form.submit();
 }
