@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="{% static 'js/main.js' %}" defer></script>
+        <script type="text/javascript" src="{% static 'js/add_subject.js' %}" defer></script>
+        <title>Add Subject Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/add_subject.css' %}"/>
+        <link rel="icon" href="{%static 'img/favicon.ico' %}" type="image/x-icon">
+    </head>
+    <body>
+    {% include "navigation_start.html" %}
+        <h3>Pr.io page walkthrough</h3>
+        <iframe width="600" height="350" src="https://www.youtube.com/embed/9NJIvKdeYrs" title="Parokya Ni Edgar feat. Kamikazee  - The Ordertaker (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style="margin-left: 2%;"></iframe>
+    {% include "navigation_end.html" %}
+    </body>
+</html>

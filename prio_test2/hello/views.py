@@ -305,3 +305,9 @@ def editSubForm(request, subject_id):
         subject.save()
 
     return redirect("editSub")
+
+def help_view(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    return render(request, 'help.html')
