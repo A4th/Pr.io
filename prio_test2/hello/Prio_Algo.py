@@ -71,7 +71,8 @@ def prioritizationAlgorithm(taskModels):
             "name": task.taskName,
             "dueDate": task.dueDate,
             "units": subject.numUnits,
-            "gradeContrib": subReqContrib[key]
+            # set 1 as mininum gradeContrib to prevent divide by 0
+            "gradeContrib": max(subReqContrib[key], 1)
         })
 
     # #### Test Data
