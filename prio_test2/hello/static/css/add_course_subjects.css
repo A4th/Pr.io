@@ -13,7 +13,7 @@
 /* TODO: make view height of subjects box relative to parent div instead of hardcoded */
 #subjects-box {
     width: 90%;
-    height: 300px;
+    max-height: 70vh;
     overflow: auto;
 }
 
