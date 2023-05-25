@@ -17,7 +17,7 @@
 
               <form method = "POST" action="{% url 'addCourseSubList' %}">
                 {% csrf_token %}
-                <label for="degprog_id">Degree Program:</label>
+                <label id = "degprog" for="degprog_id">Degree Program:</label>
                 <select id="degprog_id" name ="degprog_id" class="dropdown" onchange="this.form.submit()"></input>
                     <option value=-1>--CHOOSE DEGREE PROGRAM--</option>
                 {% if degreeprogram %}
@@ -38,6 +38,7 @@
               {% csrf_token %}
                <!-- submit degprog_id as part of form -->
               <input type="hidden" value={{ degprog_id }} name="degprog_id" id="degprog_id"></input>
+              <br>
               <div id="course-subjects">
               <div id="subjects-box" class="scroll">
               {% if subjects %}
@@ -50,7 +51,10 @@
               </div>
               </div>
               {% if degprog_id != -1 %}
-              <input type="submit" value ="Add Subjects" id="submit" class="control-button" onclick="inputsFunc()"></input>
+              <br>
+              <div id="submit">
+              <input type="submit" value ="Add Subjects" class="control-button" onclick="inputsFunc()"></input>
+              </div>
               {% endif %}
             </form>
     {% include "navigation_end.html" %}
