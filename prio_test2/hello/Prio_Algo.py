@@ -8,11 +8,13 @@ logging.basicConfig(filename='prio.log', encoding='utf-8', level=logging.DEBUG)
 
 # Helper class for easy formatting/access of attributes in Django templates
 class TaskSched(object):
-    def __init__(self, name, start, end):
+    def __init__(self, name, start, end, taskModel):
         self.name = name
         # DEBUG: use time today since we don't have start datetimes yet
         self.start = start if start is not None else datetime.today()
         self.end = end
+        # NOTE: task model added as member for easy data access in javascript
+        self.taskModel = taskModel
 
     def startDate(self):
         return f"{self.start.year}-{str(self.start.month).zfill(2)}-{str(self.start.day).zfill(2)}"
@@ -72,7 +74,8 @@ def prioritizationAlgorithm(taskModels):
             "dueDate": task.dueDate,
             "units": subject.numUnits,
             # set 1 as mininum gradeContrib to prevent divide by 0
-            "gradeContrib": max(subReqContrib[key], 1)
+            "gradeContrib": max(subReqContrib[key], 1),
+            "taskModel": task
         })
 
     # #### Test Data
@@ -331,7 +334,8 @@ def prioritizationAlgorithm(taskModels):
                 str(endTime),
                 sep="\t")
 
-            taskObject = TaskSched(task['name'], startTime, max(startTime + MIN_SESSION,  min(endTime, startTime + MAX_SESSION)))
+            taskObject = TaskSched(task['name'], startTime, max(startTime + MIN_SESSION,
+                                   min(endTime, startTime + MAX_SESSION)), task["taskModel"])
             taskSchedObjects.append(taskObject)
 
             startTime = endTime + timedelta(hours=1) # No breaks yet.

@@ -198,16 +198,11 @@ def viewSched(request):
     if not request.user.is_authenticated:
         return redirect("login")
 
-    tasks = []
-    # TODO: uses tasks directly for now; use return value of prioritizationAlgorithm to compute actual task schedules
-    tasks = prioritizationAlgorithm(Task.objects.filter(enrolee=request.user))
-    # for task in Task.objects.all():
-    #     task = TaskSched(task.taskName, None, task.dueDate)
-    #     tasks.append(task)
+    tasks = Task.objects.filter(enrolee=request.user)
+    taskSchedules = prioritizationAlgorithm(tasks)
 
     active_page = 'viewSched'
-
-    context = {'tasks': tasks,
+    context = {'tasks': tasks, 'taskSchedules': taskSchedules,
                'active_page': active_page,}
     return render(request, "view_schedule.html", context)
 

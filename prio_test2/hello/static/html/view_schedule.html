@@ -37,6 +37,8 @@
                     },
 
                     events:[
+                    {% if taskSchedules %}
+                    {% for task in taskSchedules %}
                     {
                         title: '{{ task.name }}',
                         start: '{{ task.startDateTime }}',
