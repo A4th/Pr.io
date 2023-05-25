@@ -90,12 +90,23 @@ a:hover{
     float: left;
 }
 
-.details-pane > h1{
+.details-pane h1{
     margin-left: 5%;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 24px;
     color: black;
+}
+
+#details-header {
+    display: flex;
+    align-items: center;
+    padding-right: 5%;
+}
+
+#details-close {
+    width: 15%;
+    margin-left: auto;
 }
 
 

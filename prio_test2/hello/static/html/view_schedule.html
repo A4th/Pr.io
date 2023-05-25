@@ -31,9 +31,12 @@
                         list: 'List',
                     },
 
+                    eventClick: function(info) {
+                        let detailsPane = document.getElementById("details-pane");
+                        detailsPane.style = "display: inline";
+                    },
+
                     events:[
-                    {% if tasks %}
-                    {% for task in tasks %}
                     {
                         title: '{{ task.name }}',
                         start: '{{ task.startDateTime }}',
