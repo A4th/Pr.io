@@ -13,7 +13,8 @@
     {% include "navigation_start.html" %}
                     <h3>EDIT SUBJECT INFORMATION</h3>
                     <div id="error-bar" class="error-bar"></div>
-
+                    
+                    <div id="editSubSection">
                     <form method = "POST" action="{% url 'subject_details' %}">
                         {% csrf_token %}
                         <label for="subject_id">Subject:</label>
@@ -39,17 +40,19 @@
                         <input type="hidden" value="{{ subject.subName }}" name="currsubject" id="currsubject"></input>
                         <div id="addSub">
                             {% if subject_id != -1 %}
-                            <label for="subName"> New Subject Name </label>
+                            <label for="subName"> New Subject Name: </label>
                             <input id="subName" name="subName" class="input-field" type="text" value="{{subject}}"></input>
                             <br>
                             {% endif %}
-
-                            <label for="numUnits"> Edit No. of Units </label>
+                            
+                            <br>
+                            <label for="numUnits"> No. of Units: </label>
                             <input id="numUnits" name="numUnits" class="input-field" type="number" value={{subject.numUnits}}></input>
-                            <br><br>
+                            <br>
                         </div>
+                    </div>
 
-                        <h3>Edit Grading System / Breakdown</h3>
+                        <h3>Grading System / Breakdown</h3>
                         <div id="gradeSysBox">
                             <input name="reqName1" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam" value="{{subject.reqName1}}">
                             <input name="gradeNum1" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100" value={{subject.gradeNum1}}>
@@ -68,8 +71,9 @@
                             <button type="button" hidden id="add_gradeSys" class="control-button" onclick="addGradeSys()">+</button>
                             <button type="button" id="del_gradeSys" class="control-button" onclick="delGradeSys()">-</button>
 
-                        </div><br><br>
+                        </div><br>
 
+                        <h3>Subject Schedule</h3>
                         <div id="startEnd">
                             <label for="start">Edit Start Time </label>
                             <input id="start" name="subStart" value="{{ subject.getSubStart }}" class="input-field" type="time"></input>
@@ -86,13 +90,15 @@
                             ></input>{{ day }}</label>
                             {% endfor %}
                         </div><br>
-
+                        
+                        <div id = "endButtons">
                         <input type="button" value ="Save" id="submit-button" class="control-button" onclick="submitForm(this.form)"
                         {% if subject_id == -1 %}
                         disabled
                         {% endif %}
                         ></input>
                         <input type="button" value ="Reset" id="cancel-button" class="control-button" onclick="this.form.reset()"/>
+                        </div>
                     </form>
 
                     <!-- Add subjects data in HTML for access in javascript -->

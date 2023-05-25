@@ -17,10 +17,10 @@
                         {% csrf_token %}
                         <div id="error-bar" class="error-bar"></div>
                         <div id="addSub">
-                            <label for="subName"> Subject Name </label>
+                            <label for="subName"> Subject Name: </label>
                             <input id="subName" name="subName" class="input-field" type="text" placeholder="...enter subject name" required/>
                             <br><br>
-                            <label for="numUnits"> No. of Units </label>
+                            <label for="numUnits"> No. of Units: </label>
                             <input id="numUnits" name="numUnits" class="input-field" type="number" placeholder="...enter number of units" required/>
                             <br><br>
                         </div>
@@ -57,10 +57,13 @@
                             {% for day in days %}
                             <label><input type="checkbox" value="{{ day }}" name="subjDays"></input>{{ day }}</label>
                             {% endfor %}
-                        </div><br>
-                        
+                        <br>
+
+                        <div id="endButtons">
                         <input type="button" value ="Submit" id="submit-button" class="control-button" onclick="submitForm(this.form)"/>
                         <input type="button" value ="Cancel" id="cancel-button" class="control-button" onclick="this.form.reset()"/>
+                        </div>
+                        </div>
                     </form>
 
                     <!-- Add subjects data in HTML for access in javascript -->

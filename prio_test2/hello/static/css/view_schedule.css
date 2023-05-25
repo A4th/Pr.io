@@ -109,3 +109,11 @@
 :root {
     --fc-today-bg-color: rgb(17 54 88 / 75%);
 }
+
+.fc-timegrid-axis-cushion{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fc-timegrid-slot-label-cushion{
+    font-family: Arial, Helvetica, sans-serif;
+}
