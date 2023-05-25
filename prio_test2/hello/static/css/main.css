@@ -190,7 +190,7 @@ a {
 }
 
 .help:hover{
-    background-color: purple;
+    background-color: rgb(185, 56, 185);
 }
 
 .help:hover #help-text{
