@@ -41,7 +41,7 @@ html, body {
     flex-basis: max-content;
     white-space: nowrap;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .main-container {
