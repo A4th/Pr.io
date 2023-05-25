@@ -223,8 +223,8 @@ header {
 
 .error-bar {
     display: none;
-    background-color: #ffe5ff;
-    border-left: 6px solid #aa00aa;
+    background-color: #faa0a0;
+    border-left: 6px solid #fa6d5a;
     margin-left: 2%;
     font-family: "Montserrat", sans-serif;
     font-size: 24px;
