@@ -38,7 +38,7 @@ function submitForm(form) {
 
 function subjectChanged(form) {
     // add previous reqType, taskName, dueDate values
-    let fieldIDs = [ "reqType", "taskName", "dueDate" ];
+    let fieldIDs = [ "reqType", "taskName", "dueDate", "taskNotes"];
     for (const id of fieldIDs) {
         // HACK: Add to form by appending hidden input elements
         let addInput = document.createElement("input");

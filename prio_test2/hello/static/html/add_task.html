@@ -72,6 +72,11 @@
                             {% endif %}
                             ></input>
                             <br><br>
+
+                            <label>Notes: </label>
+                            <br>
+                            <textarea id="taskNotes" name="taskNotes" class="input-field" rows="7">{% if prevNotes %}{{ prevNotes }}{% endif %}</textarea>
+                            <br>
                         </div>
                         <div id = "endButtons">
                         <input type="button" value ="Save" id="submit-button" class="control-button" onclick="submitForm(this.form)"></input>

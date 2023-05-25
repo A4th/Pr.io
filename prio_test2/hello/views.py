@@ -102,11 +102,12 @@ def addTaskForm(request):
         reqType = request.POST["reqType"]
         taskName = request.POST["taskName"]
         dueDate = request.POST["dueDate"]
+        notes = request.POST["taskNotes"]
         enrolee = request.user
 
         subject = get_object_or_404(Subject, pk=subject_id)
         addTask_details = Task(subName=subject,
-            reqType = reqType, taskName=taskName, dueDate=dueDate, enrolee=enrolee
+            reqType = reqType, taskName=taskName, dueDate=dueDate, notes=notes, enrolee=enrolee
         )
         addTask_details.save()
 
@@ -126,10 +127,11 @@ def task_details(request):
     reqType = request.POST.get("reqType", "")
     taskName = request.POST.get("taskName", "")
     dueDate = request.POST.get("dueDate", None)
+    notes = request.POST.get("taskNotes", "")
     enrolee = request.user
 
     context = {'subjects': Subject.objects.filter(enrolee=enrolee), "subject_id": subject_id,
-               "prevTaskName": taskName, "prevDueDate": dueDate}
+               "prevTaskName": taskName, "prevDueDate": dueDate, "prevNotes": notes}
 
     if subject_id != -1:
         subject = get_object_or_404(Subject, pk=subject_id)
