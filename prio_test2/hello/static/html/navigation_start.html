@@ -15,6 +15,7 @@
                     <a href="{% url 'addSub' %}" class="menu {% if active_page == 'addSub' %}active{% endif %}">ADD SUBJECT</a><br><br>
                     <a href="{% url 'checkSub' %}" class="menu {% if active_page == 'checkSub' %}active{% endif %}">SEARCH</a><br><br>
                     <a href="{% url 'editSub' %}" class="menu {% if active_page == 'editSub' %}active{% endif %}">EDIT SUBJECT</a><br><br>
+                    <p id="loggedIn">Current user: --{{user}}--</p>
                 </div>
 
             <div class = "main-container">
