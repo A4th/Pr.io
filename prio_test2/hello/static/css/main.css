@@ -74,7 +74,7 @@ a {
 
 a:hover{
     border-radius: 50px;
-    color: #CC00CC;
+    color:  rgba(109, 175, 237, 0.75);
 }
 
 .details-pane {

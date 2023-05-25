@@ -44,8 +44,9 @@
                             <input hidden name="reqName5" class="gradeSys-Type input-field" type="text" placeholder="e.g. Exam">
                             <input hidden name="gradeNum5" class="gradeSys-Points input-field" type="number" placeholder="%, e.g. 30" min="0" max="100">
 
-                        </div><br><br>
+                        </div><br>
                         
+                        <h3>Subject Schedule</h3>
                         <div id="startEnd">
                             <label for="start"> Start Time </label>
                             <input id="start" name="subStart" class="input-field" type="time"/>
@@ -58,11 +59,10 @@
                             <label><input type="checkbox" value="{{ day }}" name="subjDays"></input>{{ day }}</label>
                             {% endfor %}
                         <br>
-
+                    </div><br>
                         <div id="endButtons">
                         <input type="button" value ="Submit" id="submit-button" class="control-button" onclick="submitForm(this.form)"/>
                         <input type="button" value ="Cancel" id="cancel-button" class="control-button" onclick="this.form.reset()"/>
-                        </div>
                         </div>
                     </form>
 
