@@ -43,6 +43,16 @@
                         title: '{{ task.name }}',
                         start: '{{ task.startDateTime }}',
                         end: '{{ task.endDateTime }}',
+
+                        extendedProps: {
+                            taskId: {{ task.taskModel.id }},
+                            subject: '{{ task.taskModel.subName.subName}}',
+                            reqType: '{{ task.taskModel.reqType }}',
+                            taskName: '{{ task.taskModel.taskName }}',
+                            startDate: '{{ task.startDate }}',
+                            endDate: '{{ task.endDate }}',
+                            dueDate: '{{ task.dueDate }}'
+                        }
                     },
                     {% endfor %}
                     {% endif %}

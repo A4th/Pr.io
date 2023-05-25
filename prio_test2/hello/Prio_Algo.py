@@ -16,11 +16,18 @@ class TaskSched(object):
         # NOTE: task model added as member for easy data access in javascript
         self.taskModel = taskModel
 
+    # Functions for constructing Date in JS string format
     def startDate(self):
-        return f"{self.start.year}-{str(self.start.month).zfill(2)}-{str(self.start.day).zfill(2)}"
+        date = self.end
+        return f"{date.year}-{str(date.month).zfill(2)}-{str(date.day).zfill(2)}T{str(date.hour).zfill(2)}:{str(date.minute).zfill(2)}"
 
     def endDate(self):
-        return f"{self.end.year}-{str(self.end.month).zfill(2)}-{str(self.end.day).zfill(2)}"
+        date = self.end
+        return f"{date.year}-{str(date.month).zfill(2)}-{str(date.day).zfill(2)}T{str(date.hour).zfill(2)}:{str(date.minute).zfill(2)}"
+
+    def dueDate(self):
+        date = self.taskModel.dueDate;
+        return f"{date.year}-{str(date.month).zfill(2)}-{str(date.day).zfill(2)}T{str(date.hour).zfill(2)}:{str(date.minute).zfill(2)}"
 
     # For debugging
     def startDateTime(self):

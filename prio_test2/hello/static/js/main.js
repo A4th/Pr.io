@@ -25,4 +25,15 @@ function showTaskDetails(taskEvent) {
     // Ensure that details pane is visible
     let detailsPane = document.getElementById("details-pane");
     detailsPane.style = "display: inline";
+
+    document.getElementById("taskName").value = taskEvent.extendedProps.taskName;
+    document.getElementById("taskSubject").value = taskEvent.extendedProps.subject;
+    // TODO: provide option to change reqType (requires data from task.taskModel)
+    document.getElementById("taskReqType").value = taskEvent.extendedProps.reqType;
+
+    // TODO: Simplify date outputs (contains too much information)
+    document.getElementById("taskStart").value = taskEvent.extendedProps.startDate;
+    document.getElementById("taskEnd").value = taskEvent.extendedProps.endDate;
+
+    document.getElementById("taskDueDate").value = taskEvent.extendedProps.dueDate;
 }
