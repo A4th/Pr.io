@@ -10,11 +10,11 @@
             <div class="below-nav-bar">
                 <div class = "left-navigation-bar">
                     <br>
-                    <a href="{% url 'viewSched' %}" class="menu">VIEW SCHEDULE</a><br><br>
-                    <a href="{% url 'addTask' %}" class="menu">ADD TASK</a><br><br>
-                    <a href="{% url 'addSub' %}" class="menu">ADD SUBJECT</a><br><br>
-                    <a href="{% url 'checkSub' %}" class="menu">SEARCH</a><br><br>
-                    <a href="{% url 'editSub' %}" class="menu">EDIT SUBJECT</a><br><br>
+                    <a href="{% url 'viewSched' %}" class="menu {% if active_page == 'viewSched' %}active{% endif %}">VIEW SCHEDULE</a><br><br>
+                    <a href="{% url 'addTask' %}" class="menu {% if active_page == 'addTask' %}active{% endif %}">ADD TASK</a><br><br>
+                    <a href="{% url 'addSub' %}" class="menu {% if active_page == 'addSub' %}active{% endif %}">ADD SUBJECT</a><br><br>
+                    <a href="{% url 'checkSub' %}" class="menu {% if active_page == 'checkSub' %}active{% endif %}">SEARCH</a><br><br>
+                    <a href="{% url 'editSub' %}" class="menu {% if active_page == 'editSub' %}active{% endif %}">EDIT SUBJECT</a><br><br>
                 </div>
 
             <div class = "main-container">

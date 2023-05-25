@@ -35,7 +35,9 @@ def addSub(request):
     for sub in subjects:
         subjects_json[sub.subName] = {"start": sub.getSubStart(), "end": sub.getSubEnd(), "subjDays": sub.subjDays}
 
-    context = {"subjects_json": subjects_json, "days": days}
+    active_page = 'addSub'
+
+    context = {"subjects_json": subjects_json, "days": days, "active_page": active_page}
     return render(request, 'add_subject.html', context)
 
 def addSubForm(request):
@@ -83,8 +85,10 @@ def addTask(request, subject_id=-1):
     if not request.user.has_perm('hello.add_task'):
         raise PermissionDenied() 
     
+    active_page = 'addTask'
+
     subjects = Subject.objects.filter(enrolee=request.user)
-    context = {'subjects': subjects, "subject_id": subject_id}
+    context = {'subjects': subjects, "subject_id": subject_id, 'active_page':active_page}
     return render(request, "add_task.html",context)
 
 def addTaskForm(request):
@@ -201,7 +205,10 @@ def viewSched(request):
     #     task = TaskSched(task.taskName, None, task.dueDate)
     #     tasks.append(task)
 
-    context = {'tasks': tasks}
+    active_page = 'viewSched'
+
+    context = {'tasks': tasks,
+               'active_page': active_page,}
     return render(request, "view_schedule.html", context)
 
 
@@ -211,7 +218,10 @@ def checkSub(request):
 
     all_sub = Subject.objects.filter(enrolee=request.user)
     all_task = Task.objects.filter(enrolee=request.user)
-    return render(request,'check.html',{'all_sub':all_sub, 'all_task': all_task})
+
+    active_page = 'checkSub'
+
+    return render(request,'check.html',{'all_sub':all_sub, 'all_task': all_task, 'active_page': active_page})
     
     
 def edit_subject(request):
@@ -231,7 +241,9 @@ def edit_subject(request):
     for sub in subjects:
         subjects_json[sub.subName] = {"start": sub.getSubStart(), "end": sub.getSubEnd(), "subjDays": sub.subjDays}
 
-    context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": -1, "subject": "", "days": days}
+    active_page = 'editSub'
+
+    context = {'subjects': subjects, "subjects_json": subjects_json, "subject_id": -1, "subject": "", "days": days, 'active_page': active_page}
     return render(request, 'edit_subject.html', context)
     
 def subject_details(request):

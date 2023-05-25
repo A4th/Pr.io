@@ -101,6 +101,9 @@ a:hover{
     text-decoration: none;
 }
 
+.menu.active{
+    color: rgba(109, 175, 237, 0.75)
+}
 
 
 #help-text{
