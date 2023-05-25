@@ -17,6 +17,7 @@ class Task(models.Model):
     reqType = models.CharField(max_length=50,default = "")
     taskName = models.CharField(max_length=50,default = "")
     dueDate = models.DateTimeField()
+    notes = models.TextField(default="")
     enrolee = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
