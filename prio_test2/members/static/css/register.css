@@ -18,6 +18,10 @@
     left: 5%;
 }
 
+html {
+    height: 120%;
+}
+
 .control-button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
