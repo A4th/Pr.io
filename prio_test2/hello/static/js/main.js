@@ -41,6 +41,10 @@ function showTaskDetails(taskEvent) {
     document.getElementById("taskNotes").value = taskEvent.extendedProps.taskNotes;
 }
 
+function editTask(form) {
+    form.submit();
+}
+
 function removeTask(form) {
     form.submit();
 }

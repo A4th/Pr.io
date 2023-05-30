@@ -155,6 +155,28 @@ def task_details(request):
 
     return render(request, 'add_task.html', context)
 
+def editTaskForm(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    if request.method == "POST":
+        task_id = request.POST["task_id"]
+
+        task_editable_fields = {
+            "taskName": request.POST["taskName"],
+            "dueDate": request.POST["taskDueDate"],
+            "notes": request.POST["taskNotes"]
+        }
+
+        task = Task.objects.get(id=task_id);
+
+        for (field, value) in task_editable_fields.items():
+            setattr(task, field, value)
+
+        task.save()
+
+    return redirect("viewSched")
+
 def removeTaskForm(request):
     if not request.user.is_authenticated:
         return redirect("login")

@@ -6,44 +6,48 @@
                         onclick="document.getElementById('details-pane').style = 'display:none'">X</button>
                     </div>
 
-                    <div id="task-details">
-                    <input type="text" id="taskName" name="taskName" class="input-field"/>
-                    <br>
+                    <form method = "POST" action="{% url 'editTaskForm' %}">
+                        {% csrf_token %}
+                        <input type="hidden" value="-1" name="task_id" id="task_id"></input>
+                        <div id="task-details">
+                        <input type="text" id="taskName" name="taskName" class="input-field"/>
+                        <br>
 
-                    <label for="taskSubject">Subject: </label>
-                    <output id="taskSubject"></output>
-                    <br>
+                        <label for="taskSubject">Subject: </label>
+                        <output id="taskSubject"></output>
+                        <br>
 
-                    <label for="taskReqType">Type: </label>
-                    <output id="taskReqType"></output>
-                    <br>
+                        <label for="taskReqType">Type: </label>
+                        <output id="taskReqType"></output>
+                        <br>
 
-                    <br>
+                        <br>
 
-                    <label for="taskStart">Task Start: </label>
-                    <output id="taskStart"></output>
-                    <br>
+                        <label for="taskStart">Task Start: </label>
+                        <output id="taskStart"></output>
+                        <br>
 
-                    <label for="taskEnd">Task End: </label>
-                    <output id="taskEnd"></output>
-                    <br>
+                        <label for="taskEnd">Task End: </label>
+                        <output id="taskEnd"></output>
+                        <br>
 
-                    <br>
+                        <br>
 
-                    <label>Due Date: </label>
-                    <br>
-                    <input id="taskDueDate" name="taskDueDate" class="input-field" type="datetime-local" required/>
-                    <br>
+                        <label>Due Date: </label>
+                        <br>
+                        <input id="taskDueDate" name="taskDueDate" class="input-field" type="datetime-local" required/>
+                        <br>
 
-                    <label>Notes: </label>
-                    <br>
-                    <textarea id="taskNotes" name="taskNotes" class="input-field" rows="7"></textarea>
-                    <br>
+                        <label>Notes: </label>
+                        <br>
+                        <textarea id="taskNotes" name="taskNotes" class="input-field" rows="7"></textarea>
+                        <br>
 
-                    <br>
+                        <br>
 
-                    <button type="button" id="save-task-button" class="control-button task-button">Save Task Details</button>
-                    <br><br>
+                        <button type="button" id="save-task-button" class="control-button task-button" onclick="editTask(this.form)">Save Task Details</button>
+                        <br><br>
+                    </form>
 
                     <form method = "POST" action="{% url 'removeTaskForm' %}">
                         {% csrf_token %}
