@@ -88,6 +88,8 @@ a {
     background-color: #e3d8d8;
     flex-basis: 25%;
     float: left;
+    overflow-y: scroll;
+    padding-bottom: 5%;
 }
 
 .details-pane div {
