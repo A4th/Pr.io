@@ -6,6 +6,7 @@ urlpatterns = [
     path("addTask/", views.addTask, name="addTask"),
     path("addTaskDetails",views.task_details,name = "task_details"),
     path("addTaskForm/", views.addTaskForm, name="addTaskForm"),
+    path("removeTaskForm/", views.removeTaskForm, name="removeTaskForm"),
     path("addCourseSub/", views.addCourseSub, name="addCourseSub"),
     path("addCourseSubList/", views.addCourseSubList, name="addCourseSubList"),
     path("addCourseSubForm/", views.addCourseSubForm, name="addCourseSubForm"),

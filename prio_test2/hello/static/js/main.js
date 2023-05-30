@@ -26,6 +26,8 @@ function showTaskDetails(taskEvent) {
     let detailsPane = document.getElementById("details-pane");
     detailsPane.style = "display: inline";
 
+    document.getElementById("task_id").value = taskEvent.extendedProps.taskId;
+
     document.getElementById("taskName").value = taskEvent.extendedProps.taskName;
     document.getElementById("taskSubject").value = taskEvent.extendedProps.subject;
     // TODO: provide option to change reqType (requires data from task.taskModel)
@@ -37,4 +39,8 @@ function showTaskDetails(taskEvent) {
 
     document.getElementById("taskDueDate").value = taskEvent.extendedProps.dueDate;
     document.getElementById("taskNotes").value = taskEvent.extendedProps.taskNotes;
+}
+
+function removeTask(form) {
+    form.submit();
 }

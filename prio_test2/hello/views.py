@@ -155,6 +155,17 @@ def task_details(request):
 
     return render(request, 'add_task.html', context)
 
+def removeTaskForm(request):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    if request.method == "POST":
+        task_id = request.POST["task_id"]
+
+        task = Task.objects.get(pk=task_id)
+        task.delete()
+
+    return redirect("viewSched")
 
 def addCourseSub(request):
     if not request.user.is_authenticated:

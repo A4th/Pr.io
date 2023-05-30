@@ -5,6 +5,7 @@
                     <button type="button" id="details-close" class="control-button header-button"
                         onclick="document.getElementById('details-pane').style = 'display:none'">X</button>
                     </div>
+
                     <div id="task-details">
                     <input type="text" id="taskName" name="taskName" class="input-field"/>
                     <br>
@@ -43,7 +44,12 @@
 
                     <button type="button" id="save-task-button" class="control-button task-button">Save Task Details</button>
                     <br><br>
-                    <button type="button" id="remove-task-button" class="control-button task-button">Mark as Done/Remove</button>
+
+                    <form method = "POST" action="{% url 'removeTaskForm' %}">
+                        {% csrf_token %}
+                        <input type="hidden" value="-1" name="task_id" id="task_id"></input>
+                        <button type="button" id="remove-task-button" class="control-button task-button" onclick="removeTask(this.form)">Mark as Done/Remove</button>
+                    </form>
 
                     </div>
                 </div>
