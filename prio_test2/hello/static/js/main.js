@@ -26,7 +26,9 @@ function showTaskDetails(taskEvent) {
     let detailsPane = document.getElementById("details-pane");
     detailsPane.style = "display: inline";
 
-    document.getElementById("task_id").value = taskEvent.extendedProps.taskId;
+    for (let task_id_el of document.getElementsByName("task_id")) {
+        task_id_el.value = taskEvent.extendedProps.taskId;
+    }
 
     document.getElementById("taskName").value = taskEvent.extendedProps.taskName;
     document.getElementById("taskSubject").value = taskEvent.extendedProps.subject;
