@@ -33,7 +33,13 @@
 
 #submit-button {
     margin-left: 55%;
-    margin-right:1%;
+    margin-right: 1%;
+}
+
+#delete-button {
+    margin-left: 84%;
+    margin-right: 1%;
+    background-color: red;
 }
 
 #add_gradeSys, #del_gradeSys {
