@@ -50,3 +50,16 @@ function editTask(form) {
 function removeTask(form) {
     form.submit();
 }
+
+function removeSub(form) {
+    let message = "Are you sure you want delete '"
+    message +=  String(document.getElementById("sub_name").value)
+    message += "' from your subjects and ALL tasks under it?"
+    
+    if( confirm(message)) {
+        alert("Subject deleted Successfully.");
+        form.submit();
+    } else {
+        return false;
+    }
+}
