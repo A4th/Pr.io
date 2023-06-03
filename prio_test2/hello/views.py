@@ -338,3 +338,14 @@ def editSubForm(request, subject_id):
 
 def help_view(request):
     return render(request, 'help.html')
+
+
+def removeSubForm(request, subject_id):
+    if not request.user.is_authenticated:
+        return redirect("login")
+
+    if request.method == "POST":        
+        subject = Subject.objects.get(id=subject_id)
+        subject.delete()
+
+    return redirect("editSub")

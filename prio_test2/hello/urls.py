@@ -16,6 +16,7 @@ urlpatterns = [
     path("editSub/",views.edit_subject,name = "editSub"),
     path("editSubDetails/",views.subject_details,name = "subject_details"),
     re_path("editSub/(?P<subject_id>-?[0-9]+)/change\Z", views.editSubForm, name="editSubForm"),
+    re_path("removeSubForm/(?P<subject_id>-?[0-9]+)/change\Z", views.removeSubForm, name="removeSubForm"),
     path("checkSub/", views.checkSub, name="checkSub"),
     path("help/", views.help_view, name="help"),
 

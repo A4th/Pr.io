@@ -102,7 +102,22 @@
                         ></input>
                         <input type="button" value ="Reset" id="cancel-button" class="control-button" onclick="this.form.reset()"/>
                         </div>
-                    </form>
+                    </form><br>
+
+                    <form method = "POST" action="{% url 'removeSubForm' subject_id %}">
+                        {% csrf_token %}
+
+                        <input type="hidden" value=-1 name="sub_id"/>
+                        <input type="hidden" value="{{subject}}" name="sub_name" id="sub_name"/>
+
+                        <input type="button" value ="Delete" id="delete-button" class="control-button" onclick="removeSub(this.form)"
+                        {% if subject_id == -1 %}
+                        disabled
+                        {% endif %}
+                        ></input>
+                        
+                    </form><br>
+                    
 
                     <!-- Add subjects data in HTML for access in javascript -->
                     {{ subjects_json|json_script:"subjects-data" }}
