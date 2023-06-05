@@ -47,7 +47,7 @@ html {
 }
 
 html, body {
-    height: 95%;
+    height: 97%;
 }
 
 .form-label {
@@ -86,5 +86,4 @@ html, body {
     text-align: center;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
-    margin-bottom: 1%;
 }
