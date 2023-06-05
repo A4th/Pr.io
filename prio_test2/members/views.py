@@ -51,7 +51,6 @@ def register_user(request):
             user = authenticate(email=email, username=username, password=password, 
                                 is_active=is_active, is_superuser=is_superuser, is_staff=is_staff)
             login(request, user)
-            messages.success(request, ("You were logged out successfully, " + str(username)))
 
             return redirect('viewSched')
     else:

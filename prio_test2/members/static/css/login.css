@@ -69,3 +69,12 @@ html {
     background-color: #5B345B;
     background-position: 20px 20px;
 }
+
+#alert {
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    color: white;
+    text-align: center;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}

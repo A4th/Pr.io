@@ -27,4 +27,18 @@
 
             <button type="submit" value="Submit" class="control-button">Submit</button>
         </form>
+
+        {% if messages %}
+          {% for message in messages %}
+            {% if message.level == 25 %}
+              <div class="alert {% if message.tags %} {{message.tags}} {% endif %}" id="alert"
+                  style="background-color: green;">{{ message }}</div>
+            {% else %}
+              <div class="alert {% if message.tags %} {{message.tags}} {% endif %}" id="alert"
+                    style="background-color: red;">{{ message }}</div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
     </body>
+
+    
