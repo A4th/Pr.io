@@ -13,17 +13,23 @@ def login_user(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
 
+        log = "User -- " + str(username) + " -- has been logged-in successfully"
         if user is not None:
             login(request, user)
+            messages.success(request, (log))
             return redirect('viewSched')
         else:
+            messages.error(request, ("Invalid username/password"))
             return redirect('login')
     else:
         return render(request, 'registration/login.html', {})
     
 def logout_user(request):
+    username = request.user
     logout(request)
-    messages.success(request, ("You were logged-out successfully"))
+
+    log = "User -- " + str(username) + " -- has been logged-out successfully"
+    messages.success(request, (log))
     return redirect('login')
 
 def register_user(request):

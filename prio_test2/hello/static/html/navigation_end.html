@@ -59,3 +59,15 @@
                 </div>
             </div>
         </div>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" id="alert"
+            style="background-color: green;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: large;
+                    color: white;
+                    text-align: center;
+                    padding-top: 0.5%;
+                    padding-bottom: 0.5%;">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
